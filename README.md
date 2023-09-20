@@ -79,6 +79,6 @@ concat :|-------------------------------------------------- 100%
 spots read      : 5,829
 ...
 
---- Output manually trunctated; takes about 15 minutes for this small example ---
+--- Output manually trunctated; takes about 5-10 minutes for this small example ---
 ```
 
