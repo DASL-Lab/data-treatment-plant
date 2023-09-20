@@ -16,7 +16,6 @@ for accession in ${accessions[@]}; do
         if [ ! -f "groutput/${accession}.mapped.csv" ]; then
             if [ ! -f "groutput/${accession}.mapped.csv.gz" ]; then
                 fasterq-dump ${accession} --progress --outdir "data/fastq/"
-                gzip -vf data/fastq/${accession}*fastq
             fi
         fi
     fi
@@ -25,9 +24,18 @@ for accession in ${accessions[@]}; do
     echo ${accession}
     if [ ! -f "groutput/${accession}.mapped.csv" ]; then
         if [ ! -f "groutput/${accession}.mapped.csv.gz" ]; then
-            # Some fastqs include combined and two separate files.
+            # Some fastqs are combined, some are two separate files.
             # Check the separate files first.
-            if [ -f "data/fastq/${accession}_1.fastq.gz" ]; then
+            # Also check for gzipped files
+            if [ -f "data/fastq/${accession}_1.fastq" ]; then
+                echo python gromstolen/minimap2.py -t 2 -p ${accession} -o groutput --nocut --replace "data/fastq/${accession}_1.fastq" "data/fastq/${accession}_2.fastq"
+                python gromstolen/minimap2.py -t 2 -p ${accession} -o groutput --nocut --replace "data/fastq/${accession}_1.fastq" "data/fastq/${accession}_2.fastq"
+                echo "Done"
+            elif [ -f "data/fastq/${accession}.fastq" ]; then
+                echo python gromstolen/minimap2.py -t 2 -p ${accession} -o groutput --nocut --replace "data/fastq/${accession}.fastq"
+                python gromstolen/minimap2.py -t 2 -p ${accession} -o groutput --nocut --replace "data/fastq/${accession}.fastq"
+                echo "Done"
+            elif [ -f "data/fastq/${accession}_1.fastq.gz" ]; then
                 echo python gromstolen/minimap2.py -t 2 -p ${accession} -o groutput --nocut --replace "data/fastq/${accession}_1.fastq.gz" "data/fastq/${accession}_2.fastq.gz"
                 python gromstolen/minimap2.py -t 2 -p ${accession} -o groutput --nocut --replace "data/fastq/${accession}_1.fastq.gz" "data/fastq/${accession}_2.fastq.gz"
                 echo "Done"
@@ -42,12 +50,12 @@ for accession in ${accessions[@]}; do
         if [ `ls groutput | grep ${accession} | wc -l` = 2 ]; then
             mfile=`ls groutput/${accession}*mapped.csv*`
             if (( `wc -l < $mfile` > 50 )); then
-                echo "GromStole Successful, removing fastq"
+                echo "Minimap2 Successful, removing fastq"
                 fastq_file=`ls data/fastq/${accession}*`
                 rm $fastq_file
             else 
                 echo `wc -l < $mfile`
-                echo "Gromstole failed, keeping fastq but removing groutput."
+                echo "Minimap2 failed, keeping fastq but removing groutput."
                 rm "$mfile"
                 rm "${mfile/mapped/coverage}"
             fi
@@ -55,5 +63,5 @@ for accession in ${accessions[@]}; do
     fi
 done
 
-
-
+gzip -q groutput/*
+gzip -q data/fastq/*
