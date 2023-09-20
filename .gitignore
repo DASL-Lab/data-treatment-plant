@@ -2,3 +2,4 @@ runtables/*
 data/fastq/*
 exampledata/*
 groutput/*
+*__pycache__*
