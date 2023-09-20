@@ -1,0 +1,1 @@
+These scripts have been adapted (stolen) from [GromStole](https://github.com/PoonLab/gromstole/), which were distributed according to the same license as this repository (MIT).
