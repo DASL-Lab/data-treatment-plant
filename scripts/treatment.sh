@@ -7,7 +7,7 @@ accessions=($(awk -F "," '{if (NR !=1) print $1}' ${1}))
 mkdir -p data/fastq
 mkdir -p data/groutput
 
-COUNTER=0
+COUNTER=1
 for accession in ${accessions[@]}; do
     echo ""
     echo ${accession}
@@ -59,6 +59,18 @@ for accession in ${accessions[@]}; do
             else 
                 echo `wc -l < $mfile`
                 echo "Minimap2 failed, keeping fastq but removing data/groutput."
+                echo "Minimap2 failed on $accession in $1. Line count:" >> out.log
+                if [ -f "data/fastq/${accession}_1.fastq" ]; then
+                    wc -l "data/fastq/${accession}_1.fastq" >> out.log
+                    wc -l "data/fastq/${accession}_2.fastq" >> out.log
+                elif [ -f "data/fastq/${accession}.fastq" ]; then
+                    wc -l "data/fastq/${accession}.fastq" >> out.log
+                elif [ -f "data/fastq/${accession}_1.fastq.gz" ]; then
+                    wc -l "data/fastq/${accession}_1.fastq.gz" >> out.log
+                    wc -l "data/fastq/${accession}_2.fastq.gz" >> out.log
+                elif [ -f "data/fastq/${accession}.fastq.gz" ]; then
+                    wc -l "data/fastq/${accession}.fastq.gz" >> out.log
+                fi 
                 rm "$mfile"
                 rm "${mfile/mapped/coverage}"
             fi
