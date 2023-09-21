@@ -1,5 +1,13 @@
+# Data folders
 data/fastq/*
 data/groutput/*
-data/runtables/*
 data/processed/*
+# I am unsure if re-hosting the runtables is a violation of ToS, being cautious.
+data/runtables/*
+
+# Code output
 *__pycache__*
+
+# Partial files - these files shouldn't persist, but 
+# they make it annoying to use git while treatment.sh is running
+*fasterq.tmp*
