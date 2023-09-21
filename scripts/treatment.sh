@@ -7,10 +7,13 @@ accessions=($(awk -F "," '{if (NR !=1) print $1}' ${1}))
 mkdir -p data/fastq
 mkdir -p data/groutput
 
+COUNTER=0
 for accession in ${accessions[@]}; do
     echo ""
-    echo $1
     echo ${accession}
+    echo $COUNTER
+    wc -l $1
+    COUNTER=$((COUNTER+1))
     # Check for duplicates
     # Since gzip'd, fasterq-dump doesn't know about existing files
     if [ `ls data/fastq | grep ${accession} | wc -w` = 0 ]; then
@@ -22,7 +25,6 @@ for accession in ${accessions[@]}; do
     fi
     
     echo "Running Minimap2"
-    echo ${accession}
     if [ ! -f "data/groutput/${accession}.mapped.csv" ]; then
         if [ ! -f "data/groutput/${accession}.mapped.csv.gz" ]; then
             # Some fastqs are combined, some are two separate files.
@@ -64,5 +66,3 @@ for accession in ${accessions[@]}; do
     fi
 done
 
-gzip -q data/groutput/*
-gzip -q data/fastq/*
