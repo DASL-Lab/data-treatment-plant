@@ -1,10 +1,13 @@
-library(here)
-library(dplyr)
-library(lubridate)
+suppressPackageStartupMessages({
+    library(here)
+    library(dplyr)
+    library(lubridate)
+})
 
 # Rscript effluent.R --quiet --freqmin 0.1 PRJNA745177
 # "--quiet" can go anywhere
 # Bioproject accession should be at the end
+# Assumes you've renamed runtables to SraRunTable_[prj].txt
 
 args <- commandArgs(trailingOnly = TRUE)
 verbose <- TRUE
@@ -13,7 +16,7 @@ if ("--quiet" %in% args) {
     args <- args[-which(args == "--quiet")]
 }
 
-freqmin <- 0.05
+freqmin <- 0.1
 if ("--freqmin" %in% args) {
     freqmin <- as.numeric(args[which(args == "--freqmin") + 1])
 }
@@ -21,10 +24,10 @@ if ("--freqmin" %in% args) {
 prj <- args[length(args)]
 if (!length(prj)) prj <- "PRJNA745177"
 
-runtable <- read.csv(here("data", "runtables", 
+runtable <- read.csv(here("data", "runtables",
     paste0("SraRunTable_", prj, ".txt")))
 
-# The rows selected in runtable will be kept in the effluent
+# The columns selected in runtable will be kept in the output
 if (prj == "PRJNA745177") {
     runtable <- filter(runtable, Replicate != 2 | is.na(Replicate)) %>%
         select(sra = Run,
@@ -43,6 +46,9 @@ if (prj == "PRJNA745177") {
 }
 
 # Gather the actual sample data
+# Mutations with coverage less than 10 are removed
+    # IMPORTANT: They may be re-added later with a count of 0
+    # This is a compromise for memory managment.
 for (i in seq_along(runtable$sra)) {
     m <- read.csv(here("data", "groutput",
         paste0("", runtable$sra[i], ".mapped.csv.gz")))
@@ -56,9 +62,6 @@ for (i in seq_along(runtable$sra)) {
         coco <- rbind(coco, m)
     }
 }
-
-coco_backup <- coco
-coco <- coco_backup
 
 # Remove mutations which never achieved a frequency >0.1
 badmuts <- coco %>%
@@ -76,6 +79,8 @@ allmuts <- coco %>%
     select(position, label, mutation) %>%
     distinct()
 
+# If a mutation had a coverage of 0 but it had a high frequency elsewhere,
+# this is where it will be added back in with a count of 0.
 my_sra <- unique(coco$sra)
 for (i in seq_along(my_sra)) {
     this_sra <- which(coco$sra == my_sra[i])
@@ -100,9 +105,10 @@ for (i in seq_along(my_sra)) {
 # Put it all together
 fullcoco <- left_join(fullcoco, runtable, by = "sra")
 
-dir.create(here("data", "processed"), 
-    showWarnings = FALSE)
-write.csv(x = fullcoco, 
+dir.create(here("data", "processed"),
+    showWarnings = FALSE) # Ensure the directory exists
+# Write directly to a compressed file.
+write.csv(x = fullcoco,
     file = gzfile(here("data", "processed",
         paste0(prj, "_processed.csv.gz"))),
     row.names = FALSE)
