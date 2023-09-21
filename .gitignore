@@ -1,5 +1,4 @@
-runtables/*
 data/fastq/*
-exampledata/*
-groutput/*
+data/groutput/*
+data/runtables/*
 *__pycache__*
