@@ -18,7 +18,7 @@ baaijens <- load_prj("PRJNA741211")
 names(baaijens)
 baaijens <- rm_ones(baaijens)
 names(baaijens)
-head(baaijens[order(baaijens$Sample.Name),])
+head(baaijens[order(baaijens$Sample.Name), ])
 # No idea which samples correspond to different WWTPs
 
 jahn <- load_prj("PRJEB44932") |> rm_ones()
@@ -63,7 +63,7 @@ length(unique(rasmussen$latlon))
 rios <- load_prj("PRJNA750263") |> rm_ones()
 head(rios)
 rios %>%
-    tidyr::separate(Sample.Name, 
+    tidyr::separate(Sample.Name,
         into = c("location", "month", "letter", "PAE", "barcode"),
         sep = " / ") %>%
     pull(location) %>%
@@ -77,7 +77,7 @@ rothman <- rothman %>%
         into = c("WWTP", "month", "day", "year", "enriched", "other"),
         sep = "_")
 table(rothman$WWTP)
-ggplot(rothman[rothman$WWTP != "JW",]) +
+ggplot(rothman[rothman$WWTP != "JW", ]) +
     aes(x = ymd(Collection_Date), fill = WWTP) +
     geom_density(alpha = 0.3)
 
