@@ -32,6 +32,8 @@ The `treatment.sh` bash script takes the location of the SRA runtable file as th
 
 After processing, I usually `gzip` all the files in the groutput folder. R and Python will both load gzipped files just fine and it saves a lot of disk space.
 
+Note that there are many checks to see if the files already exist (compressed or uncompressed). The script can be interrupted at any time; re-running will pick up where it left off.
+
 ## Stage 2: Output
 
 The `effluent.R` script processes the data according to my particular needs:
@@ -46,10 +48,10 @@ The `effluent.R` script processes the data according to my particular needs:
 
 I have chosen bioproject PRJNA745177 as an example since the files are relatively small. These data were analysed in [Swift CL, Isanovic M, Correa Velez KE, Norman RS. Community-level SARS-CoV-2 sequence diversity revealed by wastewater sampling. *Sci Total Environ.* 2021 Dec 20;801:149691. doi: 10.1016/j.scitotenv.2021.149691](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8372435/).
 
-Navigate to [https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP327683&o=acc_s%3Aa](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP327683&o=acc_s%3Aa) and select "Metadata" under Download. Move the file into an appropriate location. 
+Navigate to [https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP327683&o=acc_s%3Aa](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP327683&o=acc_s%3Aa) and select "Metadata" under Download. Move the file into an appropriate location. I use the convention of appending the bioproject accession to the default filename, *e.g.* `SraRunTable_PRJNA745177.txt`.
 
 ```sh
-bash scripts/treatment.sh exampledata/SraRunTablePRJNA745177.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA745177.txt
 gzip groutput/*
 ```
 
