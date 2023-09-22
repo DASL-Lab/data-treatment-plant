@@ -5,10 +5,11 @@ This repository contains my data processing pipeline for wastewater sequences, s
 **Dependencies**:
 
 - [cutadapt](https://cutadapt.readthedocs.io/en/stable/)
-- [minimap2](https://github.com/lh3/minimap2) (available through `apt` and `brew`, among other)
-- Python
-- R
-- sratools
+- [minimap2](https://github.com/lh3/minimap2), available through `apt` and `brew`, etc.
+- Python >= 3.6
+- R >= 4.0
+- [sratools](https://github.com/ncbi/sra-tools) >= 2.9.1, available through `apt`, `brew`, etc.
+- [ENA FTP Downloader](https://github.com/enasequence/ena-ftp-downloader/)
 
 The `SraRunTable`s can be acquired from NCBI's Run Selector. 
 
