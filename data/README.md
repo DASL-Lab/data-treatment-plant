@@ -30,7 +30,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
     - WWTP names are difficult to decipher
 - Rasmussen et al. (2023): [PRJEB65603](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=25&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
     - 116 runs
-        - Most accessions are not found in SRA - probably in ENA (TODO: download script).
+        - Accessions found in ENA. Minimap2 is only mapping ~20% of the reads (unsure why).
     - 28 different WWTPs, but only 4 observations from each
         - Exact coordinates of WWTPs
 - Rios et al. (2021): [PRJNA750263](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=27&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
