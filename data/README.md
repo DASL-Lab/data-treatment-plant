@@ -30,6 +30,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
     - WWTP names are difficult to decipher
 - Rasmussen et al. (2023): [PRJEB65603](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=25&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
     - 116 runs
+        - Most accessions are not found in SRA - probably in ENA (TODO: download script).
     - 28 different WWTPs, but only 4 observations from each
         - Exact coordinates of WWTPs
 - Rios et al. (2021): [PRJNA750263](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=27&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
@@ -39,6 +40,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
     - Collected Oct 2020 to Mar 2021
 - Rothman et al. (2021): [PRJNA729801](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=29&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
     - 363 SRA experiments
+        - minimap2 failed for most runs - unsure why
     - 8 or 9 WWTPs, between 4 and 110 samples each, collected mpstly between Aug 2020 to Jan 2021, with some WWTPs sampled until Aug 2021
     - "We collected 94 1-liter 24-h composite influent wastewater samples at seven WTPs across Southern California between August 2020 and January 2021"
 - Rouchka et al. (2021) and Westcott et al. (2022): [PRJNA735936](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=31&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
@@ -52,7 +54,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
     - 8 WWTPs, one of which is blank and sampled at different times, one is labelled NY* with 5 observations, the rest looking good with 33-37 observations each, all sampled at approximately the same times.
         - If only BB, OB, OH, TI, and WI are used, there will probably be some good nuggets to extract.
     - Some fun typos in "geo_loc_name..run."
-    - Focused exclusively on the receptor binding domain (spike protein).
+    - Focused exclusively on the receptor binding domain (spike protein), so mutations won't be generally applicable.
 - Swift et al. (2021): [PRJNA745177](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=35&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
     - 30 runs
     - Two sampling locations, sampled irregularly from Jun 2020 to Jan 2021.

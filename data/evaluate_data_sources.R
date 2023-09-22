@@ -80,6 +80,8 @@ table(rothman$WWTP)
 ggplot(rothman[rothman$WWTP != "JW", ]) +
     aes(x = ymd(Collection_Date), fill = WWTP) +
     geom_density(alpha = 0.3)
+rothman_for_ena <- paste0(rothman$Run, collapse =",")
+rothman_for_ena # to be used in data/ENA
 
 rouchka <- load_prj("PRJNA735936") |> rm_ones()
 head(rouchka)
