@@ -23,6 +23,20 @@ for accession in ${accessions[@]}; do
             fi
         fi
     fi
+    # If no file, perhaps it's in the ENA?
+    if [ `ls data/fastq | grep ${accession} | wc -w` = 0 ]; then
+        if [ ! -f "data/groutput/${accession}.mapped.csv" ]; then
+            if [ ! -f "data/groutput/${accession}.mapped.csv.gz" ]; then
+                echo "fasterq-dump appears to have failed. Trying ENA."
+                java -jar data/ENA/ena-file-downloader.jar --accessions=$accession --location=data/fastq --format=READS_FASTQ --protocol=FTP
+                mv data/fastq/reads_fastq/*/* data/fastq/
+                # Repeat counter info since ENA has a lot of output
+                echo ${accession}
+                echo $COUNTER
+                wc -l $1
+            fi
+        fi
+    fi
     
     echo "Running Minimap2"
     if [ ! -f "data/groutput/${accession}.mapped.csv" ]; then

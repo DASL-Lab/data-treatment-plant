@@ -6,6 +6,8 @@ data/processed/*
 data/runtables/*
 data/ENA/*
 !data/ENA/download.sh
+logs/*
+*/logs/*
 
 # Code output
 *__pycache__*
