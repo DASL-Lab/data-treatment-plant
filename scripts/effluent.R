@@ -57,6 +57,36 @@ if (prj == "PRJNA745177") {
         # Errant files, added manually from out.log
         filter(sra != "SRR18583185") %>% # fastq has 20 lines
         filter(sra != "SRR18583239") # fastq has 24 lines
+} else if (prj == "PRJEB65603") {
+    runtable <- runtable %>%
+        mutate(location = sapply(Sample_Name,
+            function(x) strsplit(x, "_")[[1]][1])) %>%
+        select(sra = Run,
+            avg_spot_len = AvgSpotLen,
+            bases = Bases,
+            bioproject = BioProject,
+            location,
+            lat = geographic_location_.latitude.,
+            lon = geographic_location_.longitude.)
+} else if (prj == "PRJNA735936") {
+    runtable <- runtable %>%
+        mutate(location = as.numeric(factor(ww_population))) %>%
+        select(sra = Run,
+            avg_spot_len = AvgSpotLen,
+            bases = Bases,
+            bioproject = BioProject,
+            location,
+            type = ww_sample_type,
+            ww_population)
+} else if (prj == "PRJNA750263") {
+    runtable <- runtable %>%
+        mutate(location = sapply(Sample.Name,
+            function(x) strsplit(x, " / ")[[1]][1])) %>%
+        select(sra = Run,
+            avg_spot_len = AvgSpotLen,
+            bases = Bases,
+            bioproject = BioProject,
+            lat_lon = Lat_Lon)
 } else {
     stop("I don't know how to deal with this BioProject yet.")
 }
@@ -65,15 +95,21 @@ cat("Gather all mapped files.\n")
 # Mutations with coverage less than 10 are removed
     # IMPORTANT: They may be re-added later with a count of 0
     # This is a compromise for memory managment.
+bad_files <- 0
 for (i in seq_along(runtable$sra)) {
     cat(paste0("\b\b\b\b\b\b\b\b\b", i, "/", nrow(runtable)))
     mname <- here("data", "groutput",
         paste0("", runtable$sra[i], ".mapped.csv.gz"))
     if (!file.exists(mname)) {
         mname <- gsub(".gz", "", mname)
+        if (!file.exists(mname)) {
+            cat(paste0("\n", mname, " not found. Skipping.\n"))
+            bad_files <- bad_files + 1
+            cat(paste0(bad_files, " files skipped.\n"))
+            next
+        }
     }
-    m <- read.csv(here("data", "groutput",
-        paste0("", runtable$sra[i], ".mapped.csv.gz")))
+    m <- read.csv(mname)
     m <- m[m$coverage > 10, ]
     m$count <- round(m$frequency * m$coverage, 0)
     m$run <- runtable$sra[i]
