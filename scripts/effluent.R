@@ -6,7 +6,7 @@ suppressPackageStartupMessages({
 })
 
 # Argument Parsing
-p <- arg_parser("Process GromStole output for bioprojects (variant agnostic)",
+p <- arg_parser("Process GromStole output for bioprojects (variant agnostic).",
     hide.opts = TRUE)
 p <- add_argument(p, "--freqmin", type = "numeric", default = 0.1,
     help = "Mutation must have a frequency of -f in at least one sample.")
@@ -110,7 +110,6 @@ for (i in seq_along(runtable$sra)) {
         if (!file.exists(mname)) {
             cat(paste0("\n", mname, " not found. Skipping.\n"))
             bad_files <- bad_files + 1
-            cat(paste0(bad_files, " files skipped.\n"))
             next
         }
     }
@@ -125,6 +124,7 @@ for (i in seq_along(runtable$sra)) {
         coco <- rbind(coco, m)
     }
 }
+cat(paste0(bad_files, " files skipped.\n"))
 
 cat("\nRemove mutations which never achieved a frequency > 0.1\n")
 badmuts <- coco %>%
@@ -132,7 +132,8 @@ badmuts <- coco %>%
     group_by(mutation) %>%
     summarise(keep = any(frequency > argv$freqmin))
 
-cat(paste0(round(1 - mean(badmuts$keep, 4), "% of mutations removed.\n")))
+cat(paste0(100 * round(1 - mean(badmuts$keep), 4), 
+    "% of mutations removed.\n"))
 
 coco <- left_join(coco, badmuts, by = "mutation") %>%
     filter(keep) %>%
