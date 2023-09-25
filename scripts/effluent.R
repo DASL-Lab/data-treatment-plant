@@ -2,19 +2,19 @@ suppressPackageStartupMessages({
     library(here)
     library(dplyr)
     library(lubridate)
+    library(argparser)
 })
 
-# Rscript scripts/effluent.R --freqmin 0.1 PRJNA745177
-# Bioproject accession should be at the end
-# Assumes you've renamed runtables to SraRunTable_[prj].txt
+# Argument Parsing
+p <- arg_parser("Process output of GromStole for entire BioProjects (variant agnostic)")
+p <- add_argument(p, "--freqmin", type = "numeric", default = 0.1,
+    help = "Mutation must have at least --freqmin in at least *one* sample.")
+p <- add_argument(p, "BioProject", default = "PRJNA745177",
+    help = "Path to the SraRunTable.txt file.")
+argv <- parse_args(p)
 
-args <- commandArgs(trailingOnly = TRUE)
-freqmin <- as.numeric(args[which(args == "--freqmin") + 1])
-prj <- args[length(args)]
-if (!length(prj)) prj <- "PRJNA745177"
-
-runtable <- read.csv(here("data", "runtables",
-    paste0("SraRunTable_", prj, ".txt")))
+runtable <- read.csv(argv$BioProject)
+prj <- runtable$BioProject[[1]]
 
 # The columns selected in runtable will be kept in the output
 cat("Load and process runtable.\n")
@@ -67,7 +67,8 @@ if (prj == "PRJNA745177") {
             bioproject = BioProject,
             location,
             lat = geographic_location_.latitude.,
-            lon = geographic_location_.longitude.)
+            lon = geographic_location_.longitude.,
+            date = Collection_Date)
 } else if (prj == "PRJNA735936") {
     runtable <- runtable %>%
         mutate(location = as.numeric(factor(ww_population))) %>%
@@ -77,7 +78,8 @@ if (prj == "PRJNA745177") {
             bioproject = BioProject,
             location,
             type = ww_sample_type,
-            ww_population)
+            ww_population,
+            date = Collection_Date)
 } else if (prj == "PRJNA750263") {
     runtable <- runtable %>%
         mutate(location = sapply(Sample.Name,
@@ -86,7 +88,9 @@ if (prj == "PRJNA745177") {
             avg_spot_len = AvgSpotLen,
             bases = Bases,
             bioproject = BioProject,
-            lat_lon = Lat_Lon)
+            lat_lon = Lat_Lon,
+            location,
+            date = Collection_Date)
 } else {
     stop("I don't know how to deal with this BioProject yet.")
 }
@@ -125,7 +129,9 @@ cat("\nRemove mutations which never achieved a frequency > 0.1\n")
 badmuts <- coco %>%
     select(mutation, frequency) %>%
     group_by(mutation) %>%
-    summarise(keep = any(frequency > freqmin))
+    summarise(keep = any(frequency > argv$freqmin))
+
+cat(paste0(round(1 - mean(badmuts$keep, 4), "% of mutations removed.\n")))
 
 coco <- left_join(coco, badmuts, by = "mutation") %>%
     filter(keep) %>%
@@ -171,4 +177,5 @@ write.csv(x = fullcoco,
         paste0(prj, "_processed.csv.gz"))),
     row.names = FALSE)
 
-cat("Done.")
+cat(paste0("Done. ", nrow(fullcoco), " lines written to ", 
+    prj, "_processed.csv.gz\n"))
