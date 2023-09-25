@@ -6,9 +6,10 @@ suppressPackageStartupMessages({
 })
 
 # Argument Parsing
-p <- arg_parser("Process output of GromStole for entire BioProjects (variant agnostic)")
+p <- arg_parser("Process GromStole output for bioprojects (variant agnostic)",
+    hide.opts = TRUE)
 p <- add_argument(p, "--freqmin", type = "numeric", default = 0.1,
-    help = "Mutation must have at least --freqmin in at least *one* sample.")
+    help = "Mutation must have a frequency of -f in at least one sample.")
 p <- add_argument(p, "BioProject", default = "PRJNA745177",
     help = "Path to the SraRunTable.txt file.")
 argv <- parse_args(p)
@@ -177,5 +178,5 @@ write.csv(x = fullcoco,
         paste0(prj, "_processed.csv.gz"))),
     row.names = FALSE)
 
-cat(paste0("Done. ", nrow(fullcoco), " lines written to ", 
+cat(paste0("Done. ", nrow(fullcoco), " lines written to ",
     prj, "_processed.csv.gz\n"))
