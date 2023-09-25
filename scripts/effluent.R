@@ -126,13 +126,13 @@ for (i in seq_along(runtable$sra)) {
 }
 cat(paste0(bad_files, " files skipped.\n"))
 
-cat("\nRemove mutations which never achieved a frequency > 0.1\n")
+cat("\nRemove mutations which never achieved a frequency > 0.1. ")
 badmuts <- coco %>%
     select(mutation, frequency) %>%
     group_by(mutation) %>%
     summarise(keep = any(frequency > argv$freqmin))
 
-cat(paste0(100 * round(1 - mean(badmuts$keep), 4), 
+cat(paste0(100 * round(1 - mean(badmuts$keep), 4),
     "% of mutations removed.\n"))
 
 coco <- left_join(coco, badmuts, by = "mutation") %>%

@@ -19,7 +19,14 @@ names(baaijens)
 baaijens <- rm_ones(baaijens)
 names(baaijens)
 head(baaijens[order(baaijens$Sample.Name), ])
-# No idea which samples correspond to different WWTPs
+# Using y=Bases is arbitrary, it just puts the points at different heights
+    # Also tells me if there are differences in sampling.
+ggplot(baaijens) +
+    aes(x = ymd(Collection_Date), y = Bases,
+        colour = substr(Sample.Name, 1, 2)) +
+    geom_point() +
+    geom_line()
+# Conclusion: it's just one WWTP
 
 jahn <- load_prj("PRJEB44932") |> rm_ones()
 names(jahn)
@@ -37,13 +44,22 @@ ggplot(karthykeyan) +
 ggplot(karthykeyan) +
     aes(x = ymd(Collection_Date), fill = geo_loc_name) +
     geom_histogram(alpha = 0.5, position = "identity")
+# Some overlap in March-Oct
+with(karthykeyan,
+    table(Collection_Date, gsub("USA: California\\\\, ", "", geo_loc_name)))
 
 khan <- load_prj("PRJNA772783") |> rm_ones()
 head(khan)
-unique(khan$geo_loc_name)
-unique(khan$ww_surv_target_1)
-unique(khan$ww_population)
+table(khan$geo_loc_name)
+table(khan$ww_surv_target_1)
+table(khan$geo_loc_name, khan$ww_surv_target_1) # CoV-2 in Reno only.
+table(khan$ww_population)
 sort(unique(khan$Sample.Name))
+khan2 <- filter(khan, ww_surv_target_1 == "SARS-CoV-2")
+table(substr(khan$Sample.Name, 0, 2))
+khan$Sample.Name[startsWith(khan$Sample.Name, "ScWW")] %>%
+    substr(0, 5) %>%
+    table()
 
 liu <- load_prj("PRJNA764181") |> rm_ones()
 head(liu)

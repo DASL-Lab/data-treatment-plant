@@ -3,20 +3,20 @@
 The bibliography for the following sources can be found in `open_data_sources.bib`.
 
 - Baaijens et al. (2022): [PRJNA741211](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP332940&o=acc_s%3Aa)
-    - 59 runs
+    - 59 runs, one WWTP with regular sampling.
     - Used to estimate abundances with Freyja.
-    - Unclear which WWTPs are being studied - sample names are all unique. A little digging might help.
 - Jahn et al. (2021): [PRJEB44932](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=12&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
     - 1,823 runs
     - 6 unique WWTPs sampled from 2020-07-09 to 2021-11-30 (irregularly, and on different dates for different WWTPs)
     - "We collected a total of 122 samples from three Swiss wastewater treatment plants (WWTPs) located in Zurich, Lausanne and an alpine ski resort between July 2020 and February 2021 (Supplementary Figure 1A). These samples include a close-meshed time-series for Zurich and Lausanne between December 2020 and mid-February 2021."
 - Karthykeyan et al. (2022): [PRJNA819090](https://www.ncbi.nlm.nih.gov/Traces/study/?WebEnv=MCID_650c44d372c3f35ccb6b4374&query_key=15&GALAXY_URL=https%3A%2F%2Fusegalaxy.org%2Ftool_runner%3Ftool_id%3Dsra_source)
     - 711 SRA experiments
-    - 2 sampling locations (UCSD Campus and San Diego (Point Loma)) collected from 2020-11-24 to 2022-02-07, but the sampling dates for the two locations don't overlap much.
+    - 2 sampling locations (UCSD Campus and San Diego (Point Loma)) collected from 2020-11-24 to 2022-02-07, but the sampling dates for the two locations don't overlap much (some overlap in March-Oct).
     - "The sensitivity of detection of SARS-CoV-2 viral RNA in wastewater by the high-throughput pipeline (i.e., to determine whether individual buildings yield sufficient wastewater signal for high-resolution spatial studies) was established by routinely monitoring the SARS-CoV-2 signatures in the wastewater of a large San Diego hospital building housing active coronavirus disease 2019 (COVID-19) patients (7). This site was used as a positive control to test correlations with caseload on a daily basis. Sewage samples were collected daily for a period of 12 weeks during which time the hospital’s caseload (specific to COVID-19 patients) varied between 2 and 26. SARS-CoV-2 viral gene copies correlated with the daily hospital caseload (r = 0.75; see Fig. S1 in the supplemental material), suggesting that the wastewater data could at least be used to identify the peaks. SARS-CoV-2 viral RNA was detected in wastewater on all days sampled. Furthermore, the high-throughput protocol has been used as a part of an on-campus wastewater surveillance for the last few months where data from 70 autosamplers covering individual buildings are sampled and analyzed on a daily basis."
 - Khan et al. (2023): [PRJNA772783](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=17&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
     - 161 runs, but some were for SARS-CoV-0, 1, and 3.
     - Multiple WWTPs, but the data make it difficult to decipher which is which.
+        - I have determined that "ScWW34May" is an observation from WW3 on May 4th. ScWW1-5 have 10 or 11 observations each. There are 7 other names that are not ScWW, and I can't tell what they correspond to in the paper.
 - Lin et al. (2021): [PRJNA731975](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=19&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
     - 106 runs
     - "We sequenced a total of 96 wastewater samples collected between 7 February and 18 April 2021 across five municipal WWTPs in Vancouver, Canada"
