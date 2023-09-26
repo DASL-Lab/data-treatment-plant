@@ -53,7 +53,6 @@ Navigate to [https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP327683&o=acc_s%3A
 
 ```sh
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA745177.txt
-gzip groutput/*
 ```
 
 ```
@@ -88,3 +87,5 @@ spots read      : 5,829
 ```
 
 In the output above, we see that `minimap2.py` is being run on two threads without using `cutadapt`, and the output is put in the `groutput` folder (replacing existing files if the filename already exists). 
+
+
