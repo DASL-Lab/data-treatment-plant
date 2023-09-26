@@ -201,8 +201,13 @@ if (grepl(",", argv$BioProject))
     argv$BioProject <- strsplit(argv$BioProject, ",")[[1]]
 
 for (i in seq_along(argv$BioProject)) {
+    if (!file.exists(argv$BioProject[i])) {
+        warning(paste0(argv$BioProject[i], " not found."))
+        next
+    }
     runtable <- read.csv(argv$BioProject[i])
     prj <- runtable$BioProject[[1]]
+    cat(paste0("\nStarting BioProject ", prj, "\n"))
     runtable <- get_runtable(prj)
     mfiles <- get_mfiles(runtable)
     allcoco <- rm_badmuts(mfiles, freqmin = argv$freqmin)
