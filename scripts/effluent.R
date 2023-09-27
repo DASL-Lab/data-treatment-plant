@@ -100,8 +100,9 @@ get_runtable <- function(prj) {
     # IMPORTANT: They may be re-added later with a count of 0
     # This is a compromise for memory managment.
 get_mfiles <- function(runtable) {
-    cat("Gather all mapped files.\n")
-    bad_files <- 0
+    cat("Gathering all mapped files.\n")
+    bad_files <- c()
+    mfile_list <- vector(mode = "list", length = nrow(runtable))
     for (i in seq_along(runtable$sra)) {
         cat(paste0("\b\b\b\b\b\b\b\b\b", i, "/", nrow(runtable)))
         mname <- here("data", "groutput",
@@ -109,8 +110,7 @@ get_mfiles <- function(runtable) {
         if (!file.exists(mname)) {
             mname <- gsub(".gz", "", mname)
             if (!file.exists(mname)) {
-                cat(paste0("\n", mname, " not found. Skipping.\n"))
-                bad_files <- bad_files + 1
+                bad_files <- c(bad_files, runtable$sra[i])
                 next
             }
         }
@@ -119,18 +119,21 @@ get_mfiles <- function(runtable) {
         m$count <- round(m$frequency * m$coverage, 0)
         m$run <- runtable$sra[i]
 
-        if (i == 1) {
-            coco <- m
-        } else {
-            coco <- rbind(coco, m)
-        }
+        mfile_list[[i]] <- m
     }
-    cat(paste0("\n", bad_files, " files skipped.\n"))
+    coco <- bind_rows(mfile_list)
+    if (length(bad_files) > 0) {
+        cat(paste0(". Done. ", length(bad_files), " files skipped:\n"))
+        cat(paste0("\t", paste0(bad_files, collapse = ", ")))
+    }
+    cat("\n")
     return(coco)
 }
 
 rm_badmuts <- function(coco, freqmin) {
-    cat("Remove mutations which never achieved a frequency > 0.1. ")
+    cat(paste0(
+            "Removing mutations that never had a frequency > ",
+            freqmin))
     badmuts <- coco %>%
         select(mutation, frequency) %>%
         group_by(mutation) %>%
@@ -213,7 +216,7 @@ for (i in seq_along(argv$BioProject)) {
     allcoco <- rm_badmuts(mfiles, freqmin = argv$freqmin)
     allcoco <- add_missing_mutations(allcoco)
 
-    cat("Clean up.\n")
+    cat("Cleaning up.\n")
     allcoco <- left_join(allcoco, runtable, by = "sra")
 
     dir.create(here("data", "processed"),
