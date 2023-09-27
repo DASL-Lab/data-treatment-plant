@@ -93,4 +93,4 @@ for accession in ${accessions[@]}; do
 done
 
 gzip -q data/fastq/*
-gzip -q data/gromstole/*
+gzip -q data/groutput/*

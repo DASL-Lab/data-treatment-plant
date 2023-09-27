@@ -7,7 +7,7 @@ bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA741211.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA745177.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA750263.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA819090.txt
-# In progress:
+# In progress (taking multiple days):
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA735936.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB44932.txt
 
