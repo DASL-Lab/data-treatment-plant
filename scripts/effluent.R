@@ -212,7 +212,6 @@ for (i in seq_along(argv$BioProject)) {
     mfiles <- get_mfiles(runtable)
     allcoco <- rm_badmuts(mfiles, freqmin = argv$freqmin)
     allcoco <- add_missing_mutations(allcoco)
-    allcoco <- left_join(allcoco, runtable, by = "sra")
 
     cat("Clean up.\n")
     allcoco <- left_join(allcoco, runtable, by = "sra")
