@@ -70,7 +70,7 @@ def minimap2(fq1, fq2, ref, path='minimap2', nthread=3, report=1e5):
             else:
                 print(CURSOR_UP_ONE + ERASE_LINE)
             
-            sys.stderr.write("\r{} reads, {} ({}%) mapped".format(
+            sys.stderr.write("\r{} reads, {} ({}%) mapped. ".format(
                 ln/(2 if fq2 else 1), (ln-bad)/(2 if fq2 else 1), round((ln-bad)/ln*100)))
             sys.stderr.flush()
 
