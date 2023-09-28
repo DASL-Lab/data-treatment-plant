@@ -11,6 +11,8 @@ import tempfile
 
 from seq_utils import SC2Locator
 
+CURSOR_UP_ONE = '\x1b[1A' 
+ERASE_LINE = '\x1b[2K' 
 
 def cutadapt(fq1, fq2, adapter="AGATCGGAAGAGC", ncores=1, minlen=10):
     """
@@ -59,9 +61,16 @@ def minimap2(fq1, fq2, ref, path='minimap2', nthread=3, report=1e5):
         )
     bad = 0
     output = map(lambda x: x.decode('utf-8'), p.stdout)
+    first_output = 0
     for ln, line in enumerate(output):
         if ln % report == 0 and ln > 0:
-            sys.stderr.write("{} reads, {} ({}%) mapped\n".format(
+            first_output += 1
+            if first_output == 1:
+                sys.stderr.write("\n")
+            else:
+                print(CURSOR_UP_ONE + ERASE_LINE)
+            
+            sys.stderr.write("\r{} reads, {} ({}%) mapped".format(
                 ln/(2 if fq2 else 1), (ln-bad)/(2 if fq2 else 1), round((ln-bad)/ln*100)))
             sys.stderr.flush()
 
@@ -79,7 +88,6 @@ def minimap2(fq1, fq2, ref, path='minimap2', nthread=3, report=1e5):
 
         rpos = int(rpos) - 1  # convert to 0-index
         yield qname, rpos, cigar, seq, qual
-
 
 def matchmaker(samfile):
     """
