@@ -115,3 +115,10 @@ table(smyth$geo_loc_name)
 
 swift <- load_prj("PRJNA745177") |> rm_ones()
 head(swift)
+
+layton <- load_prj("PRJNA720687") |> rm_ones()
+head(layton)
+# The next line is unreadable but works.
+sapply(strsplit(layton$Sample.Name, "-"), `[`, 2) |> table()
+# Unsure what Inf is.
+# Are Bayfront and BayfronttPS the same location?

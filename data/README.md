@@ -17,6 +17,8 @@ The bibliography for the following sources can be found in `open_data_sources.bi
     - 161 runs, but some were for SARS-CoV-0, 1, and 3.
     - Multiple WWTPs, but the data make it difficult to decipher which is which.
         - I have determined that "ScWW34May" is an observation from WW3 on May 4th. ScWW1-5 have 10 or 11 observations each. There are 7 other names that are not ScWW, and I can't tell what they correspond to in the paper.
+- Layton et al. (202*): [PRJNA719837](https://www.ncbi.nlm.nih.gov/Traces/study/?WebEnv=MCID_65145c8f166d7028a84f6ecb&query_key=8&GALAXY_URL=https%3A%2F%2Fusegalaxy.org%2Ftool_runner%3Ftool_id)
+    - 116 Runs
 - Lin et al. (2021): [PRJNA731975](https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=19&WebEnv=MCID_650c44d372c3f35ccb6b4374&o=acc_s%3Aa)
     - 106 runs
     - "We sequenced a total of 96 wastewater samples collected between 7 February and 18 April 2021 across five municipal WWTPs in Vancouver, Canada"
