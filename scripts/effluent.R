@@ -135,14 +135,14 @@ rm_badmuts <- function(coco, freqmin) {
             "Removing mutations that never had a frequency > ",
             freqmin))
     badmuts <- coco %>%
-        select(mutation, frequency) %>%
-        group_by(mutation) %>%
+        select(label, frequency) %>%
+        group_by(label) %>%
         summarise(keep = any(frequency > freqmin))
 
     cat(paste0(100 * round(1 - mean(badmuts$keep), 4),
         "% of mutations removed.\n"))
 
-    coco <- left_join(coco, badmuts, by = "mutation") %>%
+    coco <- left_join(coco, badmuts, by = "label") %>%
         filter(keep) %>%
         select(-keep) %>%
         rename(sra = run)
@@ -155,7 +155,7 @@ add_missing_mutations <- function(coco) {
 
     cat("Ensure all sra's have all mutations - including 0s.\n")
     allmuts <- coco %>%
-        select(position, label, mutation) %>%
+        select(position, label) %>%
         distinct()
 
     my_sra <- unique(coco$sra)
@@ -171,7 +171,7 @@ add_missing_mutations <- function(coco) {
                     paste0(my_sra[i], ".coverage.csv"))
             }
             c <- read.csv(cfile)
-            missings <- anti_join(allmuts, mi, by = "mutation")
+            missings <- anti_join(allmuts, mi, by = "label")
             missings$count <- 0
             missings <- left_join(missings, c, by = "position")
             mi <- bind_rows(mi, missings)
@@ -192,7 +192,7 @@ add_missing_mutations <- function(coco) {
 ###########################################################
 
 # Argument Parsing
-p <- arg_parser("Process GromStole output for bioprojects (variant agnostic).",
+p <- arg_parser("Process GromStole output for BioProjects (variant agnostic).",
     hide.opts = TRUE)
 p <- add_argument(p, "--freqmin", type = "numeric", default = 0.1,
     help = "Mutation must have a frequency of -f in at least one sample.")
