@@ -3,22 +3,22 @@
 The bibliography for the following sources can be found in `open_data_sources.bib`.
 
 
-| Source     | PRJ      | # WWTPs | # Runs  | Time | Notes |
-|------------|----------|---------|---------|------|---|
-| Baaijens   | NA741211 | 1       | 59      | Hours     | |
-| Jahn       | EB44932  | 6       | 1,823   | Many Days | Latlon |
-| Karthykeyan| NA819090 | 2       | 711     | Many Hours| |
-| Khan       | NA772783 | ?       | 161     | ?         | |
-| Layton     | NA719837 | 1       | 116     | Hour      | |
-| Lin        | NA731975 | 5       | 106     | < Hour    | |
-| Liu        | NA764181 | ?       | 10,147  | No.       | |
-| Ramuta     | NA811594 | ?       | 25      | ?         | |
-| Rasmussen  | EB65603  | 48      | 116     | Hours     | |
-| Rios       | NA750263 | 31?     | 118     | Hours     | |
-| Rothman    | NA729801 | 8-9     | 363     | Hours     | Minimap2 fails. |
-| Rouchka    | NA735936 | 17?     | 1,040   | Many Days | |
-| Smyth      | NA735936 | 5-8     | 311     | Hours     | |
-| Swift      | NA745177 | 2       | 30      | Minutes   | |
+| Source     | PRJ      | # WWTPs | # Runs  | Time   | Notes |
+|------------|----------|---------|---------|--------|-------|
+| Baaijens   | NA741211 | 1       | 59      | Hrs    | Temporal |
+| Jahn       | EB44932  | 6       | 1,823   | Days++ | Exact latlon, many obs., s-t |
+| Karthykeyan| NA819090 | 2       | 711     | Hrs++  | Locs have different dates |
+| Khan       | NA772783 | ?       | 161     | ?      | Some SARS-CoV-0,1,3, uncertain WWTPs |
+| Layton     | NA719837 | 1       | 116     | Hr     | 5 WWTPs must remain anon. |
+| Lin        | NA731975 | 5       | 106     | <Hr    | |
+| Liu        | NA764181 | ?       | 10,147  | No.    | Incl. gender - clinical rather than ww? |
+| Ramuta     | NA811594 | ?       | 25      | ?      | Uncertain WWTPs |
+| Rasmussen  | EB65603  | 48      | 116     | Hrs    | Spatial, 4 time points |
+| Rios       | NA750263 | 31?     | 118     | Hrs    | Few time points, many WWTP |
+| Rothman    | NA729801 | 8-9     | 363     | Hrs    | `minimap2.py` fails. |
+| Rouchka    | NA735936 | 17?     | 1,040   | Days++ | Mutliple purposes, composite and grab samples |
+| Smyth      | NA735936 | 5-8     | 311     | Hrs    | Extra WWTPS with poor sampling |
+| Swift      | NA745177 | 2       | 30      | Mins   | Great for examples |
 
 
 
