@@ -4,7 +4,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 
 
 | Source | # WWTPs | # Runs   | Time | Notes |
-|--------|---------|----------|------| |
+|--------|---------|----------|------|---|
 | Baaijens    | 1 | 59     | Hours | |
 | Jahn        | 6 | 1,823  | Many Days | Latlon |
 | Karthykeyan | 2 | 711    | Many Hours | |
