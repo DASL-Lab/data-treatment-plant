@@ -2,6 +2,25 @@
 
 The bibliography for the following sources can be found in `open_data_sources.bib`.
 
+
+| Source | # WWTPs | # Runs   | Time | Notes |
+|--------|---------|----------|------| |
+| Baaijens    | 1 | 59     | Hours | |
+| Jahn        | 6 | 1,823  | Many Days | Latlon |
+| Karthykeyan | 2 | 711    | Many Hours | |
+| Khan        | ? | 161    | ? | |
+| Layton      | 1 | 116    | Hour | |
+| Lin         | 5 | 106    | < Hour | |
+| Liu         | ? | 10,147 | No. | |
+| Ramuta      | ? | 25     | ? | |
+| Rios        | 31? | 118  | Hours | |
+| Rothman     | 8-9 | 363  | Hours | Minimap2 fails. |
+| Rouchka     | 17? | 1,040 | Many Days | |
+| Smyth       | 5-8 | 311  | Hours | |
+| Swift       | 2 | 30     | Minutes | |
+
+
+
 - Baaijens et al. (2022): [PRJNA741211](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP332940&o=acc_s%3Aa)
     - 59 runs, one WWTP with regular sampling.
     - Used to estimate abundances with Freyja.

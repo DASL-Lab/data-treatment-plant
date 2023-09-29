@@ -90,6 +90,43 @@ get_runtable <- function(prj) {
                 bioproject = BioProject,
                 date = Collection_Date,
                 sample_name = Sample.Name)
+    } else if (prj == "PRJNA720687") {
+        runtable <- runtable %>%
+            mutate(location = sapply(Sample.Name, function(x)
+                strsplit(x, "-")[[1]][2])) %>%
+            select(sra = Run,
+                avg_spot_len = AvgSpotLen,
+                bases = Bases,
+                bioproject = BioProject,
+                date = Collection_Date,
+                location)
+    } else if (prj == "PRJEB44932") {
+        runtable <- runtable %>%
+            mutate(location = sapply(
+                runtable$geographic_location_.region_and_locality.,
+                function(x) strsplit(x, " - ")[[1]][2])) %>%
+            select(sra = Run,
+                avg_spot_len = AvgSpotLen,
+                bases = Bases,
+                bioproject = BioProject,
+                date = Collection_Date,
+                location,
+                lat = geographic_location_.latitude.,
+                lon = geographic_location_.longitude.)
+    } else if (prj == "PRJNA735936") {
+        runtable <- runtable %>%
+            select(sra = Run,
+                avg_spot_len = AvgSpotLen,
+                bases = Bases,
+                bioproject = BioProject,
+                date = Collection_Date,
+                instrument = Instrument,
+                lat_lon = Lat_Lon,
+                organism = Organism,
+                population = ww_population,
+                sample_type = ww_sample_type
+            )
+
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -133,7 +170,7 @@ get_mfiles <- function(runtable) {
 rm_badmuts <- function(coco, freqmin) {
     cat(paste0(
             "Removing mutations that never had a frequency > ",
-            freqmin))
+            freqmin, ". "))
     badmuts <- coco %>%
         select(label, frequency) %>%
         group_by(label) %>%
