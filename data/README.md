@@ -3,21 +3,22 @@
 The bibliography for the following sources can be found in `open_data_sources.bib`.
 
 
-| Source | # WWTPs | # Runs   | Time | Notes |
-|--------|---------|----------|------|---|
-| Baaijens    | 1 | 59     | Hours | |
-| Jahn        | 6 | 1,823  | Many Days | Latlon |
-| Karthykeyan | 2 | 711    | Many Hours | |
-| Khan        | ? | 161    | ? | |
-| Layton      | 1 | 116    | Hour | |
-| Lin         | 5 | 106    | < Hour | |
-| Liu         | ? | 10,147 | No. | |
-| Ramuta      | ? | 25     | ? | |
-| Rios        | 31? | 118  | Hours | |
-| Rothman     | 8-9 | 363  | Hours | Minimap2 fails. |
-| Rouchka     | 17? | 1,040 | Many Days | |
-| Smyth       | 5-8 | 311  | Hours | |
-| Swift       | 2 | 30     | Minutes | |
+| Source     | PRJ      | # WWTPs | # Runs  | Time | Notes |
+|------------|----------|---------|---------|------|---|
+| Baaijens   | NA741211 | 1       | 59      | Hours     | |
+| Jahn       | EB44932  | 6       | 1,823   | Many Days | Latlon |
+| Karthykeyan| NA819090 | 2       | 711     | Many Hours| |
+| Khan       | NA772783 | ?       | 161     | ?         | |
+| Layton     | NA719837 | 1       | 116     | Hour      | |
+| Lin        | NA731975 | 5       | 106     | < Hour    | |
+| Liu        | NA764181 | ?       | 10,147  | No.       | |
+| Ramuta     | NA811594 | ?       | 25      | ?         | |
+| Rasmussen  | EB65603  | 48      | 116     | Hours     | |
+| Rios       | NA750263 | 31?     | 118     | Hours     | |
+| Rothman    | NA729801 | 8-9     | 363     | Hours     | Minimap2 fails. |
+| Rouchka    | NA735936 | 17?     | 1,040   | Many Days | |
+| Smyth      | NA735936 | 5-8     | 311     | Hours     | |
+| Swift      | NA745177 | 2       | 30      | Minutes   | |
 
 
 
