@@ -141,7 +141,7 @@ get_mfiles <- function(runtable) {
     bad_files <- c()
     mfile_list <- vector(mode = "list", length = nrow(runtable))
     for (i in seq_along(runtable$sra)) {
-        cat(paste0("\b\b\b\b\b\b\b\b\b", i, "/", nrow(runtable)))
+        cat(paste0("\r", i, "/", nrow(runtable)))
         mname <- here("data", "groutput",
             paste0("", runtable$sra[i], ".mapped.csv.gz"))
         if (!file.exists(mname)) {
@@ -190,13 +190,15 @@ rm_badmuts <- function(coco, freqmin) {
 # this is where it will be added back in with a count of 0.
 add_missing_mutations <- function(coco) {
 
-    cat("Ensure all sra's have all mutations - including 0s.\n")
+    cat("Use coverage files to ensure all samples have all mutations - including 0s.\n")
     allmuts <- coco %>%
         select(position, label) %>%
         distinct()
 
     my_sra <- unique(coco$sra)
+    mi_list <- vector(mode = "list", length = length(my_sra))
     for (i in seq_along(my_sra)) {
+        cat(paste0("\r", i, "/", length(my_sra)))
         this_sra <- which(coco$sra == my_sra[i])
         mi <- coco[this_sra, ]
 
@@ -211,15 +213,15 @@ add_missing_mutations <- function(coco) {
             missings <- anti_join(allmuts, mi, by = "label")
             missings$count <- 0
             missings <- left_join(missings, c, by = "position")
-            mi <- bind_rows(mi, missings)
-        }
+            missings$frequency <- missings$count / (missings$coverage + 1)
+            missings$sra <- mi$sra[1]
+            mi$mutation <- NULL
 
-        if (i == 1) {
-            fullcoco <- mi
-        } else {
-            fullcoco <- bind_rows(fullcoco, mi)
+            mi_list[[i]] <- rbind(mi, missings)
         }
     }
+    cat(". Done.\n")
+    fullcoco <- bind_rows(mi_list)
     return(fullcoco)
 }
 
@@ -249,8 +251,8 @@ for (i in seq_along(argv$BioProject)) {
     prj <- runtable$BioProject[[1]]
     cat(paste0("\nStarting BioProject ", prj, "\n"))
     runtable <- get_runtable(prj)
-    mfiles <- get_mfiles(runtable)
-    allcoco <- rm_badmuts(mfiles, freqmin = argv$freqmin)
+    allcoco <- get_mfiles(runtable)
+    allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
     allcoco <- add_missing_mutations(allcoco)
 
     cat("Cleaning up.\n")
