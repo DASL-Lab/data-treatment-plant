@@ -10,7 +10,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Karthykeyan| NA819090 | 2       | 711     | Hrs++  | Locs have different dates |
 | Khan       | NA772783 | ?       | 161     | ?      | Some SARS-CoV-0,1,3, uncertain WWTPs |
 | Layton     | NA719837 | 1       | 116     | Hr     | 5 WWTPs must remain anon. |
-| Lin        | NA731975 | 5       | 106     | <Hr    | |
+| Lin        | NA731975 | 5       | 106     | <Hr    | Evaluating primer sets. |
 | Liu        | NA764181 | ?       | 10,147  | No.    | Incl. gender - clinical rather than ww? |
 | Ramuta     | NA811594 | ?       | 25      | ?      | Uncertain WWTPs |
 | Rasmussen  | EB65603  | 48      | 116     | Hrs    | Spatial, 4 time points |
