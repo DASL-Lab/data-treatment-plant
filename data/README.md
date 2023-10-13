@@ -6,17 +6,22 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Source     | PRJ      | # WWTPs | # Runs  | Time   | Notes |
 |------------|----------|---------|---------|--------|-------|
 | Baaijens   | NA741211 | 1       | 59      | Hrs    | Temporal |
+| Brunner    | EB55313  | ?       | 23,536  | ???    | Exact location |
+| Izquierdo-Lara | EB48206 | 10?  | 698     | Hrs    | S-T |
 | Jahn       | EB44932  | 6       | 1,823   | Days++ | Exact latlon, many obs., s-t |
 | Karthykeyan| NA819090 | 2       | 711     | Hrs++  | Locs have different dates |
 | Khan       | NA772783 | ?       | 161     | ?      | Some SARS-CoV-0,1,3, uncertain WWTPs |
 | Layton     | NA719837 | 1       | 116     | Hr     | 5 WWTPs must remain anon. |
 | Lin        | NA731975 | 5       | 106     | <Hr    | Evaluating primer sets. |
 | Liu        | NA764181 | ?       | 10,147  | No.    | Incl. gender - clinical rather than ww? |
+| N'Guessan  | NA788395 | 3       | 936     | Hrs?   | Temporal |
+| Crits-Christoph | NA661613 | 1  | 18      | Hrs    | `minimiap2.py` fails |
 | Ramuta     | NA811594 | ?       | 25      | ?      | Uncertain WWTPs |
 | Rasmussen  | EB65603  | 48      | 116     | Hrs    | Spatial, 4 time points |
 | Rios       | NA750263 | 31?     | 118     | Hrs    | Few time points, many WWTP |
 | Rothman    | NA729801 | 8-9     | 363     | Hrs    | `minimap2.py` fails. |
 | Rouchka    | NA735936 | 17?     | 1,040   | Days++ | Mutliple purposes, composite and grab samples |
+| Sapoval    | NA796340 | 23      | 256     | Hrs    | Spatial? |
 | Smyth      | NA735936 | 5-8     | 311     | Hrs    | Extra WWTPS with poor sampling |
 | Swift      | NA745177 | 2       | 30      | Mins   | Great for examples |
 
