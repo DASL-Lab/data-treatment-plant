@@ -126,7 +126,41 @@ get_runtable <- function(prj) {
                 population = ww_population,
                 sample_type = ww_sample_type
             )
-
+    } else if (prj == "PRJNA796340") {
+        runtable <- runtable %>%
+            select(
+                sra = Run,
+                avg_spot_len = AvgSpotLen,
+                bases = Bases,
+                bioproject = BioProject,
+                date = Collection_Date,
+                wwtp = geo_loc_name,
+                population = ww_population
+            )
+    } else if (prj == "PRJEB48206") {
+        runtable <- runtable %>%
+            select(
+                sra = Run,
+                avg_spot_len = AvgSpotLen,
+                bases = Bases,
+                bioproject = BioProject,
+                date = Collection_Date,
+                wwtp = geographic_location_.region_and_locality.
+            )
+    } else if (prj == "PRJNA788395") {
+        runtable <- runtable %>%
+            filter(ww_sample_type == "composite") %>%
+            mutate(city = gsub("Canada:Quebec\\\\,", "",
+                geo_loc_name)) %>%
+            select(
+                sra = Run,
+                avg_spot_len = AvgSpotLen,
+                bases = Bases,
+                bioproject = BioProject,
+                date = Collection_Date,
+                population = ww_population,
+                city
+            )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -153,6 +187,10 @@ get_mfiles <- function(runtable) {
         }
         m <- read.csv(mname)
         m <- m[m$coverage > 10, ]
+        if (nrow(m) < 10) {
+            bad_files <- c(bad_files, runtable$sra[i])
+            next
+        }
         m$count <- round(m$frequency * m$coverage, 0)
         m$run <- runtable$sra[i]
 
@@ -255,7 +293,7 @@ for (i in seq_along(argv$BioProject)) {
     allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
     allcoco <- add_missing_mutations(allcoco)
 
-    cat("Cleaning up.\n")
+    cat("Cleaning up. ")
     allcoco <- left_join(allcoco, runtable, by = "sra")
 
     dir.create(here("data", "processed"),
@@ -266,6 +304,6 @@ for (i in seq_along(argv$BioProject)) {
             paste0(prj, "_processed.csv.gz"))),
         row.names = FALSE)
 
-    cat(paste0("Done. ", nrow(allcoco), " lines written to ",
+    cat(paste0("Done. \n", nrow(allcoco), " lines written to ",
         prj, "_processed.csv.gz\n"))
 }
