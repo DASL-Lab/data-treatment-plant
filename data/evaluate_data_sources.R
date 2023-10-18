@@ -1,6 +1,7 @@
 library(dplyr)
 library(here)
 library(ggplot2)
+theme_set(theme_bw())
 library(lubridate)
 
 load_prj <- function(prj) {
@@ -12,6 +13,48 @@ rm_ones <- function(prj_df) {
     ones[names(prj_df) == "BioProject"] <- FALSE
     prj_df <- prj_df[!ones]
     prj_df
+}
+
+diff_dates <- function(df, col = "wwtp", plot = TRUE) {
+    tmp <- bind_rows(lapply(unique(df[, col]), function(x) {
+        n <- sum(df[, col] == x)
+        thisdate <- ymd(df$Collection_Date[df[, col] == x])
+        tmp <- data.frame(
+            wwtp = x,
+            diffs = as.numeric(diff(sort(ymd(thisdate)))),
+            date_low = sort(thisdate)[1:(n - 1)],
+            date_high = sort(thisdate)[2:n]
+        )
+        tmp$mean_date <- as.Date(
+            as.numeric(as.Date(tmp$date_low)) / 2 +
+                as.numeric(as.Date(tmp$date_high)) / 2,
+            origin = "1970-01-01")
+        tmp
+    }))
+
+    if (plot) {
+        plot(x = as.Date(df$Collection_Date), 
+            y = as.numeric(as.factor(df[, col])), pch = "|",
+            ylab = col, xlab = "Collection_Date", yaxt = "n",
+            cex = 2)
+        yticks <- unique(as.numeric(as.factor(df[, col])))
+        axis(2, at = yticks, labels = sort(levels(as.factor(df[, col]))))
+        text(x = tmp[, "mean_date"],
+            y = as.numeric(as.factor(tmp[, "wwtp"])),
+            labels = tmp[, "diffs"])
+        return(invisible())
+    } else {
+        return(tmp)
+    }
+}
+
+table_regularity <- function(dates, wwtps, mindays = 1) {
+    t1 <- table(wwtps, dates)
+    t1 <- t1[, order(colnames(t1))]
+    ismin <- apply(t1, 2, function(x) sum(x > 0) >= mindays)
+    t1 <- t1[, ismin]
+    colnames(t1) <- c(0, diff(as.numeric(ymd(colnames(t1)))))
+    t1
 }
 
 baaijens <- load_prj("PRJNA741211")
@@ -33,6 +76,9 @@ names(jahn)
 head(jahn)
 unique(jahn$geographic_location_.region_and_locality.)
 range(jahn$Collection_Date)
+diff_dates(jahn, "geographic_location_.region_and_locality.")
+table_regularity(jahn$Collection_Date,
+    jahn$geographic_location_.region_and_locality., 3)
 
 karthykeyan <- load_prj("PRJNA819090") |> rm_ones()
 head(karthykeyan)
@@ -47,6 +93,9 @@ ggplot(karthykeyan) +
 # Some overlap in March-Oct
 with(karthykeyan,
     table(Collection_Date, gsub("USA: California\\\\, ", "", geo_loc_name)))
+diff_dates(karthykeyan, "geo_loc_name")
+table_regularity(karthykeyan$Collection_Date, 
+    gsub("USA: California\\\\, ", "", karthykeyan$geo_loc_name), 2)
 
 khan <- load_prj("PRJNA772783") |> rm_ones()
 head(khan)
@@ -75,16 +124,24 @@ rasmussen$latlon <- paste(rasmussen$geographic_location_.latitude.,
     rasmussen$geographic_location_.longitude., sep = "_")
 table(rasmussen$latlon)
 length(unique(rasmussen$latlon))
+rasmussen <- rasmussen %>%
+    mutate(wwtp = paste(geographic_location_.latitude., 
+        geographic_location_.longitude., sep = "_"))
+diff_dates(rasmussen, "wwtp")
+table_regularity(rasmussen$Collection_Date,
+    rasmussen$wwtp)
 
 rios <- load_prj("PRJNA750263") |> rm_ones()
 head(rios)
-rios %>%
+rios <- rios %>%
     tidyr::separate(Sample.Name,
         into = c("location", "month", "letter", "PAE", "barcode"),
-        sep = " / ") %>%
-    pull(location) %>%
-    unique() %>%
-    length()
+        sep = " / ")
+length(unique(rios$location))
+rios_loc_table <- table(rios$location)
+keep <- names(rios_loc_table)[rios_loc_table > 2]
+diff_dates(rios[rios$location %in% keep, ], "location")
+
 
 rothman <- load_prj("PRJNA729801") |> rm_ones()
 head(rothman)
@@ -96,6 +153,8 @@ table(rothman$WWTP)
 ggplot(rothman[rothman$WWTP != "JW", ]) +
     aes(x = ymd(Collection_Date), fill = WWTP) +
     geom_density(alpha = 0.3)
+diff_dates(rothman, "WWTP")
+table_regularity(rothman$Collection_Date, rothman$WWTP, 2)
 
 rouchka <- load_prj("PRJNA735936") |> rm_ones()
 head(rouchka)
@@ -103,6 +162,8 @@ table(rouchka$ww_surv_target_1)
 table(rouchka$purpose_of_ww_sequencing)
 table(rouchka$ww_population)
 table(rouchka$ww_sample_type)
+diff_dates(rouchka, "ww_population")
+table_regularity(rouchka$Collection_Date, rouchka$ww_population)
 
 smyth <- load_prj("PRJNA715712") |> rm_ones()
 head(smyth)
@@ -112,9 +173,20 @@ ggplot(smyth) +
     geom_density()
 table(smyth$geo_loc_name..run.)
 table(smyth$geo_loc_name)
+df1 <- smyth %>% filter(wwtp %in% c("BB", "CI", "OB", "OH", "TI", "WI"))
+table(df1$wwtp)
+diff_dates(df1)
+datetable <- table(df1$wwtp, df1$Collection_Date)
+
+dfdates <- apply(datetable, 2, function(x) any(x > 0))
+ddt <- datetable[, dfdates]
+ddt <- ddt[, order(colnames(ddt))]
+colnames(ddt) <- c(0, diff(as.numeric(ymd(colnames(ddt)))))
+ddt
 
 swift <- load_prj("PRJNA745177") |> rm_ones()
 head(swift)
+diff_dates(swift, "ww_population")
 
 layton <- load_prj("PRJNA720687") |> rm_ones()
 head(layton)
