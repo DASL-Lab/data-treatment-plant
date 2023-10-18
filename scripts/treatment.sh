@@ -92,5 +92,5 @@ for accession in ${accessions[@]}; do
     fi
 done
 
-gzip -q data/fastq/*
-gzip -q data/groutput/*
+gzip -q data/fastq/*.fastq
+gzip -q data/groutput/*.csv
