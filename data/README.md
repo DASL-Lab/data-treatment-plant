@@ -5,7 +5,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 
 | Source     | PRJ      | # WWTPs | # Runs  | Time   | Notes |
 |------------|----------|---------|---------|--------|-------|
-| Baaijens   | NA741211 | 1       | 59      | Hrs    | Temporal |
+| Baaijens   | NA741211, NA759260 | 1       | 59      | Hrs    | Temporal |
 | Brunner    | EB55313  | ?       | 23,536  | ???    | Exact location |
 | Izquierdo-Lara | EB48206 | 10?  | 698     | Hrs    | S-T |
 | Jahn       | EB44932  | 6       | 1,823   | Days++ | Exact latlon, many obs., s-t |

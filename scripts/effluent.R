@@ -161,6 +161,17 @@ get_runtable <- function(prj) {
                 population = ww_population,
                 city
             )
+    } else if (prj == "PRJEB55313") {
+        runtable <- runtable %>%
+            filter(Instrument == "Illumina NovaSeq 6000") %>%
+            select(
+                sra = Run,
+                avg_spot_len = AvgSpotLen,
+                bases = Bases,
+                bioproject = BioProject,
+                date = Collection_Date,
+                lat_lon
+            )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }

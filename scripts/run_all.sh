@@ -15,6 +15,7 @@ bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA735936.txt
 # Running
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA788395.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA796340.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA759260.txt
 #bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA661613.txt # minimap2.py failed.
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB48206.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB55313.txt
