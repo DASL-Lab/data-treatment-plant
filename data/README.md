@@ -22,7 +22,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Rothman    | NA729801 | 8-9     | 363     | Hrs    | `minimap2.py` fails. |
 | Rouchka    | NA735936 | 17?     | 1,040   | Days++ | Mutliple purposes, composite and grab samples |
 | Sapoval    | NA796340 | 23      | 256     | Hrs    | Spatial? |
-| Smyth      | NA735936 | 5-8     | 311     | Hrs    | Extra WWTPS with poor sampling |
+| Smyth      | NA715712 | 5-8     | 311     | Hrs    | Extra WWTPS with poor sampling |
 | Swift      | NA745177 | 2       | 30      | Mins   | Great for examples |
 
 
