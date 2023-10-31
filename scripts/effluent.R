@@ -30,6 +30,7 @@ get_runtable <- function(prj) {
                 function(x) strsplit(x, ", ")[[1]][2])) %>%
             select(sra = Run,
                 date = Collection_Date,
+                sample_name = Sample.Name,
                 location,
                 isolation_source = Isolation_Source,
                 avg_spot_len = AvgSpotLen,
@@ -40,6 +41,7 @@ get_runtable <- function(prj) {
         runtable <- runtable %>%
             select(sra = Run,
                 location = wwtp,
+                sample_name = Sample.Name,
                 avg_spot_len = AvgSpotLen,
                 bases = Bases,
                 bioproject = BioProject,
@@ -54,6 +56,7 @@ get_runtable <- function(prj) {
                 function(x) strsplit(x, "_")[[1]][1])) %>%
             select(sra = Run,
                 avg_spot_len = AvgSpotLen,
+                sample_name = Sample.Name,
                 bases = Bases,
                 bioproject = BioProject,
                 location,
@@ -65,6 +68,7 @@ get_runtable <- function(prj) {
             mutate(location = as.numeric(factor(ww_population))) %>%
             select(sra = Run,
                 avg_spot_len = AvgSpotLen,
+                sample_name = Sample.Name,
                 bases = Bases,
                 bioproject = BioProject,
                 location,
@@ -77,6 +81,7 @@ get_runtable <- function(prj) {
                 function(x) strsplit(x, " / ")[[1]][1])) %>%
             select(sra = Run,
                 avg_spot_len = AvgSpotLen,
+                sample_name = Sample.Name,
                 bases = Bases,
                 bioproject = BioProject,
                 lat_lon = Lat_Lon,
@@ -86,6 +91,7 @@ get_runtable <- function(prj) {
         runtable <- runtable %>%
             select(sra = Run,
                 avg_spot_len = AvgSpotLen,
+                sample_name = Sample.Name,
                 bases = Bases,
                 bioproject = BioProject,
                 date = Collection_Date,
@@ -96,6 +102,7 @@ get_runtable <- function(prj) {
                 strsplit(x, "-")[[1]][2])) %>%
             select(sra = Run,
                 avg_spot_len = AvgSpotLen,
+                sample_name = Sample.Name,
                 bases = Bases,
                 bioproject = BioProject,
                 date = Collection_Date,
@@ -110,6 +117,7 @@ get_runtable <- function(prj) {
                 bases = Bases,
                 bioproject = BioProject,
                 date = Collection_Date,
+                sample_name = Sample.Name,
                 location,
                 lat = geographic_location_.latitude.,
                 lon = geographic_location_.longitude.)
@@ -120,6 +128,7 @@ get_runtable <- function(prj) {
                 bases = Bases,
                 bioproject = BioProject,
                 date = Collection_Date,
+                sample_name = Sample.Name,
                 instrument = Instrument,
                 lat_lon = Lat_Lon,
                 organism = Organism,
@@ -134,6 +143,7 @@ get_runtable <- function(prj) {
                 bases = Bases,
                 bioproject = BioProject,
                 date = Collection_Date,
+                sample_name = Sample.Name,
                 wwtp = geo_loc_name,
                 population = ww_population
             )
@@ -145,6 +155,7 @@ get_runtable <- function(prj) {
                 bases = Bases,
                 bioproject = BioProject,
                 date = Collection_Date,
+                sample_name = Sample.Name,
                 wwtp = geographic_location_.region_and_locality.
             )
     } else if (prj == "PRJNA788395") {
@@ -158,6 +169,7 @@ get_runtable <- function(prj) {
                 bases = Bases,
                 bioproject = BioProject,
                 date = Collection_Date,
+                sample_name = Sample.Name,
                 population = ww_population,
                 city
             )
@@ -170,6 +182,7 @@ get_runtable <- function(prj) {
                 bases = Bases,
                 bioproject = BioProject,
                 date = Collection_Date,
+                sample_name = Sample.Name,
                 lat_lon
             )
     } else {
