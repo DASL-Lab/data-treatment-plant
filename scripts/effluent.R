@@ -5,8 +5,6 @@ suppressPackageStartupMessages({
     library(argparser)
 })
 
-
-
 # The columns selected in runtable will be kept in the output
 get_runtable <- function(prj) {
     if (prj == "PRJNA745177") {
@@ -237,14 +235,15 @@ rm_badmuts <- function(coco, freqmin) {
         select(label, frequency) %>%
         group_by(label) %>%
         summarise(keep = any(frequency > freqmin))
+    tmp <- aggregate(coco$frequency,
+        by = list(coco$label), FUN = max)
+    badmuts <- tmp[tmp[, 2] < freqmin, 1]
 
-    cat(paste0(100 * round(1 - mean(badmuts$keep), 4),
+    cat(paste0(100 * round(1 - length(badmuts) / nrow(coco), 4),
         "% of mutations removed.\n"))
 
-    coco <- left_join(coco, badmuts, by = "label") %>%
-        filter(keep) %>%
-        select(-keep) %>%
-        rename(sra = run)
+    coco <- coco[!coco$label %in% badmuts, ]
+    coco <- rename(coco, sra = run)
     return(coco)
 }
 
