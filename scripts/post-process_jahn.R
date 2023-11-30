@@ -1,6 +1,6 @@
 # This finds the best parts of the best data on which to build models.
 # Jahn takes about 10 minutes to load into memory
-# (and crashes my Linux computer with only 8GB ram)
+# (and crashes my Linux computer with 8GB ram)
 
 # I also create a version which has relevant variant information
 
@@ -19,10 +19,6 @@ jahn <- mutate(jahn, date = ymd(date))
 jahn <- filter(jahn, (date > ymd("2021-02-01")) &
     (date <= ymd("2021-11-01")))
 
-head(jahn)
-
-jahnfo <- jahn %>% select(sra, date, location) %>% distinct()
-
 if (FALSE) { # Choosing a date range when interactive
     library(ggplot2)
     jahnfo %>%
@@ -34,21 +30,18 @@ if (FALSE) { # Choosing a date range when interactive
                 vjust = 0.5, hjust = 1))
 } # Added a filter statement for 2021-02-01 to 2021-11-01 above
 
-sort(unique(jahnfo$date))
-
-datloc <- table(jahnfo$date, jahnfo$location)
-datloc[order(rownames(datloc)), ]
-
-jahn$week <- week(jahn$date)
-
 jahn2 <- jahn %>%
+    mutate(week = week(date)) %>%
     group_by(week, location, label) %>%
     summarise(count = sum(count), coverage = sum(coverage),
         .groups = "drop") %>%
-    mutate(frequency = count / coverage)
+    mutate(frequency = ifelse(coverage == 0, 0, count / coverage))
 
-dim(jahn)
-dim(jahn2)
+maxes <- aggregate(jahn2$frequency,
+    by = list(label = jahn2$label),
+    FUN = max, na.rm = TRUE)
+bad_muts <- maxes$label[maxes$x < 0.05]
+jahn2 <- filter(jahn2, !label %in% bad_muts)
 
 write.csv(jahn2, here("data/processed/jahn_weekly.csv"))
 
@@ -60,4 +53,4 @@ jahn2 <- left_join(jahn2, varmat, by = "mutation")
 # Only mutations with known lineages
 jahneage <- jahn2[!is.na(jahn2$B.1.1.7), ]
 
-write.csv(jahneage, file = "data/processed/jahn_variants.csv")
+write.csv(jahneage, file = "data/processed/jahn_weekly_variants.csv")
