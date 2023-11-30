@@ -231,10 +231,6 @@ rm_badmuts <- function(coco, freqmin) {
     cat(paste0(
             "Removing mutations that never had a frequency > ",
             freqmin, ". "))
-    badmuts <- coco %>%
-        select(label, frequency) %>%
-        group_by(label) %>%
-        summarise(keep = any(frequency > freqmin))
     tmp <- aggregate(coco$frequency,
         by = list(coco$label), FUN = max)
     badmuts <- tmp[tmp[, 2] < freqmin, 1]
