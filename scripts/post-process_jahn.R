@@ -32,7 +32,7 @@ if (FALSE) { # Choosing a date range when interactive
             scale_x_date(date_breaks = "1 month") +
             theme(axis.text.x = element_text(angle = 90,
                 vjust = 0.5, hjust = 1))
-} # Added a filter statement for 2021-01-01 to 2021-11-01 above
+} # Added a filter statement for 2021-02-01 to 2021-11-01 above
 
 sort(unique(jahnfo$date))
 
@@ -51,3 +51,13 @@ dim(jahn)
 dim(jahn2)
 
 write.csv(jahn2, here("data/processed/jahn_weekly.csv"))
+
+# ProVoC-ify
+jahn2$mutation <- provoc::parse_mutations(jahn2$label)
+varmat <- filter_varmat(path = "../../constellations", return_df = TRUE)
+jahn2 <- left_join(jahn2, varmat, by = "mutation")
+
+# Only mutations with known lineages
+jahneage <- jahn2[!is.na(jahn2$B.1.1.7), ]
+
+write.csv(jahneage, file = "data/processed/jahn_variants.csv")
