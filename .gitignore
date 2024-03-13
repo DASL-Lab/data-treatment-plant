@@ -3,7 +3,7 @@ data/fastq/*
 data/groutput/*
 data/processed/*
 # I am unsure if re-hosting the runtables is a violation of ToS, being cautious.
-data/runtables/*
+#data/runtables/*
 data/ENA/*
 !data/ENA/download.sh
 logs/*
