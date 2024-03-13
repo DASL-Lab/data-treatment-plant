@@ -19,6 +19,7 @@ bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA759260.txt
 #bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA661613.txt # minimap2.py failed.
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB48206.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB55313.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB48985.txt
 
 rm -r data/fastq/reads_fastq # Remove ENA folder (full of empty folders)
 
