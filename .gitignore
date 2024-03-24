@@ -16,3 +16,11 @@ out.log
 # Partial files - these files shouldn't persist, but 
 # they make it annoying to use git while treatment.sh is running
 *fasterq.tmp*
+
+# Data files
+*bam
+*bai
+*fastq
+*gz
+*fai
+*tsv
