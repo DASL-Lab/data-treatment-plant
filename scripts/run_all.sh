@@ -20,6 +20,7 @@ bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA759260.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB48206.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB55313.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB48985.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1042787.txt
 
 rm -r data/fastq/reads_fastq # Remove ENA folder (full of empty folders)
 

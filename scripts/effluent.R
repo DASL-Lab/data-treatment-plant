@@ -183,6 +183,16 @@ get_runtable <- function(prj) {
                 sample_name = Sample.Name,
                 lat_lon
             )
+    } else if (prj == "PRJNA1042787") {
+        runtable <- runtable %>%
+            select(
+                sra = Run,
+                avg_spot_len = AvgSpotLen,
+                bases = Bases,
+                bioproject = BioProject,
+                date = Collection_Date,
+                sample_name = Sample.Name
+            )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
