@@ -125,8 +125,8 @@ rasmussen$latlon <- paste(rasmussen$geographic_location_.latitude.,
 table(rasmussen$latlon)
 length(unique(rasmussen$latlon))
 rasmussen <- rasmussen %>%
-    mutate(wwtp = paste(geographic_location_.latitude., 
-        geographic_location_.longitude., sep = "_"))
+    mutate(wwtp = paste(geographic_location_.latitude.,
+            geographic_location_.longitude., sep = "_"))
 diff_dates(rasmussen, "wwtp")
 table_regularity(rasmussen$Collection_Date,
     rasmussen$wwtp)
