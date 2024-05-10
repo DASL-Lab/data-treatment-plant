@@ -21,11 +21,11 @@ get_runtable <- function(prj) {
                 location = sapply(location,
                     function(x) strsplit(x, split = ", ")[[1]][2]),
                 ww_population = as.numeric(gsub(",", "", ww_population))
-                )
+            )
     } else if (prj == "PRJNA819090") {
         runtable <- runtable %>%
             mutate(location = sapply(geo_loc_name,
-                function(x) strsplit(x, ", ")[[1]][2])) %>%
+                    function(x) strsplit(x, ", ")[[1]][2])) %>%
             select(sra = Run,
                 date = Collection_Date,
                 sample_name = Sample.Name,
@@ -34,7 +34,7 @@ get_runtable <- function(prj) {
                 avg_spot_len = AvgSpotLen,
                 bases = Bases,
                 bioproject = BioProject
-                )
+            )
     } else if (prj == "PRJNA715712") {
         runtable <- runtable %>%
             select(sra = Run,
@@ -51,7 +51,7 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJEB65603") {
         runtable <- runtable %>%
             mutate(location = sapply(Sample_Name,
-                function(x) strsplit(x, "_")[[1]][1])) %>%
+                    function(x) strsplit(x, "_")[[1]][1])) %>%
             select(sra = Run,
                 avg_spot_len = AvgSpotLen,
                 sample_name = Sample.Name,
@@ -76,7 +76,7 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA750263") {
         runtable <- runtable %>%
             mutate(location = sapply(Sample.Name,
-                function(x) strsplit(x, " / ")[[1]][1])) %>%
+                    function(x) strsplit(x, " / ")[[1]][1])) %>%
             select(sra = Run,
                 avg_spot_len = AvgSpotLen,
                 sample_name = Sample.Name,
@@ -96,8 +96,8 @@ get_runtable <- function(prj) {
                 sample_name = Sample.Name)
     } else if (prj == "PRJNA720687") {
         runtable <- runtable %>%
-            mutate(location = sapply(Sample.Name, function(x)
-                strsplit(x, "-")[[1]][2])) %>%
+            mutate(location = sapply(Sample.Name, 
+                    function(x) strsplit(x, "-")[[1]][2])) %>%
             select(sra = Run,
                 avg_spot_len = AvgSpotLen,
                 sample_name = Sample.Name,
@@ -160,7 +160,7 @@ get_runtable <- function(prj) {
         runtable <- runtable %>%
             filter(ww_sample_type == "composite") %>%
             mutate(city = gsub("Canada:Quebec\\\\,", "",
-                geo_loc_name)) %>%
+                    geo_loc_name)) %>%
             select(
                 sra = Run,
                 avg_spot_len = AvgSpotLen,
@@ -193,6 +193,17 @@ get_runtable <- function(prj) {
                 date = Collection_Date,
                 sample_name = Sample.Name
             )
+    } else if (prj == "PRJNA1027858") {
+        run_table <- runtable %>%
+            select(
+                sra = Run,
+                avg_spot_len = AvgSpotLen,
+                bases = Bases,
+                bioproject = BioProject,
+                date = Collection_Date,
+                sample_name = Sample.Name,
+                wwtp = isolation_source
+            )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -200,8 +211,8 @@ get_runtable <- function(prj) {
 }
 
 # Mutations with coverage less than 10 are removed
-    # IMPORTANT: They may be re-added later with a count of 0
-    # This is a compromise for memory managment.
+# IMPORTANT: They may be re-added later with a count of 0
+# This is a compromise for memory managment.
 get_mfiles <- function(runtable) {
     cat("Gathering all mapped files.\n")
     bad_files <- c()
@@ -239,14 +250,14 @@ get_mfiles <- function(runtable) {
 
 rm_badmuts <- function(coco, freqmin) {
     cat(paste0(
-            "Removing mutations that never had a frequency > ",
-            freqmin, ". "))
+        "Removing mutations that never had a frequency > ",
+        freqmin, ". "))
     tmp <- aggregate(coco$frequency,
         by = list(coco$label), FUN = max)
     badmuts <- tmp[tmp[, 2] < freqmin, 1]
 
     cat(paste0(100 * round(1 - length(badmuts) / nrow(coco), 4),
-        "% of mutations removed.\n"))
+            "% of mutations removed.\n"))
 
     coco <- coco[!coco$label %in% badmuts, ]
     coco <- rename(coco, sra = run)
@@ -330,9 +341,9 @@ for (i in seq_along(argv$BioProject)) {
     # Write directly to a compressed file.
     write.csv(x = allcoco,
         file = gzfile(here("data", "processed",
-            paste0(prj, "_processed.csv.gz"))),
+                paste0(prj, "_processed.csv.gz"))),
         row.names = FALSE)
 
     cat(paste0("Done. \n", nrow(allcoco), " lines written to ",
-        prj, "_processed.csv.gz\n"))
+            prj, "_processed.csv.gz\n"))
 }

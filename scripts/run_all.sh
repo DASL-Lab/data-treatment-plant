@@ -21,8 +21,10 @@ bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB48206.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB55313.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB48985.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1042787.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1027858.txt
 
 rm -r data/fastq/reads_fastq # Remove ENA folder (full of empty folders)
 
 # Effluent (all with the same freqmin)
 Rscript scripts/effluent.R --freqmin 0.05 data/runtables/SraRunTable_PRJEB65603.txt,data/runtables/SraRunTable_PRJNA715712.txt,data/runtables/SraRunTable_PRJNA741211.txt,data/runtables/SraRunTable_PRJNA745177.txt,data/runtables/SraRunTable_PRJNA750263.txt,data/runtables/SraRunTable_PRJNA819090.txt,data/runtables/SraRunTable_PRJNA720687.txt,data/runtables/SraRunTable_PRJNA720687.txt,data/runtables/SraRunTable_PRJEB44932.txt,data/runtables/SraRunTable_PRJNA735936.txt,data/runtables/SraRunTable_PRJNA796340.txt,data/runtables/SraRunTable_PRJEB48206.txt,data/runtables/SraRunTable_PRJNA788395.txt
+Rscript scripts/effluent.R --freqmin 0.05 data/runtables/SraRunTable_PRJNA1027858.txt

@@ -5,10 +5,10 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 
 | Source     | PRJ      | # WWTPs | # Runs  | Time   | Notes |
 |------------|----------|---------|---------|--------|-------|
-| Baaijens   | NA741211, NA759260 | 1       | 59      | Hrs    | Temporal |
-| Brunner    | EB55313  | ?       | 23,536  | ???    | Exact location |
+| Baaijens   | NA741211, NA759260 | 1       | 59      | Hrs    | Excellent for temporal studies |
+| Brunner    | EB55313  | ?       | 23,536  | ???    | Exact latlon |
 | Izquierdo-Lara | EB48206 | 10?  | 698     | Hrs    | S-T |
-| Jahn       | EB44932  | 6       | 1,823   | Days++ | Exact latlon, many obs., s-t |
+| Jahn       | EB44932  | 6       | 1,823   | Days++ | Exact latlon, many obs., spatio-temporal |
 | Karthykeyan| NA819090 | 2       | 711     | Hrs++  | Locs have different dates |
 | Khan       | NA772783 | ?       | 161     | ?      | Some SARS-CoV-0,1,3, uncertain WWTPs |
 | Layton     | NA719837 | 1       | 116     | Hr     | 5 WWTPs must remain anon. |
@@ -25,6 +25,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Smith      | NA715712 | 5-8     | 311     | Hrs    | Extra WWTPS with poor sampling |
 | Swift      | NA745177 | 2       | 30      | Mins   | Great for examples |
 | Liponnen   | NA1042787 | 1      | 15      | Mins   | |
+| Ellman     | NA1027858 | 58?    | 869     | Hrs    | Used for NMF paper |
 
 
 
