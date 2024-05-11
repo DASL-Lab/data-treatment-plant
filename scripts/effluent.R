@@ -316,6 +316,8 @@ p <- add_argument(p, "--freqmin", type = "numeric", default = 0.1,
 p <- add_argument(p, "BioProject", nargs = Inf,
     default = "data/runtables/SraRunTable_PRJNA745177.txt",
     help = "Path to the SraRunTable.txt file.")
+p <- add_argument(p, "--parse", flag = TRUE,
+    help = "Parse mutations into aa format.")
 argv <- parse_args(p)
 if (grepl(",", argv$BioProject))
     argv$BioProject <- strsplit(argv$BioProject, ",")[[1]]
@@ -332,8 +334,10 @@ for (i in seq_along(argv$BioProject)) {
     allcoco <- get_mfiles(runtable)
     allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
     allcoco <- add_missing_mutations(allcoco)
-    cat("Adding aa mutation names using provoc::parse_mutations().\n")
-    allcoco$mutation <- parse_mutations(allcoco$label)
+    if (argv$parse) {
+        cat("Adding aa mutation names using provoc::parse_mutations().\n")
+        allcoco$mutation <- parse_mutations(allcoco$label)
+    }
 
     cat("Cleaning up. ")
     allcoco <- left_join(allcoco, runtable, by = "sra")
