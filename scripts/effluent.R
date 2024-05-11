@@ -194,7 +194,7 @@ get_runtable <- function(prj) {
                 sample_name = Sample.Name
             )
     } else if (prj == "PRJNA1027858") {
-        run_table <- runtable %>%
+        runtable <- runtable %>%
             select(
                 sra = Run,
                 avg_spot_len = AvgSpotLen,
@@ -268,7 +268,7 @@ rm_badmuts <- function(coco, freqmin) {
 # this is where it will be added back in with a count of 0.
 add_missing_mutations <- function(coco) {
 
-    cat("Use coverage files to ensure all samples have all mutations - including 0s.\n")
+    cat("Using coverage files to ensure all samples have all mutations (including counts of 0).\n")
     allmuts <- coco %>%
         select(position, label) %>%
         distinct()
@@ -332,6 +332,8 @@ for (i in seq_along(argv$BioProject)) {
     allcoco <- get_mfiles(runtable)
     allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
     allcoco <- add_missing_mutations(allcoco)
+    cat("Adding aa mutation names using provoc::parse_mutations().\n")
+    allcoco$mutation <- parse_mutations(allcoco$label)
 
     cat("Cleaning up. ")
     allcoco <- left_join(allcoco, runtable, by = "sra")
@@ -345,5 +347,5 @@ for (i in seq_along(argv$BioProject)) {
         row.names = FALSE)
 
     cat(paste0("Done. \n", nrow(allcoco), " lines written to ",
-            prj, "_processed.csv.gz\n"))
+            prj, "_processed.csv.gz"))
 }
