@@ -229,7 +229,7 @@ get_mfiles <- function(runtable) {
             }
         }
         m <- read.csv(mname)
-        m <- m[m$coverage > 10, ]
+        m <- m[m$coverage > 40, ]
         if (nrow(m) < 10) {
             bad_files <- c(bad_files, runtable$sra[i])
             next
@@ -256,11 +256,12 @@ rm_badmuts <- function(coco, freqmin) {
         by = list(coco$label), FUN = max)
     badmuts <- tmp[tmp[, 2] < freqmin, 1]
 
-    cat(paste0(100 * round(1 - length(badmuts) / nrow(coco), 4),
-            "% of mutations removed.\n"))
 
     coco <- coco[!coco$label %in% badmuts, ]
     coco <- rename(coco, sra = run)
+
+    cat(paste0(100 * round(1 - length(badmuts) / nrow(coco), 4),
+            "% of mutations removed.\n"))
     return(coco)
 }
 
@@ -274,7 +275,6 @@ add_missing_mutations <- function(coco) {
         distinct()
 
     my_sra <- unique(coco$sra)
-    mi_list <- vector(mode = "list", length = length(my_sra))
     for (i in seq_along(my_sra)) {
         cat(paste0("\r", i, "/", length(my_sra)))
         this_sra <- which(coco$sra == my_sra[i])
@@ -295,12 +295,13 @@ add_missing_mutations <- function(coco) {
             missings$sra <- mi$sra[1]
             mi$mutation <- NULL
 
-            mi_list[[i]] <- rbind(mi, missings)
+            # slow, but doesn't duplicate a large dataframe
+            coco <- rbind(coco, rbind(mi, missings))
         }
     }
+
     cat(". Done.\n")
-    fullcoco <- bind_rows(mi_list)
-    return(fullcoco)
+    return(coco)
 }
 
 
