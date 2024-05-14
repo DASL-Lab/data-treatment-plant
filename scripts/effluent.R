@@ -169,12 +169,13 @@ rm_badmuts <- function(coco, freqmin) {
 # this is where it will be added back in with a count of 0.
 add_missing_mutations <- function(coco) {
 
-    cat("Using coverage files to ensure all samples have all mutations (including counts of 0).\n")
+    cat("Using coverage files to ensure all samples have all mutations (including counts of 0 or coverages below min_coverage).\n")
     allmuts <- coco %>%
         select(position, label) %>%
         distinct()
 
     my_sra <- unique(coco$sra)
+    missing_list <- vector(mode = "list", length = length(my_sra))
     for (i in seq_along(my_sra)) {
         cat(paste0("\r", i, "/", length(my_sra)))
         this_sra <- which(coco$sra == my_sra[i])
@@ -193,12 +194,13 @@ add_missing_mutations <- function(coco) {
             missings <- left_join(missings, c, by = "position")
             missings$frequency <- missings$count / (missings$coverage + 1)
             missings$sra <- mi$sra[1]
-            mi$mutation <- NULL
 
-            # slow, but doesn't duplicate a large dataframe
-            coco <- rbind(coco, rbind(mi, missings))
+            missing_list[[i]] <- missings
         }
     }
+    all_missings <- bind_rows(missing_list)
+    coco <- bind_rows(coco, all_missings)
+    coco <- arrange(coco, sra, label)
 
     cat(". Done.\n")
     return(coco)
