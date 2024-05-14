@@ -135,8 +135,14 @@ get_mfiles <- function(runtable, min_coverage) {
     }
     coco <- bind_rows(mfile_list)
     if (length(bad_files) > 0) {
-        cat(paste0(". Done. ", length(bad_files), " files skipped:\n"))
+        cat(paste0(". Done. ",
+                nrow(coco), " lines with at least ",
+                min_coverage, " coverage.\n",
+                length(bad_files), " files skipped:\n"))
         cat(paste0("\t", paste0(bad_files, collapse = ", ")))
+    } else {
+        cat(paste0(". Done. ",
+                nrow(coco), " lines read. "))
     }
     cat("\n")
     return(coco)
