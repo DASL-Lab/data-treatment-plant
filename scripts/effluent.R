@@ -107,7 +107,7 @@ get_runtable <- function(prj) {
 # Mutations with coverage less than 10 are removed
 # IMPORTANT: They may be re-added later with a count of 0
 # This is a compromise for memory managment.
-get_mfiles <- function(runtable) {
+get_mfiles <- function(runtable, min_coverage) {
     cat("Gathering all mapped files.\n")
     bad_files <- c()
     mfile_list <- vector(mode = "list", length = nrow(runtable))
@@ -123,7 +123,7 @@ get_mfiles <- function(runtable) {
             }
         }
         m <- read.csv(mname)
-        m <- m[m$coverage > 40, ]
+        m <- m[m$coverage >= min_coverage, ]
         if (nrow(m) < 10) {
             bad_files <- c(bad_files, runtable$sra[i])
             next
@@ -208,6 +208,8 @@ p <- arg_parser("Process GromStole output for BioProjects (variant agnostic).",
     hide.opts = TRUE)
 p <- add_argument(p, "--freqmin", type = "numeric", default = 0.1,
     help = "Mutation must have a frequency of -f in at least one sample.")
+p <- add_argument(p, "--min_coverage", type = "numeric", default = 40,
+    help = "Mutation must have a min coverage of -m in at least one sample.")
 p <- add_argument(p, "BioProject", nargs = Inf,
     default = "data/runtables/SraRunTable_PRJNA745177.txt",
     help = "Path to the SraRunTable.txt file.")
@@ -226,7 +228,7 @@ for (i in seq_along(argv$BioProject)) {
     prj <- runtable$BioProject[[1]]
     cat(paste0("\nStarting BioProject ", prj, "\n"))
     runtable <- get_runtable(prj)
-    allcoco <- get_mfiles(runtable)
+        allcoco <- get_mfiles(runtable, argv$min_coverage)
     allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
     allcoco <- add_missing_mutations(allcoco)
     if (argv$parse) {
