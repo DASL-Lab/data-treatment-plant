@@ -155,12 +155,12 @@ rm_badmuts <- function(coco, freqmin) {
     tmp <- aggregate(coco$frequency,
         by = list(coco$label), FUN = max)
     badmuts <- tmp[tmp[, 2] < freqmin, 1]
-
+    starting_muts <- nrow(coco)
 
     coco <- coco[!coco$label %in% badmuts, ]
     coco <- rename(coco, sra = run)
 
-    cat(paste0(100 * round(1 - length(badmuts) / nrow(coco), 4),
+    cat(paste0("Done. ", 100 * round(1 - length(badmuts) / starting_muts, 4),
             "% of mutations removed.\n"))
     return(coco)
 }
