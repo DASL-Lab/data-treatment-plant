@@ -142,7 +142,8 @@ get_mfiles <- function(runtable, min_coverage) {
         cat(paste0("\t", paste0(bad_files, collapse = ", ")))
     } else {
         cat(paste0(". Done. ",
-                nrow(coco), " lines read. "))
+                nrow(coco), " lines with at least ",
+                min_coverage, " coverage."))
     }
     cat("\n")
     return(coco)
