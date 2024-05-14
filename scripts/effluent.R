@@ -218,11 +218,13 @@ p <- add_argument(p, "--freqmin", type = "numeric", default = 0.1,
     help = "Mutation must have a frequency of -f in at least one sample.")
 p <- add_argument(p, "--min_coverage", type = "numeric", default = 40,
     help = "Mutation must have a min coverage of -m in at least one sample.")
+p <- add_argument(p, "--parse_mutations", flag = TRUE,
+    help = "Parse mutations into aa format.")
+p <- add_argument(p, "--beep", flag = TRUE,
+    help = "Play a beep when completed. Requires the beepr package.")
 p <- add_argument(p, "BioProject", nargs = Inf,
     default = "data/runtables/SraRunTable_PRJNA745177.txt",
     help = "Path to the SraRunTable.txt file.")
-p <- add_argument(p, "--parse", flag = TRUE,
-    help = "Parse mutations into aa format.")
 argv <- parse_args(p)
 if (grepl(",", argv$BioProject))
     argv$BioProject <- strsplit(argv$BioProject, ",")[[1]]
@@ -256,5 +258,9 @@ for (i in seq_along(argv$BioProject)) {
         row.names = FALSE)
 
     cat(paste0("Done. \n", nrow(allcoco), " lines written to ",
-            prj, "_processed.csv.gz"))
+            prj, "_processed.csv.gz\n\n"))
+    if ("beepr" %in% rownames(installed.packages())) {
+        beepr::beep(10)
+        Sys.sleep(0.5)
+    }
 }
