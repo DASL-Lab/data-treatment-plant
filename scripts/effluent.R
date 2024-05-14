@@ -1,10 +1,3 @@
-suppressPackageStartupMessages({
-    library(here)
-    library(dplyr)
-    library(lubridate)
-    library(argparser)
-})
-
 # The columns selected in runtable will be kept in the output
 get_runtable <- function(prj) {
     
@@ -156,13 +149,15 @@ rm_badmuts <- function(coco, freqmin) {
     tmp <- aggregate(coco$frequency,
         by = list(coco$label), FUN = max)
     badmuts <- tmp[tmp[, 2] < freqmin, 1]
-    starting_muts <- nrow(coco)
 
+    starting_muts <- length(unique(coco$label))
     coco <- coco[!coco$label %in% badmuts, ]
-    coco <- rename(coco, sra = run)
+    ending_muts <- length(unique(coco$label))
 
-    cat(paste0("Done. ", 100 * round(1 - length(badmuts) / starting_muts, 4),
+    cat(paste0("Done. ",
+            100 * round(1 - ending_muts / starting_muts, 4),
             "% of mutations removed.\n"))
+    coco <- rename(coco, sra = run)
     return(coco)
 }
 
@@ -211,7 +206,12 @@ add_missing_mutations <- function(coco) {
 ###########################################################
 #### Run program                                       ####
 ###########################################################
-
+suppressPackageStartupMessages({
+    library(here)
+    library(dplyr)
+    library(lubridate)
+    library(argparser)
+})
 # Argument Parsing
 p <- arg_parser("Process GromStole output for BioProjects (variant agnostic).",
     hide.opts = TRUE)
