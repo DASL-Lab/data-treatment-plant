@@ -230,6 +230,12 @@ argv <- parse_args(p)
 if (grepl(",", argv$BioProject))
     argv$BioProject <- strsplit(argv$BioProject, ",")[[1]]
 
+if (FALSE) {
+    argv <- list(BioProject = "data/runtables/SraRunTable_PRJEB44932.txt",
+        beep = TRUE, parse_mutations = FALSE,
+        freqmin = 0.1, min_coverage = 40)
+}
+
 for (i in seq_along(argv$BioProject)) {
     if (!file.exists(argv$BioProject[i])) {
         warning(paste0(argv$BioProject[i], " not found."))
@@ -239,7 +245,7 @@ for (i in seq_along(argv$BioProject)) {
     prj <- runtable$BioProject[[1]]
     cat(paste0("\nStarting BioProject ", prj, "\n"))
     runtable <- get_runtable(prj)
-    if (prj != "PRJEB55313") {
+    if (!prj %in% c("PRJEB55313", "PRJEB44932")) {
         allcoco <- get_mfiles(runtable, argv$min_coverage)
         allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
         allcoco <- add_missing_mutations(allcoco)
@@ -251,22 +257,37 @@ for (i in seq_along(argv$BioProject)) {
         cat("Cleaning up and writing to disk. ")
         allcoco <- left_join(allcoco, runtable, by = "sra")
     } else {
-        cat("BioProject, ", prj, " detected, splitting by location.\n")
-        locs <- unique(runtable$lat_lon)
+        cat("BioProject", prj, "detected, splitting by location.\n")
+        if (prj == "PRJEB44932") {
+            loc_col <- "location"
+        } else {
+            loc_col <- "lat_lon"
+        }
+        locs <- unique(runtable[, loc_col])
+        locs <- locs[!is.na(locs)]
+        if (exists("allcoco")) rm("allcoco")
         for (loc in locs) {
-            cat(paste0("\r", "Location ", which(locs == loc),
-                    " of ", length(locs)))
-            sometable <- runtable[runtable$lat_lon == loc, ]
+            cat(paste0("Location ", which(locs == loc),
+                    " of ", length(locs), "\n"))
+            sometable <- runtable[runtable[, loc_col] == loc, ]
+            sometable <- sometable[complete.cases(sometable), ]
+            if (nrow(sometable) < 3) {
+                cat("Location", loc, "had less than 3 samples")
+                next
+            }
             somecoco <- get_mfiles(sometable, argv$min_coverage)
-            somecoco <- rm_badmuts(somecoco, freqmin = argv$freqmin)
-            somecoco <- add_missing_mutations(somecoco)
+            somecoco <- rm_badmuts(somecoco,
+                freqmin = 0.1 * argv$freqmin)
 
-            if (loc == locs[1]) {
+            if (!exists("allcoco")) {
                 allcoco <- somecoco
             } else {
                 allcoco <- bind_rows(allcoco, somecoco)
             }
+            cat("\n")
         }
+        allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
+        allcoco <- add_missing_mutations(allcoco)
 
         cat("\nCleaning up and writing to disk. ")
         allcoco <- left_join(allcoco, runtable, by = "sra")
