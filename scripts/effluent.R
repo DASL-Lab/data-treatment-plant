@@ -7,16 +7,10 @@ suppressPackageStartupMessages({
 
 # The columns selected in runtable will be kept in the output
 get_runtable <- function(prj) {
+    
     if (prj == "PRJNA745177") {
         runtable <- filter(runtable, Replicate != 2 | is.na(Replicate)) %>%
-            select(sra = Run,
-                date = Collection_Date,
-                sample_name = Sample.Name,
-                ww_population,
-                location = geo_loc_name,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject) %>%
+            rename(location = geo_loc_name) %>%
             mutate(
                 location = sapply(location,
                     function(x) strsplit(x, split = ", ")[[1]][2]),
@@ -25,188 +19,88 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA819090") {
         runtable <- runtable %>%
             mutate(location = sapply(geo_loc_name,
-                    function(x) strsplit(x, ", ")[[1]][2])) %>%
-            select(sra = Run,
-                date = Collection_Date,
-                sample_name = Sample.Name,
-                location,
-                isolation_source = Isolation_Source,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject
-            )
+                    function(x) strsplit(x, ", ")[[1]][2]))
     } else if (prj == "PRJNA715712") {
         runtable <- runtable %>%
-            select(sra = Run,
-                location = wwtp,
-                sample_name = Sample.Name,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date
-            ) %>%
+            rename(location = wwtp) %>%
             # Errant files, added manually from out.log
-            filter(sra != "SRR18583185") %>% # fastq has 20 lines
-            filter(sra != "SRR18583239") # fastq has 24 lines
+            filter(Run != "SRR18583185") %>% # fastq has 20 lines
+            filter(Run != "SRR18583239") # fastq has 24 lines
     } else if (prj == "PRJEB65603") {
         runtable <- runtable %>%
             mutate(location = sapply(Sample_Name,
                     function(x) strsplit(x, "_")[[1]][1])) %>%
-            select(sra = Run,
-                avg_spot_len = AvgSpotLen,
-                sample_name = Sample.Name,
-                bases = Bases,
-                bioproject = BioProject,
-                location,
-                lat = geographic_location_.latitude.,
-                lon = geographic_location_.longitude.,
-                date = Collection_Date)
+            rename(lat = geographic_location_.latitude.,
+                lon = geographic_location_.longitude.)
     } else if (prj == "PRJNA735936") {
         runtable <- runtable %>%
             mutate(location = as.numeric(factor(ww_population))) %>%
-            select(sra = Run,
-                avg_spot_len = AvgSpotLen,
-                sample_name = Sample.Name,
-                bases = Bases,
-                bioproject = BioProject,
-                location,
-                type = ww_sample_type,
-                ww_population,
-                date = Collection_Date)
+            rename(sample_type = ww_sample_type)
     } else if (prj == "PRJNA750263") {
         runtable <- runtable %>%
             mutate(location = sapply(Sample.Name,
                     function(x) strsplit(x, " / ")[[1]][1])) %>%
-            select(sra = Run,
-                avg_spot_len = AvgSpotLen,
-                sample_name = Sample.Name,
-                bases = Bases,
-                bioproject = BioProject,
-                lat_lon = Lat_Lon,
-                location,
-                date = Collection_Date)
+            rename(lat_lon = Lat_Lon)
     } else if (prj == "PRJNA741211") {
-        runtable <- runtable %>%
-            select(sra = Run,
-                avg_spot_len = AvgSpotLen,
-                sample_name = Sample.Name,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                sample_name = Sample.Name)
+        runtable <- runtable
     } else if (prj == "PRJNA720687") {
         runtable <- runtable %>%
             mutate(location = sapply(Sample.Name, 
-                    function(x) strsplit(x, "-")[[1]][2])) %>%
-            select(sra = Run,
-                avg_spot_len = AvgSpotLen,
-                sample_name = Sample.Name,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                location)
+                    function(x) strsplit(x, "-")[[1]][2]))
     } else if (prj == "PRJEB44932") {
         runtable <- runtable %>%
             mutate(location = sapply(
                 runtable$geographic_location_.region_and_locality.,
                 function(x) strsplit(x, " - ")[[1]][2])) %>%
-            select(sra = Run,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                sample_name = Sample.Name,
-                location,
-                lat = geographic_location_.latitude.,
+            rename(lat = geographic_location_.latitude.,
                 lon = geographic_location_.longitude.)
     } else if (prj == "PRJNA735936") {
         runtable <- runtable %>%
-            select(sra = Run,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                sample_name = Sample.Name,
-                instrument = Instrument,
+            rename(instrument = Instrument,
                 lat_lon = Lat_Lon,
                 organism = Organism,
-                population = ww_population,
                 sample_type = ww_sample_type
             )
     } else if (prj == "PRJNA796340") {
-        runtable <- runtable %>%
-            select(
-                sra = Run,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                sample_name = Sample.Name,
-                wwtp = geo_loc_name,
-                population = ww_population
-            )
+        runtable <- rename(runtable, location = geo_loc_name)
     } else if (prj == "PRJEB48206") {
-        runtable <- runtable %>%
-            select(
-                sra = Run,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                sample_name = Sample.Name,
-                wwtp = geographic_location_.region_and_locality.
-            )
+        runtable <- rename(runtable,
+            location = geographic_location_.region_and_locality.)
     } else if (prj == "PRJNA788395") {
         runtable <- runtable %>%
             filter(ww_sample_type == "composite") %>%
-            mutate(city = gsub("Canada:Quebec\\\\,", "",
-                    geo_loc_name)) %>%
-            select(
-                sra = Run,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                sample_name = Sample.Name,
-                population = ww_population,
-                city
-            )
+            mutate(location = gsub("Canada:Quebec\\\\,", "",
+                    geo_loc_name))
     } else if (prj == "PRJEB55313") {
         runtable <- runtable %>%
-            filter(Instrument == "Illumina NovaSeq 6000") %>%
-            select(
-                sra = Run,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                sample_name = Sample.Name,
-                lat_lon
-            )
+            filter(Instrument == "Illumina NovaSeq 6000")
     } else if (prj == "PRJNA1042787") {
-        runtable <- runtable %>%
-            select(
-                sra = Run,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                sample_name = Sample.Name
-            )
+        runtable <- runtable
     } else if (prj == "PRJNA1027858") {
-        runtable <- runtable %>%
-            select(
-                sra = Run,
-                avg_spot_len = AvgSpotLen,
-                bases = Bases,
-                bioproject = BioProject,
-                date = Collection_Date,
-                sample_name = Sample.Name,
-                wwtp = isolation_source
+        runtable <- rename(runtable, wwtp = isolation_source)
+    } else if (prj == "PRJNA759260") {
+        runtable %>% rename(location = geo_loc_name)
+    } else if (prj == "PRJEB48985") {
+        runtable %>% rename(
+            ww_population = population_size_of_the_catchment_area,
+            location = name_of_the_sampling_site,
+            lat = geographic_location_.latitude.,
+            lon = geographic_location_.longitude.
             )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
+    runtable <- rename(runtable,
+        sra = Run,
+        date = Collection_Date,
+        sample_name = Sample.Name,
+        avg_spot_len = AvgSpotLen,
+        bases = Bases,
+        bioproject = BioProject)
+    runtable <- select(runtable,
+        sra, date, sample_name, avg_spot_len, bases, bioproject,
+        any_of(c("location", "lat", "lon", "lat_lon", "city",
+                "ww_population", "organism", "sample_type")))
     return(runtable)
 }
 
