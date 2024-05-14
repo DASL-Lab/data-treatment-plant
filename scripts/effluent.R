@@ -86,7 +86,7 @@ get_runtable <- function(prj) {
             location = name_of_the_sampling_site,
             lat = geographic_location_.latitude.,
             lon = geographic_location_.longitude.
-            )
+        )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -238,16 +238,38 @@ for (i in seq_along(argv$BioProject)) {
     prj <- runtable$BioProject[[1]]
     cat(paste0("\nStarting BioProject ", prj, "\n"))
     runtable <- get_runtable(prj)
+    if (prj != "PRJEB55313") {
         allcoco <- get_mfiles(runtable, argv$min_coverage)
-    allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
-    allcoco <- add_missing_mutations(allcoco)
-    if (argv$parse) {
-        cat("Adding aa mutation names using provoc::parse_mutations().\n")
-        allcoco$mutation <- parse_mutations(allcoco$label)
-    }
+        allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
+        allcoco <- add_missing_mutations(allcoco)
+        if (argv$parse) {
+            cat("Adding aa mutation names using provoc::parse_mutations().\n")
+            allcoco$mutation <- parse_mutations(allcoco$label)
+        }
 
-    cat("Cleaning up. ")
-    allcoco <- left_join(allcoco, runtable, by = "sra")
+        cat("Cleaning up and writing to disk. ")
+        allcoco <- left_join(allcoco, runtable, by = "sra")
+    } else {
+        cat("BioProject, ", prj, " detected, splitting by location.\n")
+        locs <- unique(runtable$lat_lon)
+        for (loc in locs) {
+            cat(paste0("\r", "Location ", which(locs == loc),
+                    " of ", length(locs)))
+            sometable <- runtable[runtable$lat_lon == loc, ]
+            somecoco <- get_mfiles(sometable, argv$min_coverage)
+            somecoco <- rm_badmuts(somecoco, freqmin = argv$freqmin)
+            somecoco <- add_missing_mutations(somecoco)
+
+            if (loc == locs[1]) {
+                allcoco <- somecoco
+            } else {
+                allcoco <- bind_rows(allcoco, somecoco)
+            }
+        }
+
+        cat("\nCleaning up and writing to disk. ")
+        allcoco <- left_join(allcoco, runtable, by = "sra")
+    }
 
     dir.create(here("data", "processed"),
         showWarnings = FALSE) # Ensure the directory exists
