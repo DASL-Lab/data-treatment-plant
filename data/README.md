@@ -13,7 +13,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Khan       | NA772783 | ?       | 161     | ?      | Some SARS-CoV-0,1,3, uncertain WWTPs |
 | Layton     | NA719837 | 1       | 116     | Hr     | 5 WWTPs must remain anon. |
 | Lin        | NA731975 | 5       | 106     | <Hr    | Evaluating primer sets. |
-| Liu        | NA764181 | ?       | 10,147  | No.    | Incl. gender - clinical rather than ww? |
+| Liu        | NA764181 | ?       | 10,147  | No.    | Clinical rather than ww |
 | N'Guessan  | NA788395 | 3       | 936     | Hrs?   | Temporal |
 | Crits-Christoph | NA661613 | 1  | 18      | Hrs    | `minimiap2.py` fails |
 | Ramuta     | NA811594 | ?       | 25      | ?      | Uncertain WWTPs |
