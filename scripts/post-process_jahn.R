@@ -112,4 +112,4 @@ jahn_meta <- jahn4 %>%
 attr(jahn_wides, "metadata") <- jahn_meta
 
 saveRDS(jahn_wides,
-    file = here("data", "processed", "jahn_wide_list_attributes.csv"))
+    file = here("data", "processed", "jahn_wide_list_attributes.RDS"))
