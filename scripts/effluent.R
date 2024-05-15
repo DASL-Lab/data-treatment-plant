@@ -80,6 +80,22 @@ get_runtable <- function(prj) {
             lat = geographic_location_.latitude.,
             lon = geographic_location_.longitude.
         )
+    } else if (prj == "PRJNA811594") {
+        runtable <- runtable %>%
+            mutate(location = gsub("ENV/USA/", "", Isolate, fixed = TRUE)) %>%
+            mutate(location = sapply(location, function(x) {
+                strsplit(x, split = "-")[[1]][1]
+            }))
+    } else if (prj == "PRJNA731975") {
+        runtable <- rename(runtable, location = "wwtp")
+    } else if (prj == "PRJNA772783") {
+        runtable <- runtable %>%
+            mutate(location = sapply(Sample.Name, function(x) {
+                strsplit(x, split = "\\d")[[1]][1]
+            })) %>%
+            mutate(location = sapply(location, function(x) {
+                strsplit(x, split = "-")[[1]][1]
+            }))
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -157,7 +173,9 @@ rm_badmuts <- function(coco, freqmin) {
     cat(paste0("Done. ",
             100 * round(1 - ending_muts / starting_muts, 4),
             "% of mutations removed.\n"))
-    coco <- rename(coco, sra = run)
+    if ("run" %in% colnames(coco)) {
+        coco <- rename(coco, sra = run)
+    }
     return(coco)
 }
 
@@ -272,7 +290,7 @@ for (i in seq_along(argv$BioProject)) {
             sometable <- runtable[runtable[, loc_col] == loc, ]
             sometable <- sometable[complete.cases(sometable), ]
             if (nrow(sometable) < 3) {
-                cat("Location", loc, "had less than 3 samples")
+                cat("Location", loc, "had less than 3 samples.\n")
                 next
             }
             somecoco <- get_mfiles(sometable, argv$min_coverage)
