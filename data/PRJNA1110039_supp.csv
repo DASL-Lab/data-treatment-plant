@@ -1,0 +1,24 @@
+SrNo,CitiesSurveyed,SampleID,SampleCollectedFrom,Latitude,Longitude,Zone
+1,Navi Mumbai,NM,Open drain,19.069320,73.002495,Mumbai Zone
+2,Panvel,PNVL,Open drain,18.986275,73.107214,Mumbai Zone
+3,Badlapur,BUD,Open drain,19.172708,73.243650,Mumbai Zone
+4,Ambarnath,ABH,Open drain,19.208767,73.188467,Mumbai Zone
+5,Ulhasnagar,ULNR,Open drain,19.210317,73.157442,Mumbai Zone
+6,Kalyan- Dombivli,KYN,Open drain,19.234456,73.119700,Mumbai Zone
+7,Bhiwandi Nizampur MC,BIRD,Open drain,19.27025313,73.08254791,Mumbai Zone
+8,Thane,TNA,Open drain,19.209960,72.988434,Mumbai Zone
+9,Mira Bhayandar,BY,Open drain,19.272920,72.865280,Mumbai Zone
+10,Vasai-Virar City MC,BSR,Open drain,19.392223,72.829611,Mumbai Zone
+11,Osmanabad,OBD,Open drain,18.1802,76.0416,Central Maharshtra
+12,Jalna,JLN,Open drain,19.8482,75.8924,Central Maharshtra
+13,Beed,BEED,Open drain,18.9893,75.7662,Central Maharshtra
+14,Barshi,BRS,Open drain,18.2268,75.7076,Central Maharshtra
+15,Solapur,SUR,Open drain,17.6870,75.8913,Central Maharshtra
+16,Ahmednagar,AMN,Open drain,19.1317,74.7253,Central Maharshtra
+17,Aurangabad,AU,Open drain,19.8574,75.3346,Central Maharshtra
+18,Pune,PMC,Open drain,18.5258,73.8612,Pune Zone
+19,Satara,STR,Open drain,17.6971,74.0012,Pune Zone
+20,Sangli,SMK,Open drain,16.8486,74.5625,Pune Zone
+21,Ichalkaranji,IKZ,Open drain,16.6842,74.4751,Pune Zone
+22,Kolhapur,KOP,Open drain,16.6912,74.2351,Pune Zone
+23,Pimpri Chinchwad,PCMC,Open drain,18.5919,73.8305,Pune Zone

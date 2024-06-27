@@ -96,6 +96,17 @@ get_runtable <- function(prj) {
             mutate(location = sapply(location, function(x) {
                 strsplit(x, split = "-")[[1]][1]
             }))
+    } else if (prj == "PRJNA1110039") {
+        aux_info <- read.csv("data/PRJNA1110039_supp.csv") %>%
+            rename(location = SampleID, lat = Latitude,
+                lon = Longitude, city = CitiesSurveyed, 
+                zone = Zone)
+        runtable <- runtable %>%
+            mutate(location = sapply(Library.Name,
+                function(x) {
+                    strsplit(x, split = "\\d")[[1]][1]
+                })) %>%
+            left_join(aux_info, by = "location")
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -109,7 +120,7 @@ get_runtable <- function(prj) {
     runtable <- select(runtable,
         sra, date, sample_name, avg_spot_len, bases, bioproject,
         any_of(c("location", "lat", "lon", "lat_lon", "city",
-                "ww_population", "organism", "sample_type")))
+                "ww_population", "organism", "sample_type", "zone")))
     return(runtable)
 }
 
