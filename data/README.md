@@ -26,6 +26,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Swift             | NA745177          | 2        | 30       | Mins    | Great for examples |
 | Liponnen          | NA1042787         | 1        | 15       | Mins    |  |
 | Ellman            | NA1027858         | 58?      | 869      | Hrs     | Used for NMF paper |
+| **Matra**         | NA1110038         | 23       | ~700     | Hrs     | Lots of S and T |
 
 
 
