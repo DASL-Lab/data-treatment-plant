@@ -107,6 +107,36 @@ get_runtable <- function(prj) {
                     strsplit(x, split = "\\d")[[1]][1]
                 })) %>%
             left_join(aux_info, by = "location")
+    } else if (prj == "PRJNA1088471") {
+        ash <- c("AshbridgeBay", "Ashbridges", "AshbridgesBay")
+        high <- c("Highland", "HighlandCR", "HighlandCreek")
+        runtable <- runtable %>%
+            mutate(
+                location = sapply(
+                    Sample.Name,
+                    function(x) gsub("(-|\\d{2,})", "", x)[[1]]
+                )
+            ) %>%
+            mutate(
+                location = ifelse(
+                    location %in% ash,
+                    yes = "AshbridgesBay",
+                    no = ifelse(location %in% high,
+                        yes = "HighlandCreek",
+                        no = location
+                    )
+                )
+            ) %>%
+            mutate(zone = case_when(
+                location %in% c("Humber", "AshbridgesBay",
+                    "HighlandCreek", "NorthToronto") ~ "Toronto",
+                location %in% c("As", "At") ~ "Pooled Aircraft Sewage",
+                location %in% c("A1", "A3") ~ "Airport Terminal 1 and 3",
+                location %in% c("P1", "P2") ~ "Peel",
+                location %in% c("Y1", "Y5", "Y6") ~ "York",
+                TRUE ~ "Devan Missed One"
+            ))
+
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
