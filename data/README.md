@@ -7,9 +7,9 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 |-------------------| ------------------| ---------|----------|---------|--------|
 | Jahn              | EB44932           | 6        | 1,823    | Days++  | Exact latlon, many obs., spatio-temporal |
 | **Izquierdo-Lara**| EB48206           | 10?      | 698      | Hrs     | ST |
-| Brunner           | EB55313           | ?        | 23,536   | ???     | Exact latlon |
-| Rasmussen         | EB65603           | 48       | 116      | Hrs     | Spatial, 4 time points |
-| Crits-Christoph   | NA661613          | 1        | 18       | Hrs     | `minimiap2.py` fails |
+| Brunner           | EB55313           | ?        | 23,536   | ???     | `effluent.R` fails (memory issue) |
+| **Rasmussen**     | EB65603           | 48       | 116      | Hrs     | Spatial, 4 time points |
+| ~~Crits-Christoph~~ | NA661613        | 1        | 18       | Hrs     | `minimiap2.py` fails |
 | **Smith**         | NA715712          | 5-8      | 311      | Hrs     | Extra WWTPS with poor sampling |
 | Layton            | NA719837          | 5        | 116      | Hr      | 5 WWTPs must remain anon. |
 | Lin               | NA731975          | 5        | 106      | <Hr     | Evaluating primer sets. |
