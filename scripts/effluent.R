@@ -136,7 +136,9 @@ get_runtable <- function(prj) {
                 location %in% c("Y1", "Y5", "Y6") ~ "York",
                 TRUE ~ "Devan Missed One"
             ))
-
+    } else if (prj == "PRJNA856091") {
+        runtable <- runtable %>%
+            mutate(location = gsub("_.*", "", Sample.Name))
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
