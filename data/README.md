@@ -22,7 +22,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | **Sapoval**       | NA796340          | 23       | 256      | Hrs     | Spatial? |
 | Ramuta            | NA811594          | ?        | 25       | ?       | Uncertain WWTPs |
 | **Karthykeyan**   | NA819090          | 2        | 711      | Hrs++   | Locs have different dates |
-| Agrawal           | NA856091          | 15       | 118      | Hrs     | Study combines WWTPs to see temporal trend |
+| **Agrawal**       | NA856091          | 15       | 118      | Hrs     | Study combines WWTPs to see temporal trend |
 | Ellman            | NA1027858         | 58?      | 869      | Hrs     | Used for NMF paper |
 | Liponnen          | NA1042787         | 1        | 15       | Mins    |  |
 | **Overton**       | NA1088471         | 13       | 1373     | Hrs     | Lots of S and T |
