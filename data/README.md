@@ -22,13 +22,14 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Ramuta            | NA811594          | ? / 25         | Uncertain WWTPs |
 | **Karthykeyan**   | NA819090          | 2 / 711        | Locs have different dates |
 | **Agrawal**       | NA856091          | 15 / 118       | Study combines WWTPs to see temporal trend |
+| Merrett           | NA992940          | ? / 412        | Many WWTPs, not much T. |
 | Ellman            | NA1027858         | 58? / 869      | Used for NMF paper |
 | Liponnen          | NA1042787         | 1 / 15         | |
 | **Overton**       | NA1088471         | 13 / 1373      | Lots of S and T |
 | **Matra**         | NA1110038         | 23 / ~700      | Lots of S and T |
-| ~~Crits-Christoph~~ | NA661613        | 1 / 18         | `minimiap2.py` fails |
-| ~~Rothman~~       | NA729801          | 8-9 / 363      | `minimap2.py` fails. |
-| ~~Liu~~           | NA764181          | ? / 10,147     | Clinical rather than ww |
+| ~~Crits-Christoph~~ | ~~NA661613~~    | 1 / 18         | `minimiap2.py` fails |
+| ~~Rothman~~       | ~~NA729801~~      | 8-9 / 363      | `minimap2.py` fails. |
+| ~~Liu~~           | ~~NA764181~~      | ? / 10,147     | Clinical rather than ww |
 
 
 - Baaijens et al. (2022): [PRJNA741211](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP332940&o=acc_s%3Aa)

@@ -139,6 +139,9 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA856091") {
         runtable <- runtable %>%
             mutate(location = gsub("_.*", "", Sample.Name))
+    } else if (prj == "PRJNA992940") {
+        runtable <- runtable %>%
+            rename(location = isolation_source)
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
