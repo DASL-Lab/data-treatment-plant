@@ -7,7 +7,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 |-------------------| ------------------| ---------|----------|---------|--------|
 | Jahn              | EB44932           | 6        | 1,823    | Days++  | Exact latlon, many obs., spatio-temporal |
 | **Izquierdo-Lara**| EB48206           | 10?      | 698      | Hrs     | ST |
-| <td colspan=5> This is a test to see if I can get longer descriptions for each BioProject.  ||||||
+| <td colspan=5> This is a test to see if I can get longer descriptions for each BioProject.  |
 | Brunner           | EB55313           | ?        | 23,536   | ???     | `effluent.R` fails (memory issue) |
 | **Rasmussen**     | EB65603           | 48       | 116      | Hrs     | Spatial, 4 time points |
 | ~~Crits-Christoph~~ | NA661613        | 1        | 18       | Hrs     | `minimiap2.py` fails |
