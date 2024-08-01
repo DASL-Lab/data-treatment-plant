@@ -1,6 +1,6 @@
 # The columns selected in runtable will be kept in the output
 get_runtable <- function(prj) {
-    
+
     if (prj == "PRJNA745177") {
         runtable <- filter(runtable, Replicate != 2 | is.na(Replicate)) %>%
             rename(location = geo_loc_name) %>%
@@ -38,7 +38,7 @@ get_runtable <- function(prj) {
         runtable <- runtable
     } else if (prj == "PRJNA720687") {
         runtable <- runtable %>%
-            mutate(location = sapply(Sample.Name, 
+            mutate(location = sapply(Sample.Name,
                     function(x) strsplit(x, "-")[[1]][2]))
     } else if (prj == "PRJEB44932") {
         runtable <- runtable %>%
@@ -99,7 +99,7 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA1110039") {
         aux_info <- read.csv("data/PRJNA1110039_supp.csv") %>%
             rename(location = SampleID, lat = Latitude,
-                lon = Longitude, city = CitiesSurveyed, 
+                lon = Longitude, city = CitiesSurveyed,
                 zone = Zone)
         runtable <- runtable %>%
             mutate(location = sapply(Library.Name,
@@ -142,6 +142,45 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA992940") {
         runtable <- runtable %>%
             rename(location = isolation_source)
+    } else if (prj == "PRJNA1067101") {
+        loc_zones <- data.frame(
+            location = c(
+                "Dproad, Botanical garden, Aundh, Pune", # Zone 1
+                "Pune-Mumbai Highway Aundh-Sanghvi, Pune",
+                "Baner-Balewadi, Pune",
+                "Baner-Mahalunge, Pune",
+                "Jai bhavani nagar, Pashan, Pune",
+                "Someshwarwadi, Pune",
+                "Dapodi-Old Sangvi Bridge, Pune", # Zone 2
+                "Harris Bridge, Dapodi, Pune",
+                "Phugewadi-Dapodi, Sai Service, Pune",
+                "Vishrantwadi, Shantinagar, Pune",
+                "Karveroad Kothrud, Pune", #Zone 3
+                "Kothrud Bus depot, Pune",
+                "Sanjeevan Hospital Kothrud, Pune",
+                "Warje Mumbai-Banglore Highway, Pune",
+                "Dattawadi, under Rajaram Bridge, Pune",
+                "Vitthalwadi hingne, Sinhagad road, Pune",
+                "Kalewadi Adarshnagar, Pune", # Zone 4
+                "Kasarwadi pimple gurav road, Pune",
+                "Pimple gurav, 60 ft ring road, Pune",
+                "Rahatni, new DP road, Pune",
+                "Shastrinagar, Pimpri, Pune",
+                "Wolf Colony, Pimpri, Pune",
+                "Chinchwad, Adityabirla Hospital, Pune",
+                "RTO Office Yerwada, Pune", # Zone 5
+                "Shivajinagar Chaturshrungi, Pune",
+                "Shivajinagar Junabazaar, Pune",
+                "Shivajinagar Vaidhawadi, Pune"
+            ),
+            zone = rep(1:5, times = c(5, 5, 6, 7, 4))
+        )
+        runtable <- runtable %>%
+            rename(location = geo_loc_name) %>%
+            mutate(location = gsub(
+                pattern = "(India: |\\, Maharashtra|\\\\)",
+                replacement = "", x = location)) %>%
+            left_join(loc_zones, by = "location")
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
