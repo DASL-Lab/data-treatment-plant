@@ -181,6 +181,12 @@ get_runtable <- function(prj) {
                 pattern = "(India: |\\, Maharashtra|\\\\)",
                 replacement = "", x = location)) %>%
             left_join(loc_zones, by = "location")
+    } else if (prj == "PRJEB61810") {
+        runtable <- runtable %>%
+            rename(location = name_of_the_sampling_site,
+                lat = geographic_location_.latitude.,
+                lon = geographic_location_.longitude.,
+                ww_population = population_size_of_the_catchment_area)
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
