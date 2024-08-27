@@ -8,6 +8,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Jahn              | EB44932           | 6 / 1,823      |  Exact latlon, many obs., spatio-temporal |
 | **Izquierdo-Lara**| EB48206           | 10? / 698      | ST |
 | Brunner           | EB55313           | ? / 23,536     | `effluent.R` fails (memory issue) |
+| Gurol             | EB61810           | 10 / 217       | Lat/lon, approx 20 times each |
 | **Rasmussen**     | EB65603           | 48 / 116       | Spatial, 4 time points |
 | **Smith**         | NA715712          | 5-8 / 311      | Extra WWTPS with poor sampling |
 | Layton            | NA719837          | 5 / 116        | 5 WWTPs must remain anon. |
