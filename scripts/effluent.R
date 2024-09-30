@@ -187,6 +187,16 @@ get_runtable <- function(prj) {
                 lat = geographic_location_.latitude.,
                 lon = geographic_location_.longitude.,
                 ww_population = population_size_of_the_catchment_area)
+    } else if (prj == "PRJNA946141") {
+        runtable <- runtable |>
+            rename(
+                zone = ww_sample_site,
+                sample_type = ww_sample_type
+            ) |>
+            mutate(location = str_split_i(Sample.Name, "-|(50)", 1)) |>
+            filter(!str_detect(Sample.Name, "rep"),
+                str_detect(BioSampleModel, "wastewater"),
+            )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -318,6 +328,7 @@ add_missing_mutations <- function(coco) {
 suppressPackageStartupMessages({
     library(here)
     library(dplyr)
+    library(stringr)
     library(lubridate)
     library(argparser)
 })

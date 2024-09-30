@@ -23,6 +23,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Ramuta            | NA811594          | ? / 25         | Uncertain WWTPs |
 | **Karthykeyan**   | NA819090          | 2 / 711        | Locs have different dates |
 | **Agrawal**       | NA856091          | 15 / 118       | Study combines WWTPs to see temporal trend |
+| Tierney           | NA946141          | 36 / 688       | Mostly Spatial, see paper |
 | Merrett           | NA992940          | ? / 412        | Many WWTPs, not much T. |
 | Ellman            | NA1027858         | 58? / 869      | Used for NMF paper |
 | Liponnen          | NA1042787         | 1 / 15         | |
