@@ -11,11 +11,11 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Gurol             | EB61810           | 10 / 217       | Lat/lon, approx 20 times each |
 | **Rasmussen**     | EB65603           | 48 / 116       | Spatial, 4 time points |
 | **Smith**         | NA715712          | 5-8 / 311      | Extra WWTPS with poor sampling |
-| Layton            | NA719837          | 5 / 116        | 5 WWTPs must remain anon. |
+| **Layton**        | NA719837          | 5 / 116        | 5 WWTPs must remain anon. |
 | Lin               | NA731975          | 5 / 106        | Evaluating primer sets. |
 | Rouchka           | NA735936          | 17? / 1,040    | Mutliple purposes, composite and grab samples |
 | **Baaijens**      | NA741211, NA759260| 1 / 59         | Excellent for temporal studies |
-| Swift             | NA745177          | 2 / 30         | Great for examples |
+| **Swift**         | NA745177          | 2 / 30         | Great for examples |
 | Rios              | NA750263          | 31? / 118      | Few time points, many WWTP |
 | Khan              | NA772783          | ? / 161        | Some SARS-CoV-0,1,3, uncertain WWTPs |
 | **N'Guessan**     | NA788395          | 584(3) / 936   | Many WWTPs with sparse sampling, 3 zones |
@@ -23,9 +23,9 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Ramuta            | NA811594          | ? / 25         | Uncertain WWTPs |
 | **Karthykeyan**   | NA819090          | 2 / 711        | Locs have different dates |
 | **Agrawal**       | NA856091          | 15 / 118       | Study combines WWTPs to see temporal trend |
-| Tierney           | NA946141          | 36 / 688       | Mostly Spatial, see paper |
+| Tierney           | NA946141          | 36 / 688       | Mostly Spatial, paper has detailed lineage info |
 | Merrett           | NA992940          | ? / 412        | Many WWTPs, not much T. |
-| Ellman            | NA1027858         | 58? / 869      | Used for NMF paper |
+| Ellman            | NA1027858         | 58? / 869      | Used for NMF paper, no T. |
 | Liponnen          | NA1042787         | 1 / 15         | |
 | **Overton**       | NA1088471         | 13 / 1373      | Lots of S and T |
 | **Matra**         | NA1110038         | 23 / ~700      | Lots of S and T |
