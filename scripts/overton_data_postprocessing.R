@@ -65,6 +65,17 @@ highland <- overton |>
         frequency = count / (coverage + 1)
     )
 
+highland |>
+    group_by(location, mutation) |>
+    mutate(
+        lower_thresh = sum(frequency > 0.1) > 2,
+        upper_thresh = sum(frequency < 0.9) > 2
+    ) |>
+    ungroup() |> 
+    filter(lower_thresh, upper_thresh) |>
+    ggplot() +
+    aes(x = date, y = frequency, group = mutation) +
+    geom_line()
 
 head(highland)
 write.csv(highland, here("data/processed/highland.csv"))
