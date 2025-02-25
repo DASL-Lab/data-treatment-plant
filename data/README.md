@@ -9,6 +9,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | **Izquierdo-Lara**| EB48206           | 10? / 698      | ST |
 | Brunner           | EB55313           | ? / 23,536     | `effluent.R` fails (memory issue) |
 | Gurol             | EB61810           | 10 / 217       | Lat/lon, approx 20 times each |
+| Garcia            | EB76651           | 4 / 214        | Many T, few S |
 | **Rasmussen**     | EB65603           | 48 / 116       | Spatial, 4 time points |
 | **Smith**         | NA715712          | 5-8 / 311      | Extra WWTPS with poor sampling |
 | **Layton**        | NA719837          | 5 / 116        | 5 WWTPs must remain anon. |
@@ -28,7 +29,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | Ellman            | NA1027858         | 58? / 869      | Used for NMF paper, no T. |
 | Liponnen          | NA1042787         | 1 / 15         | |
 | **Overton**       | NA1088471         | 13 / 1373      | Lots of S and T |
-| **Matra**         | NA1110038         | 23 / ~700      | Lots of S and T |
+| **Matra**         | NA1110039         | 23 / ~700      | Lots of S and T |
 | ~~Crits-Christoph~~ | ~~NA661613~~    | 1 / 18         | `minimiap2.py` fails |
 | ~~Rothman~~       | ~~NA729801~~      | 8-9 / 363      | `minimap2.py` fails. |
 | ~~Liu~~           | ~~NA764181~~      | ? / 10,147     | Clinical rather than ww |

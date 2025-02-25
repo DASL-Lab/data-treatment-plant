@@ -197,6 +197,11 @@ get_runtable <- function(prj) {
             filter(!str_detect(Sample.Name, "rep"),
                 str_detect(BioSampleModel, "wastewater"),
             )
+    } else if (prj == "PRJEB76651") {
+        runtable <- runtable |>
+            mutate(
+                location = str_split_i(sample_name, "_", 2)
+            )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
