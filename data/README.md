@@ -34,6 +34,11 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | ~~Rothman~~       | ~~NA729801~~      | 8-9 / 363      | `minimap2.py` fails. |
 | ~~Liu~~           | ~~NA764181~~      | ? / 10,147     | Clinical rather than ww |
 
+TODO:
+
+- [ ] [PRNA1238906](https://www.researchsquare.com/article/rs-6228463/v1)
+- [ ] [PRJNA1212683](https://www.nature.com/articles/s41598-025-94323-4)
+- [ ] [PRJNA1141947](https://journals.asm.org/doi/pdf/10.1128/spectrum.03195-24)
 
 - Baaijens et al. (2022): [PRJNA741211](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP332940&o=acc_s%3Aa)
     - 59 runs, one WWTP with regular sampling.
