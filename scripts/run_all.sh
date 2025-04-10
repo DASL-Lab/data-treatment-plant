@@ -36,6 +36,9 @@ bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA719837.txt
 
 # Running
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA946141.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1238906.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1212683.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1141947.txt
 
 rm -r data/fastq/reads_fastq # Remove ENA folder (full of empty folders)
 
@@ -54,5 +57,8 @@ Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables
 Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJEB44932.txt
 Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJEB55313.txt
 
+
+
 # Running
 Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA946141.txt
+Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA1238906.txt,data/runtables/SraRunTable_PRJNA1212683.txt,data/runtables/SraRunTable_PRJNA1141947.txt

@@ -199,9 +199,21 @@ get_runtable <- function(prj) {
             )
     } else if (prj == "PRJEB76651") {
         runtable <- runtable |>
+            rename(Sample_Name = Sample.Name) |>
             mutate(
                 location = str_split_i(sample_name, "_", 2)
-            )
+            ) |>
+            rename(Collection_Date = collection_date,
+                Sample.Name = sample_name)
+    } else if (prj == "PRJNA1238906") {
+        runtable <- runtable |>
+            mutate(location = str_sub(Sample.Name, 1, 2))
+    } else if (prj == "PRJNA1212683") {
+        runtable <- runtable |>
+            mutate(location = str_remove(geo_loc_name, "Luxembourg: "))
+    } else if (prj == "PRJNA1141947") {
+        runtable <- runtable |>
+            mutate(location = str_remove(geo_loc_name, "United Kingdom: "))
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
