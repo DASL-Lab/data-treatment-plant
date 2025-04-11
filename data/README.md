@@ -1,44 +1,49 @@
 # Data Provenance
 
-The bibliography for the following sources can be found in `open_data_sources.bib`. Bold names indicate the existense of a completed reanalysis using `provoc`.
+The bibliography for the following sources can be found in `open_data_sources.bib`. Bold names indicate the existense of a completed reanalysis using `provoc`, whereas strikethrough means I cannot complete the reanalysis (see notes).
 
 
 | Source            | PRJ               | WWTPs / Runs   |  Notes | 
 |-------------------| ------------------| ---------------|--------|
 | Jahn              | EB44932           | 6 / 1,823      |  Exact latlon, many obs., spatio-temporal |
 | **Izquierdo-Lara**| EB48206           | 10? / 698      | ST |
-| Brunner           | EB55313           | ? / 23,536     | `effluent.R` fails (memory issue) |
-| Gurol             | EB61810           | 10 / 217       | Lat/lon, approx 20 times each |
-| Garcia            | EB76651           | 4 / 214        | Many T, few S |
+| **Gurol**         | EB61810           | 10 / 217       | Lat/lon, approx 20 times each |
 | **Rasmussen**     | EB65603           | 48 / 116       | Spatial, 4 time points |
+| **Garcia**        | EB76651           | 4 / 214        | Many T, few S |
 | **Smith**         | NA715712          | 5-8 / 311      | Extra WWTPS with poor sampling |
 | **Layton**        | NA719837          | 5 / 116        | 5 WWTPs must remain anon. |
-| Lin               | NA731975          | 5 / 106        | Evaluating primer sets. |
+| Unknown           | NA720687          | ???            | ??? |
+| **Lin**           | NA731975          | 5 / 106        | Evaluating primer sets. |
 | Rouchka           | NA735936          | 17? / 1,040    | Mutliple purposes, composite and grab samples |
-| **Baaijens**      | NA741211, NA759260| 1 / 59         | Excellent for temporal studies |
+| **Baaijens**      | NA741211, NA759260| 1 / 59         | Generally poor results - possible data treatment errors? |
 | **Swift**         | NA745177          | 2 / 30         | Great for examples |
 | Rios              | NA750263          | 31? / 118      | Few time points, many WWTP |
+| Unknown           | NA759260          | ???            | ??? |
 | Khan              | NA772783          | ? / 161        | Some SARS-CoV-0,1,3, uncertain WWTPs |
 | **N'Guessan**     | NA788395          | 584(3) / 936   | Many WWTPs with sparse sampling, 3 zones |
 | **Sapoval**       | NA796340          | 23 / 256       | Spatial? |
 | Ramuta            | NA811594          | ? / 25         | Uncertain WWTPs |
 | **Karthykeyan**   | NA819090          | 2 / 711        | Locs have different dates |
 | **Agrawal**       | NA856091          | 15 / 118       | Study combines WWTPs to see temporal trend |
-| **Tierney**           | NA946141          | 36 / 688       | Mostly Spatial, paper has detailed lineage info |
+| **Tierney**       | NA946141          | 36 / 688       | Mostly Spatial, paper has detailed lineage info |
 | Merrett           | NA992940          | ? / 412        | Many WWTPs, not much T. |
 | Ellman            | NA1027858         | 58? / 869      | Used for NMF paper, no T. |
 | Liponnen          | NA1042787         | 1 / 15         | |
 | **Overton**       | NA1088471         | 13 / 1373      | Lots of S and T |
 | **Matra**         | NA1110039         | 23 / ~700      | Lots of S and T |
+| **Opeyemi**       | NA1238906         |                | Comparison of Auto and passive samplers |
+| ~~Brunner~~       | ~~EB55313~~       | ? / 23,536     | `effluent.R` fails (memory issue) |
 | ~~Crits-Christoph~~ | ~~NA661613~~    | 1 / 18         | `minimiap2.py` fails |
 | ~~Rothman~~       | ~~NA729801~~      | 8-9 / 363      | `minimap2.py` fails. |
 | ~~Liu~~           | ~~NA764181~~      | ? / 10,147     | Clinical rather than ww |
 
 TODO:
 
-- [ ] [PRNA1238906](https://www.researchsquare.com/article/rs-6228463/v1)
-- [ ] [PRJNA1212683](https://www.nature.com/articles/s41598-025-94323-4)
-- [ ] [PRJNA1141947](https://journals.asm.org/doi/pdf/10.1128/spectrum.03195-24)
+- [x] [PRJNA1238906](https://www.researchsquare.com/article/rs-6228463/v1)
+- [ ] [PRJNA1212683](https://www.nature.com/articles/s41598-025-94323-4) (Processed, not in list yet)
+- [ ] [PRJNA1141947](https://journals.asm.org/doi/pdf/10.1128/spectrum.03195-24) (Processed, not in list yet)
+- [ ] [PRJNA230403](https://www.proquest.com/docview/2881072570?pq-origsite=gscholar&fromopenview=true&sourcetype=Dissertations%20&%20Theses)
+
 
 - Baaijens et al. (2022): [PRJNA741211](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP332940&o=acc_s%3Aa)
     - 59 runs, one WWTP with regular sampling.
