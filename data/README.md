@@ -31,19 +31,13 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | **Liponnen**      | NA1042787         | 1 / 15         | |
 | **Overton**       | NA1088471         | 13 / 1373      | Lots of S and T |
 | **Matra**         | NA1110039         | 23 / ~700      | Lots of S and T |
+| **Afonso**        | NA1212683         | ???            | ??? |
+| **Kellingray**    | NA1141947         | ???            | ??? |
 | **Opeyemi**       | NA1238906         |                | Comparison of Auto and passive samplers |
 | ~~Brunner~~       | ~~EB55313~~       | ? / 23,536     | `effluent.R` fails (memory issue) |
 | ~~Crits-Christoph~~ | ~~NA661613~~    | 1 / 18         | `minimiap2.py` fails |
 | ~~Rothman~~       | ~~NA729801~~      | 8-9 / 363      | `minimap2.py` fails. |
 | ~~Liu~~           | ~~NA764181~~      | ? / 10,147     | Clinical rather than ww |
-
-TODO:
-
-- [x] [PRJNA1238906](https://www.researchsquare.com/article/rs-6228463/v1)
-- [ ] [PRJNA1212683](https://www.nature.com/articles/s41598-025-94323-4) (Processed, not in list yet)
-- [ ] [PRJNA1141947](https://journals.asm.org/doi/pdf/10.1128/spectrum.03195-24) (Processed, not in list yet)
-- [ ] [PRJNA230403](https://www.proquest.com/docview/2881072570?pq-origsite=gscholar&fromopenview=true&sourcetype=Dissertations%20&%20Theses)
-
 
 - Baaijens et al. (2022): [PRJNA741211](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP332940&o=acc_s%3Aa)
     - 59 runs, one WWTP with regular sampling.
