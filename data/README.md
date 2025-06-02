@@ -5,6 +5,8 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 
 | Source            | PRJ               | WWTPs / Runs   |  Notes | 
 |-------------------| ------------------| ---------------|--------|
+| [Honda](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317076)                  | DB19812     | 2 / 21         | |
+| [Conway](https://www.nature.com/articles/s41598-025-03771-5) | NA1027333 | 1+ / 17 | Some one-off WWTPs, one main one |
 | Jahn              | EB44932           | 6 / 1,823      |  Exact latlon, many obs., spatio-temporal |
 | **Izquierdo-Lara**| EB48206           | 10? / 698      | ST |
 | **Gurol**         | EB61810           | 10 / 217       | Lat/lon, approx 20 times each |
@@ -34,7 +36,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | **Afonso**        | NA1212683         | ???            | ??? |
 | **Kellingray**    | NA1141947         | ???            | ??? |
 | **Opeyemi**       | NA1238906         |                | Comparison of Auto and passive samplers |
-| ~~Brunner~~       | ~~EB55313~~       | ? / 23,536     | `effluent.R` fails (memory issue) |
+| ~~Brunner~~       | ~~EB55313~~       | 460 / 23,536     | `effluent.R` fails (memory issue) |
 | ~~Crits-Christoph~~ | ~~NA661613~~    | 1 / 18         | `minimiap2.py` fails |
 | ~~Rothman~~       | ~~NA729801~~      | 8-9 / 363      | `minimap2.py` fails. |
 | ~~Liu~~           | ~~NA764181~~      | ? / 10,147     | Clinical rather than ww |

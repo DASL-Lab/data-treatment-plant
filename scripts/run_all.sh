@@ -2,6 +2,7 @@
 # Running from start to finish would take about two-three weeks.
 
 # Finished runs sorted by PRJ
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJDB19812.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB44932.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB48206.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB61810.txt
@@ -23,6 +24,7 @@ bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA819090.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA856091.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA946141.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA992940.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1027333.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1027858.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1042787.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1067101.txt
@@ -57,3 +59,4 @@ Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables
 Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJEB55313.txt
 Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA946141.txt
 Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA1238906.txt,data/runtables/SraRunTable_PRJNA1212683.txt,data/runtables/SraRunTable_PRJNA1141947.txt
+Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA1027333.txt,data/runtables/SraRunTable_PRJDB19812.txt

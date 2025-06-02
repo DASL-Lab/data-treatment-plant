@@ -66,7 +66,20 @@ get_runtable <- function(prj) {
                     geo_loc_name))
     } else if (prj == "PRJEB55313") {
         runtable <- runtable %>%
-            filter(Instrument == "Illumina NovaSeq 6000")
+            tidyr::separate_wider_regex( #51.45113601 N     0.39481552 W
+                lat_lon,
+                patterns = c(
+                    lat = "[\\d\\.+]+", " ",
+                    lat_N = "\\w", " ",
+                    lon = "[\\d\\.+]+", " ",
+                    lon_E = "\\w"
+                ),
+                cols_remove = FALSE
+            ) |>
+            mutate(
+                lat = as.numeric(lat) * ifelse(lat_N == "N", 1, -1),
+                lon = as.numeric(lon) * ifelse(lon_E == "E", 1, -1)
+            )
     } else if (prj == "PRJNA1042787") {
         runtable <- runtable
     } else if (prj == "PRJNA1027858") {
@@ -214,6 +227,16 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA1141947") {
         runtable <- runtable |>
             mutate(location = str_remove(geo_loc_name, "United Kingdom: "))
+    } else if (prj == "PRJDB19812") {
+        runtable <- runtable |>
+            mutate(
+                location = str_remove_all(geo_loc_name, "(^.*, )|( city)")
+            )
+    } else if (prj == "PRJNA1027333") {
+        runtable <- runtable |>
+            mutate(
+                location = str_remove_all(geo_loc_name, "USA: ")
+            )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -285,7 +308,7 @@ rm_badmuts <- function(coco, freqmin) {
     badmuts <- tmp[tmp[, 2] < freqmin, 1]
 
     starting_muts <- length(unique(coco$label))
-    coco <- coco[!coco$label %in% badmuts, ]
+    coco <- filter(coco, !label %in% badmuts)
     ending_muts <- length(unique(coco$label))
 
     cat(paste0("Done. ",
@@ -414,16 +437,16 @@ for (i in seq_along(argv$BioProject)) {
             }
             somecoco <- get_mfiles(sometable, argv$min_coverage)
             somecoco <- rm_badmuts(somecoco,
-                freqmin = 0.1 * argv$freqmin)
+                freqmin = argv$freqmin)
 
             if (!exists("allcoco")) {
                 allcoco <- somecoco
             } else {
                 allcoco <- bind_rows(allcoco, somecoco)
+                print(nrow(allcoco))
             }
             cat("\n")
         }
-        allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
         allcoco <- add_missing_mutations(allcoco)
 
         cat("\nCleaning up and writing to disk. ")
