@@ -3,44 +3,44 @@
 The bibliography for the following sources can be found in `open_data_sources.bib`. Bold names indicate the existense of a completed reanalysis using `provoc`, whereas strikethrough means I cannot complete the reanalysis (see notes).
 
 
-| Source            | PRJ               | WWTPs / Runs   |  Notes | 
+| Source            | PRJ               | WWTPs / Runs   |  Notes | Temp/Spat Usefulness |
 |-------------------| ------------------| ---------------|--------|
-| ()[https://www.nature.com/articles/s41597-025-05100-x] | NA865728 | 5 / 270 | Long time scale |
-| [Honda](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317076)                  | DB19812     | 2 / 21         | |
-| [Conway](https://www.nature.com/articles/s41598-025-03771-5) | NA1027333 | 1+ / 17 | Some one-off WWTPs, one main one |
-| Jahn              | EB44932           | 6 / 1,823      |  Exact latlon, many obs., spatio-temporal |
-| **Izquierdo-Lara**| EB48206           | 10? / 698      | ST |
-| **Gurol**         | EB61810           | 10 / 217       | Lat/lon, approx 20 times each |
-| **Rasmussen**     | EB65603           | 48 / 116       | Spatial, 4 time points |
-| **Garcia**        | EB76651           | 4 / 214        | Many T, few S |
-| **Smith**         | NA715712          | 5-8 / 311      | Extra WWTPS with poor sampling |
-| **Layton**        | NA719837          | 5 / 116        | 5 WWTPs must remain anon. |
-| Unknown           | NA720687          | ???            | ??? |
-| **Lin**           | NA731975          | 5 / 106        | Evaluating primer sets. |
-| **Rouchka**       | NA735936          | 17? / 1,040    | Mutliple purposes, composite and grab samples |
-| **Baaijens**      | NA741211, NA759260| 1 / 59         | Generally poor results - possible data treatment errors? |
-| **Swift**         | NA745177          | 2 / 30         | Great for examples |
-| **Rios**          | NA750263          | 31? / 118      | Few time points, many WWTP |
-| Unknown           | NA759260          | ???            | ??? |
-| **Khan**          | NA772783          | ? / 161        | Some SARS-CoV-0,1,3, uncertain WWTPs |
-| **N'Guessan**     | NA788395          | 584(3) / 936   | Many WWTPs with sparse sampling, 3 zones |
-| **Sapoval**       | NA796340          | 23 / 256       | Spatial? |
-| **Ramuta**        | NA811594          | ? / 25         | Uncertain WWTPs |
-| **Karthykeyan**   | NA819090          | 2 / 711        | Locs have different dates |
-| **Agrawal**       | NA856091          | 15 / 118       | Study combines WWTPs to see temporal trend |
-| **Tierney**       | NA946141          | 36 / 688       | Mostly Spatial, paper has detailed lineage info |
-| Merrett           | NA992940          | ? / 412        | Many WWTPs, not much T. |
-| Ellman            | NA1027858         | 58? / 869      | Used for NMF paper, no T. |
-| **Liponnen**      | NA1042787         | 1 / 15         | |
-| **Overton**       | NA1088471         | 13 / 1373      | Lots of S and T |
-| **Matra**         | NA1110039         | 23 / ~700      | Lots of S and T |
-| **Afonso**        | NA1212683         | ???            | ??? |
-| **Kellingray**    | NA1141947         | ???            | ??? |
-| **Opeyemi**       | NA1238906         |                | Comparison of Auto and passive samplers |
-| ~~Brunner~~       | ~~EB55313~~       | 460 / 23,536     | `effluent.R` fails (memory issue) |
-| ~~Crits-Christoph~~ | ~~NA661613~~    | 1 / 18         | `minimiap2.py` fails |
-| ~~Rothman~~       | ~~NA729801~~      | 8-9 / 363      | `minimap2.py` fails. |
-| ~~Liu~~           | ~~NA764181~~      | ? / 10,147     | Clinical rather than ww |
+| [Tryndyak](https://www.nature.com/articles/s41597-025-05100-x)                     | NA865728  | 5 / 270 | Long time scale | |
+| [Honda](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317076) | DB19812   | 2 / 21  | | |
+| [Conway](https://www.nature.com/articles/s41598-025-03771-5)                       | NA1027333 | 1+ / 17 | Some one-off WWTPs, one main one | |
+| Jahn              | EB44932           | 6 / 1,823      |  Exact latlon, many obs., spatio-temporal | |
+| **Izquierdo-Lara**| EB48206           | 10? / 698      | ST | 3/6 |
+| **Gurol**         | EB61810           | 10 / 217       | Lat/lon, approx 20 times each | 5/7 |
+| **Rasmussen**     | EB65603           | 48 / 116       | Spatial, 4 time points | 2/10 |
+| **Garcia**        | EB76651           | 4 / 214        | Many T, few S | 2/2 |
+| **Smith**         | NA715712          | 5-8 / 311      | Extra WWTPS with poor sampling | 7/3 |
+| **Layton**        | NA719837          | 5 / 116        | 5 WWTPs must remain anon. | 8/1 |
+| Unknown           | NA720687          | ???            | ??? |  |
+| **Lin**           | NA731975          | 5 / 106        | Evaluating primer sets. | 6/2 |
+| **Rouchka**       | NA735936          | 17? / 1,040    | Mutliple purposes, composite and grab samples | 8/2 (unknown locations, but many) |
+| **Baaijens**      | NA741211, NA759260| 1 / 59         | Generally poor results - possible data treatment errors? | 2/0 |
+| **Swift**         | NA745177          | 2 / 30         | Great for examples | 2/0 (possible date parsing issue?) |
+| **Rios**          | NA750263          | 31? / 118      | Few time points, many WWTP | 4/7 (sparse time, good space) |
+| Unknown           | NA759260          | ???            | ??? | |
+| **Khan**          | NA772783          | ? / 161        | Some SARS-CoV-0,1,3, uncertain WWTPs | 3/3 (inconsistent sampling) |
+| **N'Guessan**     | NA788395          | 584(3) / 936   | Many WWTPs with sparse sampling, 3 zones | 2/2 |
+| **Sapoval**       | NA796340          | 23 / 256       | Spatial? | 2/6 |
+| **Ramuta**        | NA811594          | ? / 25         | Uncertain WWTPs | 6/1 (sparse time, but means quick computation) |
+| **Karthykeyan**   | NA819090          | 2 / 711        | Locs have different dates | 9/2 (esp. one location) |
+| **Agrawal**       | NA856091          | 15 / 118       | Study combines WWTPs to see temporal trend | 2/2 |
+| **Tierney**       | NA946141          | 36 / 688       | Mostly Spatial, paper has detailed lineage info | 7/7 (uncertain locations) |
+| Merrett           | NA992940          | ? / 412        | Many WWTPs, not much T. | |
+| Ellman            | NA1027858         | 58? / 869      | Used for NMF paper, no T. | |
+| **Liponnen**      | NA1042787         | 1 / 15         | | 6/0 (one loc, sparse-ish sampling) |
+| **Overton**       | NA1088471         | 13 / 1373      | Lots of S and T | 8/8 |
+| **Matra**         | NA1110039         | 23 / ~700      | Lots of S and T | 8/8 |
+| **Kellingray**    | NA1141947         | 1 / ???        | ??? | 7/0 |
+| **Afonso**        | NA1212683         | 3 / ???        | ??? | |
+| **Opeyemi**       | NA1238906         | 2 / ???        | Comparison of Auto and passive samplers (overton) | 8/0 |
+| ~~Brunner~~       | ~~EB55313~~       | 460 / 23,536   | `effluent.R` fails (memory issue) | |
+| ~~Crits-Christoph~~ | ~~NA661613~~    | 1 / 18         | `minimiap2.py` fails | |
+| ~~Rothman~~       | ~~NA729801~~      | 8-9 / 363      | `minimap2.py` fails. | |
+| ~~Liu~~           | ~~NA764181~~      | ? / 10,147     | Clinical rather than ww | |
 
 - Baaijens et al. (2022): [PRJNA741211](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP332940&o=acc_s%3Aa)
     - 59 runs, one WWTP with regular sampling.
