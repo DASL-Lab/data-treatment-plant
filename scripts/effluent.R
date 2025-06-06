@@ -240,6 +240,9 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA865728") {
         runtable <- runtable |>
             mutate(location = str_remove_all(geo_loc_name, "USA: "))
+    } else if (prj == "PRJNA896334") {
+        runtable <- runtable |>
+            mutate(location = "Pune")
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }

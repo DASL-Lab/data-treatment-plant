@@ -5,6 +5,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 
 | Source            | PRJ               | WWTPs / Runs   |  Notes | ProVoC/Temp/Spat Usefulness |
 |-------------------| ------------------| ---------------|--------|----------------------|
+| [Pramanik](https://pubs.acs.org/doi/full/10.1021/envhealth.5c00048) | NA896334 | 1 / 191 | Temporal | ?/8/0 |
 | [Tryndyak](https://www.nature.com/articles/s41597-025-05100-x)                     | NA865728  | 5 / 270 | Long time scale | |
 | [Honda](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317076) | DB19812   | 2 / 21  | | |
 | [Conway](https://www.nature.com/articles/s41598-025-03771-5)                       | NA1027333 | 1+ / 17 | Some one-off WWTPs, one main one | |

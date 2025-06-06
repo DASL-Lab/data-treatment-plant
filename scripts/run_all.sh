@@ -23,6 +23,7 @@ bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA811594.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA819090.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA856091.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA865728.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA896334.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA946141.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA992940.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1027333.txt
@@ -62,3 +63,5 @@ Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables
 Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA1238906.txt,data/runtables/SraRunTable_PRJNA1212683.txt,data/runtables/SraRunTable_PRJNA1141947.txt
 Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA1027333.txt,data/runtables/SraRunTable_PRJDB19812.txt
 Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA865728.txt
+Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA896334.txt
+
