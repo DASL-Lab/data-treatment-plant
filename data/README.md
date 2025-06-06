@@ -5,6 +5,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 
 | Source            | PRJ               | WWTPs / Runs   |  Notes | 
 |-------------------| ------------------| ---------------|--------|
+| ()[https://www.nature.com/articles/s41597-025-05100-x] | NA865728 | 5 / 270 | Long time scale |
 | [Honda](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317076)                  | DB19812     | 2 / 21         | |
 | [Conway](https://www.nature.com/articles/s41598-025-03771-5) | NA1027333 | 1+ / 17 | Some one-off WWTPs, one main one |
 | Jahn              | EB44932           | 6 / 1,823      |  Exact latlon, many obs., spatio-temporal |
