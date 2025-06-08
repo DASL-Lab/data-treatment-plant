@@ -14,15 +14,18 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | **Gurol**         | EB61810           | 10 / 217       | Lat/lon, approx 20 times each | 4/5/7 |
 | **Rasmussen**     | EB65603           | 48 / 116       | Spatial, 4 time points | 6/2/10 |
 | **Garcia**        | EB76651           | 4 / 214        | Many T, few S | 1/2/2 |
+| Unknown           | NA661613          | ??? / ???      | | |
 | **Smith**         | NA715712          | 5-8 / 311      | Extra WWTPS with poor sampling | 5/7/3 |
 | **Layton**        | NA719837          | 5 / 116        | 5 WWTPs must remain anon. | 7/8/1 (one good location) |
 | Unknown           | NA720687          | ???            | ??? |  |
+| Unknown           | NA729801          | ??? / ???      | | |
 | **Lin**           | NA731975          | 5 / 106        | Evaluating primer sets. | 6/6/2 |
 | **Rouchka**       | NA735936          | 17? / 1,040    | Mutliple purposes, composite and grab samples | 7/8/2 (unknown locations, but many) |
 | **Baaijens**      | NA741211, NA759260| 1 / 59         | Generally poor results - possible data treatment errors? | 2/2/0 |
 | **Swift**         | NA745177          | 2 / 30         | Great for examples | 2/2/0 (possible date parsing issue?) |
 | **Rios**          | NA750263          | 31? / 118      | Few time points, many WWTP | 5/4/7 (sparse time, good space) |
 | Unknown           | NA759260          | ???            | ??? | |
+| Unknown           | NA764181          | ??? / ???      | | |
 | **Khan**          | NA772783          | ? / 161        | Some SARS-CoV-0,1,3, uncertain WWTPs | 5/3/3 (inconsistent sampling) |
 | **N'Guessan**     | NA788395          | 584(3) / 936   | Many WWTPs with sparse sampling, 3 zones | 3/2/2 |
 | **Sapoval**       | NA796340          | 23 / 256       | Spatial? | 8/2/6 |
@@ -32,6 +35,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | **Tierney**       | NA946141          | 36 / 688       | Mostly Spatial, paper has detailed lineage info | 7/7/7 (uncertain locations) |
 | Merrett           | NA992940          | ? / 412        | Many WWTPs, not much T. | |
 | Ellman            | NA1027858         | 58? / 869      | Used for NMF paper, no T. | |
+| Unknown           | NA1031245          | ??? / ???      | | |
 | **Liponnen**      | NA1042787         | 1 / 15         | | 8/6/0 (one loc, sparse-ish sampling) |
 | **Overton**       | NA1088471         | 13 / 1373      | Lots of S and T | 6/8/8 |
 | **Matra**         | NA1110039         | 23 / ~700      | Lots of S and T | 7/8/8 |
