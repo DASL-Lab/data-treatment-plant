@@ -243,6 +243,17 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA896334") {
         runtable <- runtable |>
             mutate(location = "Pune")
+    } else if (prj == "PRJNA847239") {
+        runtable <- runtable |>
+            mutate(location = str_remove_all(geo_loc_name, "USA: "))
+    } else if (prj == "PRJNA748354") {
+        runtable <- runtable |>
+            mutate(
+                location = paste0(
+                    "Missouri-",
+                    str_split_i(Library.Name, i = 3, pattern = "_")
+                )
+            )
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }

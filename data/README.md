@@ -11,23 +11,22 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | **Gurol**         | EB61810           | 10 / 217       | Lat/lon, approx 20 times each | 4/5/7 |
 | **Rasmussen**     | EB65603           | 48 / 116       | Spatial, 4 time points | 6/2/10 |
 | **Garcia**        | EB76651           | 4 / 214        | Many T, few S | 1/2/2 |
-| Unknown           | NA661613          | ??? / ???      | | |
-| **Smith**         | NA715712          | 5-8 / 311      | Extra WWTPS with poor sampling | 5/7/3 |
+| **Smyth**         | NA715712          | 5-8 / 311      | Extra WWTPS with poor sampling | 5/7/3 |
 | **Layton**        | NA719837          | 5 / 116        | 5 WWTPs must remain anon. | 7/8/1 (one good location) |
 | Unknown           | NA720687          | ???            | ??? |  |
-| Unknown           | NA729801          | ??? / ???      | | |
 | **Lin**           | NA731975          | 5 / 106        | Evaluating primer sets. | 6/6/2 |
 | **Rouchka**       | NA735936          | 17? / 1,040    | Mutliple purposes, composite and grab samples | 7/8/2 (unknown locations, but many) |
-| **Baaijens**      | NA741211, NA759260| 1 / 59         | Generally poor results - possible data treatment errors? | 2/2/0 |
+| [**Baaijens**](https://doi.org/10.1186/s13059-022-02805-9)                             | NA741211, NA759260| 1 / 59         | Generally poor results - possible data treatment errors? | 2/2/0 |
 | **Swift**         | NA745177          | 2 / 30         | Great for examples | 2/2/0 (possible date parsing issue?) |
+| [Gregory](https://doi.org/10.1371/journal.ppat.1010636)                                | NA748354 | | | |
 | **Rios**          | NA750263          | 31? / 118      | Few time points, many WWTP | 5/4/7 (sparse time, good space) |
-| Unknown           | NA759260          | ???            | ??? | |
-| Unknown           | NA764181          | ??? / ???      | | |
+| [Baaijens](https://doi.org/10.1186/s13059-022-02805-9)                                 | NA759260          | ???            | Second part of Baaijens study | |
 | **Khan**          | NA772783          | ? / 161        | Some SARS-CoV-0,1,3, uncertain WWTPs | 5/3/3 (inconsistent sampling) |
 | **N'Guessan**     | NA788395          | 584(3) / 936   | Many WWTPs with sparse sampling, 3 zones | 3/2/2 |
 | **Sapoval**       | NA796340          | 23 / 256       | Spatial? | 8/2/6 |
 | **Ramuta**        | NA811594          | ? / 25         | Uncertain WWTPs | 5/6/1 (sparse time, but means quick computation) |
 | **Karthykeyan**   | NA819090          | 2 / 711        | Locs have different dates | 7/9/2 (esp. one location) |
+| [Fontenele](https://www.sciencedirect.com/science/article/pii/S004896972301478X)       | NA847239 | | | |
 | **Agrawal**       | NA856091          | 15 / 118       | Study combines WWTPs to see temporal trend | 10/2/2 |
 | [**Tryndyak**](https://www.nature.com/articles/s41597-025-05100-x)                     | NA865728  | 5 / 270 | Long time scale | 7/6/6 |
 | [**Pramanik**](https://pubs.acs.org/doi/full/10.1021/envhealth.5c00048)                | NA896334  | 1 / 191 | Temporal | 7/8/0 |
@@ -35,7 +34,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | **Merrett**       | NA992940          | ? / 412        | Many WWTPs, not much T. | 4/5/5 |
 | [**Conway**](https://www.nature.com/articles/s41598-025-03771-5)                       | NA1027333 | 1+ / 17 | Some one-off WWTPs, one main one | 2/4/0 |
 | Ellman            | NA1027858         | 58? / 869      | Used for NMF paper, no T. | |
-| Unknown           | NA1031245          | ??? / ???      | | |
+| [Moon](https://www.medrxiv.org/content/10.1101/2024.02.15.24302811v1)                  | NA1031245          | ??? / ???      | Meant to test lineage callers, **no T** | |
 | **Liponnen**      | NA1042787         | 1 / 15         | | 8/6/0 (one loc, sparse-ish sampling) |
 | **Overton**       | NA1088471         | 13 / 1373      | Lots of S and T | 6/8/8 |
 | **Matra**         | NA1110039         | 23 / ~700      | Lots of S and T | 7/8/8 |
@@ -46,6 +45,19 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | ~~Crits-Christoph~~ | ~~NA661613~~    | 1 / 18         | `minimiap2.py` fails | |
 | ~~Rothman~~       | ~~NA729801~~      | 8-9 / 363      | `minimap2.py` fails. | |
 | ~~Liu~~           | ~~NA764181~~      | ? / 10,147     | Clinical rather than ww | |
+
+TODO: 
+
+- [PRJEB44141](https://www.nature.com/articles/s41598-022-06625-6)
+- [PRJEB67638](https://pmc.ncbi.nlm.nih.gov/articles/PMC10655203/)
+- [PRJNA662596](https://www.sciencedirect.com/science/article/pii/S0043135421009040)
+- [PRJNA765031](https://www.mdpi.com/2073-4441/13/21/3018)
+- [PRJNA912560,PRJNA736964,PRJNA789814](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giae051/7730001)
+- [PRJNA922726](https://www.nature.com/articles/s41598-023-44500-0)
+- [PRJNA931732](https://link.springer.com/article/10.1007/s11356-023-30709-z)
+- [PRJNA941107](https://www.nature.com/articles/s41467-023-41369-5)
+
+Brief lit review:
 
 - Baaijens et al. (2022): [PRJNA741211](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP332940&o=acc_s%3Aa)
     - 59 runs, one WWTP with regular sampling.
