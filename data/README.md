@@ -5,10 +5,7 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 
 | Source            | PRJ               | WWTPs / Runs   |  Notes | ProVoC/Temp/Spat Usefulness |
 |-------------------| ------------------| ---------------|--------|----------------------|
-| [Pramanik](https://pubs.acs.org/doi/full/10.1021/envhealth.5c00048) | NA896334 | 1 / 191 | Temporal | ?/8/0 |
-| [Tryndyak](https://www.nature.com/articles/s41597-025-05100-x)                     | NA865728  | 5 / 270 | Long time scale | |
-| [Honda](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317076) | DB19812   | 2 / 21  | | |
-| [Conway](https://www.nature.com/articles/s41598-025-03771-5)                       | NA1027333 | 1+ / 17 | Some one-off WWTPs, one main one | |
+| [**Honda**](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317076) | DB19812   | 2 / 21  | | 4/4/1 |
 | Jahn              | EB44932           | 6 / 1,823      |  Exact latlon, many obs., spatio-temporal | |
 | **Izquierdo-Lara**| EB48206           | 10? / 698      | ST | 10/3/6 |
 | **Gurol**         | EB61810           | 10 / 217       | Lat/lon, approx 20 times each | 4/5/7 |
@@ -32,8 +29,11 @@ The bibliography for the following sources can be found in `open_data_sources.bi
 | **Ramuta**        | NA811594          | ? / 25         | Uncertain WWTPs | 5/6/1 (sparse time, but means quick computation) |
 | **Karthykeyan**   | NA819090          | 2 / 711        | Locs have different dates | 7/9/2 (esp. one location) |
 | **Agrawal**       | NA856091          | 15 / 118       | Study combines WWTPs to see temporal trend | 10/2/2 |
+| [**Tryndyak**](https://www.nature.com/articles/s41597-025-05100-x)                     | NA865728  | 5 / 270 | Long time scale | 7/6/6 |
+| [**Pramanik**](https://pubs.acs.org/doi/full/10.1021/envhealth.5c00048)                | NA896334  | 1 / 191 | Temporal | 7/8/0 |
 | **Tierney**       | NA946141          | 36 / 688       | Mostly Spatial, paper has detailed lineage info | 7/7/7 (uncertain locations) |
-| Merrett           | NA992940          | ? / 412        | Many WWTPs, not much T. | |
+| **Merrett**       | NA992940          | ? / 412        | Many WWTPs, not much T. | 4/5/5 |
+| [**Conway**](https://www.nature.com/articles/s41598-025-03771-5)                       | NA1027333 | 1+ / 17 | Some one-off WWTPs, one main one | 2/4/0 |
 | Ellman            | NA1027858         | 58? / 869      | Used for NMF paper, no T. | |
 | Unknown           | NA1031245          | ??? / ???      | | |
 | **Liponnen**      | NA1042787         | 1 / 15         | | 8/6/0 (one loc, sparse-ish sampling) |
