@@ -254,6 +254,16 @@ get_runtable <- function(prj) {
                     str_split_i(Library.Name, i = 3, pattern = "_")
                 )
             )
+    } else if (prj == "PRJEB67638") {
+        runtable <- runtable |>
+            rename(
+                location = name_of_the_sampling_site,
+                lat = geographic_location_.latitude.,
+                lon = geographic_location_.longitude.
+            )
+    } else if (prj == "PRJNA765031") {
+        runtable <- runtable |>
+            rename(location = geo_loc_name)
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }

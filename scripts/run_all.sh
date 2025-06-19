@@ -44,6 +44,8 @@ bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1141947.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1212683.txt
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA1238906.txt
 
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB67638.txt && Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJEB67638.txt
+bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA765031.txt && Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep data/runtables/SraRunTable_PRJNA765031.txt
 
 # Unknown runtimes (Long or not yet processed)
 #bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA661613.txt # minimap2.py failed.
