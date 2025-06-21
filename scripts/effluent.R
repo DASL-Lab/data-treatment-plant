@@ -264,6 +264,9 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA765031") {
         runtable <- runtable |>
             rename(location = geo_loc_name)
+    } else if (prj == "PRJNA941107") {
+        runtable <- runtable |>
+            rename(location = geo_loc_name)
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }

@@ -54,18 +54,18 @@ TODO:
     - Many lineages, looks like one or two samples from each state
 - [ ] [PRJNA912560,PRJNA736964,PRJNA789814](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giae051/7730001)
     - One of the bioprojects is synthetic, two are real data
-    - Explicitly about how choosing the lineage definition matrix affects the results
-    - Will do later
+    - **Explicitly about how choosing the lineage definition matrix affects the results**
+    - Will likely do later
 - [PRJNA922726](https://www.nature.com/articles/s41598-023-44500-0)
-    - Good exploration of lineages, proportions plotted over time; poor metadata but manageable.
+    - Good exploration of lineages, proportions plotted over time; poor metadata but manageable if I use ww population.
 - [PRJNA931732](https://link.springer.com/article/10.1007/s11356-023-30709-z)
     - Many locations in India, lots of plots over time
-- [PRJNA941107](https://www.nature.com/articles/s41467-023-41369-5)
-    - Lots of locations, but aggregated for a plot over time.
 
 - [x] [PRJEB67638](https://pmc.ncbi.nlm.nih.gov/articles/PMC10655203/)
 - [x] [PRJNA765031](https://www.mdpi.com/2073-4441/13/21/3018)
     - Various lineages, plotted over time in the paper
+- [x] [PRJNA941107](https://www.nature.com/articles/s41467-023-41369-5)
+    - Lots of locations, but aggregated for a plot over time.
 
 Brief lit review:
 
