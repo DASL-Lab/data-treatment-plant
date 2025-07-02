@@ -66,6 +66,18 @@ TODO:
     - Various lineages, plotted over time in the paper
 - [x] [PRJNA941107](https://www.nature.com/articles/s41467-023-41369-5)
     - Lots of locations, but aggregated for a plot over time.
+- [ ] [PRJNA827160](https://www.sciencedirect.com/science/article/pii/S0048969722060302?casa_token=kg42tqD8nx8AAAAA:DUiC4wirP_8dnvXnmdEj7fQBDMoxXr4KlLYA0inAjeCx0ZqviNDwGw5ah_t93H2MHmS6qKWGJNo)
+    - Comparison of COJAC and Freyja
+- [ ] [PRJNA931732](https://www.sciencedirect.com/science/article/pii/S0048969724069900?casa_token=0fuv0LpR24UAAAAA:FNdc1ujuObohfmXYtCIQk3BH-YgkCI23gJHk4WbHpAAwpRveHI0TcAiQc0q6NAIuQ-9sa6sMoVA)
+    - Long time scale
+- [ ] [ PRJNA887942](https://www.nature.com/articles/s41467-023-43047-y)
+    - Focused on delta, looks at individual mutations
+- [ ] [No PRJ](https://www.cell.com/heliyon/fulltext/S2405-8440(24)03483-2)
+    - Genetic diversity
+- https://www.nature.com/articles/s41467-024-48334-w
+- https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1012850
+
+
 
 Brief lit review:
 
