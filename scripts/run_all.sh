@@ -1,5 +1,5 @@
 # No shebang - this is more like a lab notebook.
-# Running from start to finish would take about two-three weeks.
+# Running from start to finish would take about two-three weeks at least.
 
 # Finished runs sorted by PRJ
 bash scripts/treatment.sh data/runtables/SraRunTable_PRJDB19812.txt
