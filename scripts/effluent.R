@@ -434,7 +434,7 @@ for (i in seq_along(argv$BioProject)) {
     runtable <- read.csv(argv$BioProject[i])
     prj <- runtable$BioProject[[1]]
     cat(paste0("\nStarting BioProject ", prj, "\n"))
-    runtable <- get_runtable(prj)
+    runtable <- get_runtable(prj, runtable)
     if (!prj %in% c("PRJEB55313", "PRJEB44932")) {
         allcoco <- get_mfiles(runtable, argv$min_coverage)
         allcoco <- rm_badmuts(allcoco, freqmin = argv$freqmin)
