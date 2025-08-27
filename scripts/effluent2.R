@@ -57,7 +57,8 @@ prj_transformations <- list(
         df |> split_location(geo_loc_name, ", ", 2)
     },
     PRJNA715712 = function(df) {
-        df |> rename(location = wwtp) |>
+        df |>
+            rename(location = wwtp) |>
             filter(!Run %in% c("SRR18583185", "SRR18583239"))
     },
     PRJEB65603 = function(df) {
@@ -92,7 +93,9 @@ prj_transformations <- list(
             split_location(location, " - ", 2)
     },
     PRJNA796340 = function(df) rename(df, location = geo_loc_name),
-    PRJEB48206 = function(df) rename(df, location = geographic_location_.region_and_locality.),
+    PRJEB48206 = function(df) {
+        rename(df, location = geographic_location_.region_and_locality.)
+    },
     PRJNA788395 = function(df) {
         df |>
             filter(ww_sample_type == "composite") |>
@@ -102,7 +105,12 @@ prj_transformations <- list(
         df |>
             tidyr::separate_wider_regex(
                 lat_lon,
-                patterns = c(lat = "[\\d\\.+]+", " ", lat_N = "\\w", " ", lon = "[\\d\\.+]+", " ", lon_E = "\\w"),
+                patterns = c(
+                    lat = "[\\d\\.+]+", " ",
+                    lat_N = "\\w", " ",
+                    lon = "[\\d\\.+]+", " ",
+                    lon_E = "\\w"
+                ),
                 cols_remove = FALSE
             ) |>
             mutate(
@@ -113,12 +121,14 @@ prj_transformations <- list(
     PRJNA1042787 = function(df) df,
     PRJNA1027858 = function(df) rename(df, wwtp = isolation_source),
     PRJNA759260 = function(df) rename(df, location = geo_loc_name),
-    PRJEB48985 = function(df) rename(df,
-        ww_population = population_size_of_the_catchment_area,
-        location = name_of_the_sampling_site,
-        lat = geographic_location_.latitude.,
-        lon = geographic_location_.longitude.
-    ),
+    PRJEB48985 = function(df) {
+        rename(df,
+            ww_population = population_size_of_the_catchment_area,
+            location = name_of_the_sampling_site,
+            lat = geographic_location_.latitude.,
+            lon = geographic_location_.longitude.
+        )
+    },
     PRJNA811594 = function(df) {
         df |>
             fix_location(Isolate, "ENV/USA/", "") |>
@@ -132,7 +142,10 @@ prj_transformations <- list(
     },
     PRJNA1110039 = function(df) {
         aux_info <- read.csv("data/PRJNA1110039_supp.csv") |>
-            rename(location = SampleID, lat = Latitude, lon = Longitude, city = CitiesSurveyed, zone = Zone)
+            rename(
+                location = SampleID, lat = Latitude, lon = Longitude,
+                city = CitiesSurveyed, zone = Zone
+            )
         df |>
             split_location(Library.Name, "\\d", 1) |>
             left_join(aux_info, by = "location")
@@ -143,9 +156,11 @@ prj_transformations <- list(
         df |>
             fix_location(Sample.Name, "(-|\\d{2,})", "") |>
             mutate(location = ifelse(location %in% ash, "AshbridgesBay",
-                ifelse(location %in% high, "HighlandCreek", location))) |>
+                    ifelse(location %in% high, "HighlandCreek", location))) |>
             mutate(zone = case_when(
-                location %in% c("Humber", "AshbridgesBay", "HighlandCreek", "NorthToronto") ~ "Toronto",
+                location %in% c(
+                    "Humber", "AshbridgesBay", "HighlandCreek", "NorthToronto"
+                ) ~ "Toronto",
                 location %in% c("As", "At") ~ "Pooled Aircraft Sewage",
                 location %in% c("A1", "A3") ~ "Airport Terminal 1 and 3",
                 location %in% c("P1", "P2") ~ "Peel",
@@ -160,12 +175,14 @@ prj_transformations <- list(
             fix_location(geo_loc_name, "(India: |\\, Maharashtra|\\\\)", "") |>
             left_join(loc_zones, by = "location")
     },
-    PRJEB61810 = function(df) rename(df,
-        location = name_of_the_sampling_site,
-        lat = geographic_location_.latitude.,
-        lon = geographic_location_.longitude.,
-        ww_population = population_size_of_the_catchment_area
-    ),
+    PRJEB61810 = function(df) {
+        rename(df,
+            location = name_of_the_sampling_site,
+            lat = geographic_location_.latitude.,
+            lon = geographic_location_.longitude.,
+            ww_population = population_size_of_the_catchment_area
+        )
+    },
     PRJNA946141 = function(df) {
         df |>
             rename(zone = ww_sample_site, sample_type = ww_sample_type) |>
@@ -174,24 +191,35 @@ prj_transformations <- list(
                 str_detect(BioSampleModel, "wastewater"))
     },
     PRJEB76651 = function(df) {
-        df |> rename(Sample_Name = Sample.Name) |>
+        df |>
+            rename(Sample_Name = Sample.Name) |>
             split_location(sample_name, "_", 2) |>
             rename(Collection_Date = collection_date, Sample.Name = sample_name)
     },
-    PRJNA1238906 = function(df) mutate(df, location = str_sub(Sample.Name, 1, 2)),
-    PRJNA1212683 = function(df) fix_location(df, geo_loc_name, "Luxembourg: ", ""),
-    PRJNA1141947 = function(df) fix_location(df, geo_loc_name, "United Kingdom: ", ""),
-    PRJDB19812 = function(df) fix_location(df, geo_loc_name, "(^.*, )|( city)", ""),
+    PRJNA1238906 = function(df) {
+        mutate(df, location = str_sub(Sample.Name, 1, 2))
+    },
+    PRJNA1212683 = function(df) {
+        fix_location(df, geo_loc_name, "Luxembourg: ", "")
+    },
+    PRJNA1141947 = function(df) {
+        fix_location(df, geo_loc_name, "United Kingdom: ", "")
+    },
+    PRJDB19812 = function(df) {
+        fix_location(df, geo_loc_name, "(^.*, )|( city)", "")
+    },
     PRJNA1027333 = function(df) fix_location(df, geo_loc_name, "USA: ", ""),
     PRJNA865728 = function(df) fix_location(df, geo_loc_name, "USA: ", ""),
     PRJNA896334 = function(df) fix_location(df, geo_loc_name, "Pune", ""),
     PRJNA847239 = function(df) fix_location(df, geo_loc_name, "USA: ", ""),
     PRJNA748354 = function(df) split_location(df, Library.Name, "_", 3),
-    PRJEB67638 = function(df) rename(df,
-        location = name_of_the_sampling_site,
-        lat = geographic_location_.latitude.,
-        lon = geographic_location_.longitude.
-    ),
+    PRJEB67638 = function(df) {
+        rename(df,
+            location = name_of_the_sampling_site,
+            lat = geographic_location_.latitude.,
+            lon = geographic_location_.longitude.
+        )
+    },
     PRJNA765031 = function(df) rename(df, location = geo_loc_name),
     PRJNA941107 = function(df) rename(df, location = geo_loc_name)
 )
