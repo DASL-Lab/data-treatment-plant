@@ -45,33 +45,34 @@ for accession in ${accessions[@]}; do
             # Check the separate files first.
             # Also check for gzipped files
             if [ -f "data/fastq/${accession}_1.fastq" ]; then
-                echo python gromstolen/minimap2.py -t 2 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}_1.fastq" "data/fastq/${accession}_2.fastq"
-                python gromstolen/minimap2.py -t 2 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}_1.fastq" "data/fastq/${accession}_2.fastq"
+                echo python gromstolen/minimap2.py -t 12 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}_1.fastq" "data/fastq/${accession}_2.fastq"
+                python gromstolen/minimap2.py -t 12 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}_1.fastq" "data/fastq/${accession}_2.fastq"
                 echo "Done"
             elif [ -f "data/fastq/${accession}.fastq" ]; then
-                echo python gromstolen/minimap2.py -t 2 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}.fastq"
-                python gromstolen/minimap2.py -t 2 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}.fastq"
+                echo python gromstolen/minimap2.py -t 12 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}.fastq"
+                python gromstolen/minimap2.py -t 12 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}.fastq"
                 echo "Done"
             elif [ -f "data/fastq/${accession}_1.fastq.gz" ]; then
-                echo python gromstolen/minimap2.py -t 2 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}_1.fastq.gz" "data/fastq/${accession}_2.fastq.gz"
-                python gromstolen/minimap2.py -t 2 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}_1.fastq.gz" "data/fastq/${accession}_2.fastq.gz"
+                echo python gromstolen/minimap2.py -t 12 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}_1.fastq.gz" "data/fastq/${accession}_2.fastq.gz"
+                python gromstolen/minimap2.py -t 12 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}_1.fastq.gz" "data/fastq/${accession}_2.fastq.gz"
                 echo "Done"
             elif [ -f "data/fastq/${accession}.fastq.gz" ]; then
-                echo python gromstolen/minimap2.py -t 2 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}.fastq.gz"
-                python gromstolen/minimap2.py -t 2 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}.fastq.gz"
+                echo python gromstolen/minimap2.py -t 12 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}.fastq.gz"
+                python gromstolen/minimap2.py -t 12 -p ${accession} -o data/groutput --nocut --replace "data/fastq/${accession}.fastq.gz"
                 echo "Done"
             fi
         fi
 
         # If successful, remove the fastq file(s).
-        if [ `ls data/groutput | grep ${accession} | wc -l` = 2 ]; then
-            mfile=`ls data/groutput/${accession}*mapped.csv*`
-            if (( `wc -l < $mfile` > 50 )); then
+        if [ "$(ls data/groutput/${accession}* 2>/dev/null | wc -l)" = 2 ]; then
+            mfile=$(echo data/groutput/${accession}*mapped.csv*)
+            if [ "$(wc -l < "$mfile")" -gt 50 ]; then
                 echo "Minimap2 Successful, removing fastq"
-                fastq_file=`ls data/fastq/${accession}*`
-                rm $fastq_file
+                for fastq_file in data/fastq/${accession}*; do
+                    rm "$fastq_file"
+                done
             else 
-                echo `wc -l < $mfile`
+                wc -l < $mfile
                 echo "Minimap2 failed, keeping fastq but removing data/groutput."
                 echo "Minimap2 failed on $accession in $1. Line count:" >> out.log
                 if [ -f "data/fastq/${accession}_1.fastq" ]; then
