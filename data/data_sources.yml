@@ -1,0 +1,375 @@
+Honda:
+  bioproject: PRJDB19812
+  link: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317076
+  wwtps: 2
+  runs: 21
+  data_comment: ""
+  provoc: 4
+  temporal: 4
+  spatial: 1
+
+Jahn:
+  bioproject: PRJEB44932
+  wwtps: 6
+  runs: 1823
+  data_comment: "Exact latlon, many obs., spatio-temporal"
+  provoc: 9
+  temporal: 10
+  spatial: 8
+
+Izquierdo-Lara:
+  bioproject: PRJEB48206
+  wwtps: 10
+  runs: 698
+  data_comment: "ST"
+  provoc: 10
+  temporal: 3
+  spatial: 6
+
+Gurol:
+  bioproject: PRJEB61810
+  wwtps: 10
+  runs: 217
+  data_comment: "Lat/lon, approx 20 times each"
+  provoc: 4
+  temporal: 5
+  spatial: 7
+
+Rasmussen:
+  bioproject: PRJEB65603
+  wwtps: 48
+  runs: 116
+  data_comment: "Spatial, 4 time points"
+  provoc: 6
+  temporal: 2
+  spatial: 10
+
+Garcia:
+  bioproject: PRJEB76651
+  wwtps: 4
+  runs: 214
+  data_comment: "Many T, few S"
+  provoc: 1
+  temporal: 2
+  spatial: 2
+
+Smyth:
+  bioproject: PRJNA715712
+  wwtps: 5
+  runs: 311
+  data_comment: "Extra WWTPS with poor sampling"
+  provoc: 5
+  temporal: 7
+  spatial: 3
+
+Layton:
+  bioproject: PRJNA719837
+  wwtps: 5
+  runs: 116
+  data_comment: "5 WWTPs must remain anon."
+  provoc: 7
+  temporal: 8
+  spatial: 1
+
+Unknown:
+  bioproject: PRJNA720687
+
+Lin:
+  bioproject: PRJNA731975
+  wwtps: 5
+  runs: 106
+  data_comment: "Evaluating primer sets."
+  provoc: 6
+  temporal: 6
+  spatial: 2
+
+Rouchka:
+  bioproject: PRJNA735936
+  wwtps: 17
+  runs: 1040
+  data_comment: "Multiple purposes, composite and grab samples"
+  provoc: 7
+  temporal: 8
+  spatial: 2
+
+Baaijens:
+  bioproject: [PRJNA741211, PRJNA759260]
+  link: https://doi.org/10.1186/s13059-022-02805-9
+  wwtps: 1
+  runs: 59
+  data_comment: "Generally poor results - possible errors in my processing scripts."
+  provoc: 1
+  temporal: 1
+  spatial: 0
+
+Swift:
+  bioproject: PRJNA745177
+  wwtps: 2
+  runs: 30
+  data_comment: "Small data set - great for examples and a first run of treatment/effluent"
+  provoc: 2
+  temporal: 2
+  spatial: 0
+
+Gregory:
+  bioproject: PRJNA748354
+  link: https://doi.org/10.1371/journal.ppat.1010636
+  wwtps: ""
+  runs: ""
+  data_comment: ""
+  provoc: 0
+  temporal: 0
+  spatial: 0
+
+Rios:
+  bioproject: PRJNA750263
+  wwtps: 31
+  runs: 118
+  data_comment: "Few time points, many WWTP"
+  provoc: 5
+  temporal: 4
+  spatial: 7
+
+Khan:
+  bioproject: PRJNA772783
+  wwtps: "?"
+  runs: 161
+  data_comment: "Some SARS-CoV-0,1,3, uncertain WWTPs"
+  provoc: 5
+  temporal: 3
+  spatial: 3
+
+N'Guessan:
+  bioproject: PRJNA788395
+  wwtps: 584
+  runs: 936
+  data_comment: "Many WWTPs with sparse sampling, 3 zones"
+  provoc: 3
+  temporal: 2
+  spatial: 2
+
+Sapoval:
+  bioproject: PRJNA796340
+  wwtps: 23
+  runs: 256
+  data_comment: "Spatial?"
+  provoc: 8
+  temporal: 2
+  spatial: 6
+
+Ramuta:
+  bioproject: PRJNA811594
+  wwtps: "?"
+  runs: 25
+  data_comment: "Uncertain WWTPs"
+  provoc: 5
+  temporal: 6
+  spatial: 1
+
+Karthykeyan:
+  bioproject: PRJNA819090
+  wwtps: 2
+  runs: 711
+  data_comment: "Locs have different dates"
+  provoc: 7
+  temporal: 9
+  spatial: 2
+
+Fontenele:
+  bioproject: PRJNA847239
+  link: https://www.sciencedirect.com/science/article/pii/S004896972301478X
+
+
+Agrawal:
+  bioproject: PRJNA856091
+  wwtps: 15
+  runs: 118
+  data_comment: "Study combines WWTPs to see temporal trend"
+  provoc: 10
+  temporal: 2
+  spatial: 2
+
+Tryndyak:
+  bioproject: PRJNA865728
+  link: https://www.nature.com/articles/s41597-025-05100-x
+  wwtps: 5
+  runs: 270
+  data_comment: "Long time scale"
+  provoc: 7
+  temporal: 6
+  spatial: 6
+
+Pramanik:
+  bioproject: PRJNA896334
+  link: https://pubs.acs.org/doi/full/10.1021/envhealth.5c00048
+  wwtps: 1
+  runs: 191
+  data_comment: "Temporal"
+  provoc: 7
+  temporal: 8
+  spatial: 0
+
+Tierney:
+  bioproject: PRJNA946141
+  wwtps: 36
+  runs: 688
+  data_comment: "Mostly Spatial, paper has detailed lineage info"
+  provoc: 7
+  temporal: 7
+  spatial: 7
+
+Merrett:
+  bioproject: PRJNA992940
+  wwtps: "?"
+  runs: 412
+  data_comment: "Many WWTPs, not much T."
+  provoc: 4
+  temporal: 5
+  spatial: 5
+
+Conway:
+  bioproject: PRJNA1027333
+  link: https://www.nature.com/articles/s41598-025-03771-5
+  wwtps: 1
+  runs: 17
+  data_comment: "Some one-off WWTPs, one main one"
+  provoc: 2
+  temporal: 4
+  spatial: 0
+
+Ellman:
+  bioproject: PRJNA1027858
+  wwtps: 58
+  runs: 869
+  data_comment: "Used for NMF paper, no T."
+  provoc: 10
+  temporal: 0
+  spatial: 0
+
+Moon:
+  bioproject: PRJNA1031245
+  link: https://www.medrxiv.org/content/10.1101/2024.02.15.24302811v1
+  wwtps: "???"
+  runs: "???"
+  data_comment: "Meant to test lineage callers, **no T**"
+  provoc: 10
+  temporal: 0
+  spatial: 0
+
+Liponnen:
+  bioproject: PRJNA1042787
+  wwtps: 1
+  runs: 15
+  data_comment: ""
+  provoc: 8
+  temporal: 6
+  spatial: 0
+
+Overton:
+  bioproject: PRJNA1088471
+  wwtps: 13
+  runs: 1373
+  data_comment: "Lots of S and T"
+  provoc: 6
+  temporal: 8
+  spatial: 8
+
+Matra:
+  bioproject: PRJNA1110039
+  wwtps: 23
+  runs: 700
+  data_comment: "Lots of S and T"
+  provoc: 7
+  temporal: 8
+  spatial: 8
+
+Kellingray:
+  bioproject: PRJNA1141947
+  wwtps: 1
+  runs: "???"
+  data_comment: "???"
+  provoc: 4
+  temporal: 7
+  spatial: 0
+
+Afonso:
+  bioproject: PRJNA1212683
+  wwtps: 3
+  runs: "???"
+  data_comment: "???"
+  provoc: 9
+  temporal: 8
+  spatial: 3
+
+Opeyemi:
+  bioproject: PRJNA1238906
+  wwtps: 2
+  runs: "???"
+  data_comment: "Comparison of Auto and passive samplers (overton)"
+  provoc: 6
+  temporal: 8
+  spatial: 0
+
+Brunner:
+  usable: false
+  bioproject: PRJEB55313
+  wwtps: 460
+  runs: 23536
+  data_comment: "`effluent.R` fails (memory issue)"
+  provoc: 0
+  temporal: 0
+  spatial: 0
+
+Crits-Christoph:
+  usable: false
+  bioproject: PRJNA661613
+  wwtps: 1
+  runs: 18
+  data_comment: "`minimiap2.py` fails"
+  provoc: 0
+  temporal: 0
+  spatial: 0
+
+Rothman:
+  usable: false
+  bioproject: PRJNA729801
+  wwtps: 8
+  runs: 363
+  data_comment: "`minimap2.py` fails."
+  provoc: 0
+  temporal: 0
+  spatial: 0
+
+Liu:
+  usable: false
+  bioproject: PRJNA764181
+  wwtps: "?"
+  runs: 10147
+  data_comment: "Clinical rather than ww"
+  provoc: 0
+  temporal: 0
+  spatial: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
