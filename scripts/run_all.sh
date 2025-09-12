@@ -4,7 +4,7 @@
 run_treatment() {
     echo "Running $1"
     bash scripts/treatment.sh data/runtables/SraRunTable_$1.txt && 
-    Rscript scripts/effluent.sh --freqmin 0.1 --min_coverage 40 --beep \
+    Rscript scripts/effluent.R --freqmin 0.1 --min_coverage 40 --beep \
         data/runtables/SraRunTable_$1.txt
 }
 
