@@ -76,6 +76,7 @@ TODO:
     - Genetic diversity
 - https://www.nature.com/articles/s41467-024-48334-w
 - https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1012850
+- [PRJEB96931](https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978)
 
 
 From https://www.sciencedirect.com/science/article/pii/S0043135425013429: 
