@@ -26,3 +26,4 @@ out.log
 *tsv
 *usher_barcodes.csv
 provoc/gadm/*
+*.jar
