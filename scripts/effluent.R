@@ -267,6 +267,18 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA941107") {
         runtable <- runtable |>
             rename(location = geo_loc_name)
+    } else if (prj == "PRJNA1031245"){
+        runtable <- runtable |>
+            tidyr::separate_wider_regex(
+                Sample_Name,
+                patterns = c(
+                    "Mixture",
+                    mixture = "\\d\\d",
+                    "-v4.1-",
+                    ctrl = "\w+"
+                )
+            )
+
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -280,7 +292,8 @@ get_runtable <- function(prj) {
     runtable <- select(runtable,
         sra, date, sample_name, avg_spot_len, bases, bioproject,
         any_of(c("location", "lat", "lon", "lat_lon", "city",
-                "ww_population", "organism", "sample_type", "zone")))
+                "ww_population", "organism", "sample_type", "zone",
+                "ctrl", "mixture")))
     return(runtable)
 }
 
