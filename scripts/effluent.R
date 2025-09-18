@@ -275,7 +275,7 @@ get_runtable <- function(prj) {
                     "Mixture",
                     mixture = "\\d\\d",
                     "-v4.1-",
-                    ctrl = "\w+"
+                    ctrl = "\\w+"
                 )
             )
 
