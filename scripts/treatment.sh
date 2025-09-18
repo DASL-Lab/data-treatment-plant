@@ -88,9 +88,9 @@ for accession in ${accessions[@]}; do
                 fi 
                 rm "$mfile"
                 rm "${mfile/mapped/coverage}"
-                echo "Currently working on a large database, removing fastq anyway."
-                fastq_file=`ls data/fastq/${accession}*`
-                rm $fastq_file
+                #echo "Currently working on a large database, removing fastq anyway."
+                #fastq_file=`ls data/fastq/${accession}*`
+                #rm $fastq_file
             fi
         fi
     fi
