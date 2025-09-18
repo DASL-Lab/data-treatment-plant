@@ -296,7 +296,7 @@ Moon:
   link: https://www.medrxiv.org/content/10.1101/2024.02.15.24302811v1
   wwtps: "???"
   runs: "???"
-  data_notes: "Meant to test lineage callers, **no T**"
+  data_notes: "Meant to test lineage callers, **no T**. Instead, 32 mixtures with pos, neg, and ctrl."
   provoc: 10
   temporal: 0
   spatial: 0
