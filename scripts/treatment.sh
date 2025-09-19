@@ -38,9 +38,9 @@ for accession in ${accessions[@]}; do
         fi
     fi
     
-    echo "Running Minimap2"
     if [ ! -f "data/groutput/${accession}.mapped.csv" ]; then
         if [ ! -f "data/groutput/${accession}.mapped.csv.gz" ]; then
+        	echo "Running minimap2.py"
             # Some fastqs are combined, some are two separate files.
             # Check the separate files first.
             # Also check for gzipped files
@@ -69,7 +69,9 @@ for accession in ${accessions[@]}; do
             if [ "$(wc -l < "$mfile")" -gt 50 ]; then
                 echo "Minimap2 Successful, removing fastq"
                 for fastq_file in data/fastq/${accession}*; do
-                    rm "$fastq_file"
+                	if [ -f "fastq_file" ]; then
+	                    rm "$fastq_file"
+	                fi
                 done
             else 
                 wc -l < $mfile
@@ -86,22 +88,28 @@ for accession in ${accessions[@]}; do
                 elif [ -f "data/fastq/${accession}.fastq.gz" ]; then
                     wc -l "data/fastq/${accession}.fastq.gz" >> out.log
                 fi 
-                rm "$mfile"
-                rm "${mfile/mapped/coverage}"
-                #echo "Currently working on a large database, removing fastq anyway."
-                #fastq_file=`ls data/fastq/${accession}*`
-                #rm $fastq_file
+                if [ -f "$mfile" ]; then
+	                rm "$mfile"
+	            fi
+	            if [-f "${mfile/mapped/coverage}" ]; then
+	                rm "${mfile/mapped/coverage}"
+	            fi
+                echo "Currently working on a large database, removing fastq anyway."
+                fastq_file=`ls data/fastq/${accession}*`
+                if [ -f "$fastq_file" ]; then
+	                rm $fastq_file
+	            fi
             fi
         fi
     fi
 done
 
-for file in data/fastq/*.fastq; do
-  [ -f "$file" ] || continue
-  gzip "$file"
-done
+#for file in data/fastq/*.fastq; do
+#  [ -f "$file" ] || continue
+#  gzip "$file"
+#done
 
-for file in data/groutput/*.csv; do
-  [ -f "$file" ] || continue
-  gzip "$file"
-done
+#for file in data/groutput/*.csv; do
+#  [ -f "$file" ] || continue
+#  gzip "$file"
+#done

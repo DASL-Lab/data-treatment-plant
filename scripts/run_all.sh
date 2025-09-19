@@ -12,7 +12,7 @@ run_treatment() {
 run_treatment PRJDB19812
 run_treatment PRJEB44932
 run_treatment PRJEB48206
-run_treatment PRJEB48985
+##run_treatment PRJEB48985 # Too big or all errors
 run_treatment PRJEB61810
 run_treatment PRJEB65603
 run_treatment PRJEB67638
@@ -21,7 +21,7 @@ run_treatment PRJNA661613
 run_treatment PRJNA715712
 run_treatment PRJNA719837
 run_treatment PRJNA720687
-run_treatment PRJNA729801
+###run_treatment PRJNA729801 # Too big or all errors
 run_treatment PRJNA731975
 run_treatment PRJNA735936
 run_treatment PRJNA741211
@@ -60,4 +60,7 @@ run_treatment PRJNA1238906
 #bash scripts/treatment.sh data/runtables/SraRunTable_PRJEB48985.txt
 #bash scripts/treatment.sh data/runtables/SraRunTable_PRJNA719837.txt
 
-rm -r data/fastq/reads_fastq # Remove ENA folder (full of empty folders)
+ena_fastq = "data/fastq/reads_fastq"
+if [ -e "$ena_fastq" ]; then
+	rm -r "$ena_fastq" # Remove ENA folder (full of empty folders)
+fi
