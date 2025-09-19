@@ -67,7 +67,7 @@ for accession in ${accessions[@]}; do
         if [ "$(ls data/groutput/${accession}* 2>/dev/null | wc -l)" = 2 ]; then
             mfile=$(echo data/groutput/${accession}*mapped.csv*)
             if [ "$(wc -l < "$mfile")" -gt 50 ]; then
-                echo "Minimap2 Successful, removing fastq"
+                echo "Minimap2 Successful, removing fastq if it exists"
                 for fastq_file in data/fastq/${accession}*; do
                 	if [ -f "fastq_file" ]; then
 	                    rm "$fastq_file"
@@ -91,13 +91,13 @@ for accession in ${accessions[@]}; do
                 if [ -f "$mfile" ]; then
 	                rm "$mfile"
 	            fi
-	            if [-f "${mfile/mapped/coverage}" ]; then
+	            if [ -f "${mfile/mapped/coverage}" ]; then
 	                rm "${mfile/mapped/coverage}"
 	            fi
                 echo "Currently working on a large database, removing fastq anyway."
                 fastq_file=`ls data/fastq/${accession}*`
                 if [ -f "$fastq_file" ]; then
-	                rm $fastq_file
+	                rm "$fastq_file"
 	            fi
             fi
         fi
