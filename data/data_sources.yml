@@ -27,7 +27,7 @@ Izquierdo-Lara:
   link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9927792/
   wwtps: 10
   runs: 698
-  data_notes: "ST"
+  data_notes: "Very good individually, but large and inconsistent gaps in sampling."
   lineages_in_paper: ["B.1.621", "P.1", "B.1.617.2", "B.1.351", "B.1.1.7", "B.1.221", "B.177", "B.1.160"]
   provoc: 10
   temporal: 3
@@ -38,18 +38,18 @@ Gurol:
   link: https://www.researchsquare.com/article/rs-4880585/v1
   wwtps: 10
   runs: 217
-  data_notes: "Lat/lon, approx 20 times each"
+  data_notes: "Lat/lon, approx 20 times each, very consistent sampling. Mainly one lineage throughout the study."
   lineages_in_paper: ["BA.2", "CH.1.1", "BA.5", "BQ.1", "XBB", "XBB.1.5", "XBB.1.9", "XBB.1.16", "XBB.3"]
-  provoc: 4
-  temporal: 5
-  spatial: 7
+  provoc: 6
+  temporal: 7
+  spatial: 8
 
 Rasmussen:
   bioproject: PRJEB65603
   link: https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2023.28.36.2300460
   wwtps: 48
   runs: 116
-  data_notes: "Spatial, 4 time points"
+  data_notes: "Lat/Lon, but only 4 time points"
   lineages_in_paper: ["BA.2.86", "XBB.1.16", "XBB.1.5", "XBB.1.9.1", "XBB.1.5.59", "EG.5.1", "EG.5.2", "GE.1"]
   provoc: 6
   temporal: 2
@@ -66,11 +66,11 @@ Garcia:
   temporal: 2
   spatial: 2
 
-Smyth:
+Smith:
   bioproject: PRJNA715712
-  wwtps: 5
+  wwtps: 6
   runs: 311
-  data_notes: "Extra WWTPS with poor sampling"
+  data_notes: "Extra WWTPS with poor sampling, but 6 with consistent sampling."
   lineages_in_paper: ["B.1.427", "B.1.429", "B.1.525", "B.1.526", "B.1.1.7", "P.1", "B.1.351", "B.1.617.2"]
   provoc: 5
   temporal: 7
@@ -79,9 +79,9 @@ Smyth:
 Layton:
   bioproject: PRJNA719837
   link: https://ehp.niehs.nih.gov/doi/10.1289/EHP10289
-  wwtps: 5
+  wwtps: 1
   runs: 116
-  data_notes: "5 WWTPs must remain anon."
+  data_notes: "One good wwtp, rest are one-offs (or problems processing?)"
   lineages_in_paper: ["B.1.399", "B.1", "B.1.1.158", "B.1.369", "B.1.2"]
   provoc: 7
   temporal: 8
@@ -89,13 +89,16 @@ Layton:
 
 Unknown:
   bioproject: PRJNA720687
+  wwtps: 11
+  runs: 116
+  data_notes: "WWTP named Inf has 70 obs, the rest have 2-7"
 
 Lin:
   bioproject: PRJNA731975
   link: https://journals.asm.org/doi/10.1128/mSystems.01068-21
   wwtps: 5
   runs: 106
-  data_notes: "Evaluating primer sets."
+  data_notes: "Evaluating primer sets. Small but consistent T and S. 5 WWTPs must remain anonymous."
   lineages_in_paper: ["B.1.1.7", "P.1", "B.1.351"]
   provoc: 6
   temporal: 6
@@ -106,7 +109,7 @@ Rouchka:
   link: https://www.mdpi.com/2076-0817/10/10/1271
   wwtps: 17
   runs: 1040
-  data_notes: "Multiple purposes, composite and grab samples"
+  data_notes: "Multiple purposes, composite and grab samples, many T in each location. WWTPs are anonymous (I think - metadata doesn't tell me about them)."
   lineages_in_paper: ["P.1", "B.1.429", "B.1.427", "B.1.351", "B.1.1.7", "B.1.526", "B.1.525"]
   provoc: 7
   temporal: 8
@@ -128,7 +131,7 @@ Swift:
   link: https://linkinghub.elsevier.com/retrieve/pii/S0048969721047665
   wwtps: 2
   runs: 30
-  data_notes: "Small data set - great for examples and a first run of treatment/effluent"
+  data_notes: "Small data set - great for examples and a first run of treatment/effluent. Only has samples in July/Aug 2020 and Jan 2021."
   lineages_in_paper: ["B.1.160", "B.1.177", "B.1.221", "B.1.1.7", "B.1.351", "P.1", "B.1.617.2", "C.37", "B.1.621"]
   provoc: 2
   temporal: 2
@@ -151,15 +154,15 @@ Rios:
   runs: 118
   data_notes: "Few time points, many WWTP"
   lineages_in_paper: ["B.1.1.7", "B.1.160", "B.1.177", "B.1.474", "A.27", "B.1.221", "B.1.351", "P.1", "B,1,367"]
-  provoc: 5
-  temporal: 4
-  spatial: 7
+  provoc: 3
+  temporal: 3
+  spatial: 6
 
 Khan:
   bioproject: PRJNA772783
   wwtps: "?"
   runs: 161
-  data_notes: "Some SARS-CoV-0,1,3, uncertain WWTPs"
+  data_notes: "Some SARS-CoV-0,1,3, uncertain WWTPs. Two WWTPs would be okay-ish."
   lineages_in_paper: ["BA.5", "BA.2.12.1", "BA.2.29", "BA.2", "BA.1", "BA.1.1.18"]
   provoc: 5
   temporal: 3
@@ -170,7 +173,7 @@ N'Guessan:
   link: https://www.medrxiv.org/content/10.1101/2022.02.01.22270170v1
   wwtps: 584
   runs: 936
-  data_notes: "Many WWTPs with sparse sampling, 3 zones"
+  data_notes: "Many WWTPs with sparse sampling, 3 zones, poor results."
   lineages_in_paper: ["A.2.5", "B.1.1.7", "B.1.160"]
   provoc: 3
   temporal: 2
@@ -181,7 +184,7 @@ Sapoval:
   link: https://www.nature.com/articles/s41467-023-38184-3
   wwtps: 23
   runs: 256
-  data_notes: "Spatial?"
+  data_notes: "Possibly good spatial, 6 time points at all locations (same times). Consistent provoc results."
   lineages_in_paper: ["B.1.1.7", "B.1.617.2", "B.1.1.529"]
   provoc: 8
   temporal: 2
@@ -192,7 +195,7 @@ Ramuta:
   link: https://www.proquest.com/docview/2824635201/abstract/6A91E51BE32C4530PQ/1?sourcetype=Dissertations%20&%20Theses
   wwtps: "?"
   runs: 25
-  data_notes: "Uncertain WWTPs"
+  data_notes: "Uncertain WWTPs, inconsistent sampling."
   lineages_in_paper: ["B.1.617.2", "BA.1", "P.1"]
   provoc: 5
   temporal: 6
@@ -203,10 +206,10 @@ Karthykeyan:
   link: https://www.nature.com/articles/s41586-022-05049-6
   wwtps: 2
   runs: 711
-  data_notes: "Locs have different dates"
+  data_notes: "Locs have different dates, but many of them!"
   lineages_in_paper: ["B.1.617.2", "AY.4", "B.1.1.529", "BA.1", "BA.2", "B.1.1.7"]
-  provoc: 7
-  temporal: 9
+  provoc: 5
+  temporal: 7
   spatial: 2
 
 Fontenele:
@@ -230,9 +233,9 @@ Tryndyak:
   link: https://www.nature.com/articles/s41597-025-05100-x
   wwtps: 5
   runs: 270
-  data_notes: "Long time scale"
+  data_notes: "Long time scale for one WWTP, rest are iffy."
   lineages_in_paper: ["BA.1", "BA.2", "BA.4", "BA.5", "BQ.1", "BE.1", "JD.1", "EG.5", "EG.8", "HV.1", "JG.1", "HK.3", "JN.1", "XCP, XBB, XBB.1", "XBB.2"]
-  provoc: 7
+  provoc: 8
   temporal: 6
   spatial: 6
 
@@ -241,7 +244,7 @@ Pramanik:
   link: https://pubs.acs.org/doi/full/10.1021/envhealth.5c00048
   wwtps: 1
   runs: 191
-  data_notes: "Temporal"
+  data_notes: "Temporal, but lots! Good case for covar selection."
   lineages_in_paper: ["XBB.2.3", "XXB.1.9", "XBB.1.5", "XBB.1.16", "CH.1.1", "BF.7", "JN.1", "BQ.1", "KP.2", "BA.5", "BA.4", "BA.3", "BA.2.10", "BA.1", "BA.2.12", "BA.2.75", "B.1.1.529", "AY.4", "B.1.1.7"]
   provoc: 7
   temporal: 8
@@ -250,9 +253,10 @@ Pramanik:
 Tierney:
   bioproject: PRJNA946141
   link: https://www.nature.com/articles/s41467-024-52427-x
+  lit_notes: "Paper has detailed lineage info"
   wwtps: 36
   runs: 688
-  data_notes: "Mostly Spatial, paper has detailed lineage info"
+  data_notes: "Mostly Spatial, few time points."
   lineages_in_paper: ["B.1.1.7", "B.1.427", "B.1.526", "P.1", "B.1.617.2", "BA.1", "BA.2"]
   provoc: 7
   temporal: 7
@@ -263,7 +267,7 @@ Merrett:
   link: https://journals.asm.org/doi/full/10.1128/aem.01497-23
   wwtps: "?"
   runs: 412
-  data_notes: "Many WWTPs, not much T."
+  data_notes: "Many WWTPs, not much T. Poor-ish results (or lin. misspec.)."
   lineages_in_paper: ["B.1.1.7", "B.1.351", "P.1", "BA.1"]
   provoc: 4
   temporal: 5
@@ -274,7 +278,7 @@ Conway:
   link: https://www.nature.com/articles/s41598-025-03771-5
   wwtps: 1
   runs: 17
-  data_notes: "Some one-off WWTPs, one main one"
+  data_notes: "Some one-off WWTPs, one main one, inconsistent."
   lineages_in_paper: ["B.1.1.7", "AY.25", "AY.4", "BG.5", "XBB.1.5", "XBB.1.5.23", "XBB.1.28", "XBB.1.5.1", "XBB.1.5.17", "XBB.1.5.49"]
   provoc: 2
   temporal: 4
@@ -305,7 +309,8 @@ Liponnen:
   bioproject: PRJNA1042787
   wwtps: 1
   runs: 15
-  data_notes: ""
+  data_notes: "No spatial. ProVoC estimates look relatively nice. Quick to download/process."
+  lineages_in_paper: ["BA.1", "BA.2", "BA.3", "B.1.617.2"]
   provoc: 8
   temporal: 6
   spatial: 0
@@ -315,9 +320,9 @@ Overton:
   link: https://www.researchsquare.com/article/rs-4183960/v1
   wwtps: 13
   runs: 1373
-  data_notes: "Lots of S and T"
+  data_notes: "Lots of S and T!"
   lineages_in_paper: ["BQ", "BQ.1", "BA.1", "BA.2.75", "BF.1", "XBB", "XBB.1.16", "XBB.1.5", "XBB.1.9"]
-  provoc: 6
+  provoc: 8
   temporal: 8
   spatial: 8
 
@@ -326,7 +331,7 @@ Matra:
   link: https://www.researchsquare.com/article/rs-4609404/v1
   wwtps: 23
   runs: 700
-  data_notes: "Lots of S and T"
+  data_notes: "Lots of S and T, gaps in T."
   lineages_in_paper: ["XBB.1.16", "BQ", "B.1.1.529", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5", "BA.2.10", "XBB.2.3", "XBB"]
   provoc: 7
   temporal: 8
@@ -348,7 +353,7 @@ Afonso:
   link: https://www.nature.com/articles/s41598-025-94323-4
   wwtps: 3
   runs: "???"
-  data_notes: "???"
+  data_notes: "Very good results, good sampling."
   lineages_in_paper: ["B.1.1.7", "B.1.351", "B.1.617.2", "B.1.1.529", "P.1"]
   provoc: 9
   temporal: 8
