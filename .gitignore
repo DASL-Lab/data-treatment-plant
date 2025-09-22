@@ -8,6 +8,7 @@ data/ENA/*
 !data/ENA/download.sh
 logs/*
 */logs/*
+provoc/model_runs/*
 
 # Code output
 *__pycache__*
@@ -27,3 +28,4 @@ out.log
 *usher_barcodes.csv
 provoc/gadm/*
 *.jar
+provoc/model_runs/*
