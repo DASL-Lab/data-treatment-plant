@@ -16,6 +16,7 @@ Pechlivanis:
   wwtps: 20
   runs: 9018
   data_notes: "Many wwtps with <20 obs., 15 with >100. Somewhat consistent sampling at sites with high counts. Multiple instruments used."
+  lineages_in_paper: ["B.1.1.7", "B.1.351"]
 
 Jahn:
   bioproject: PRJEB44932
@@ -75,6 +76,7 @@ Rasmussen:
 Espinosa-Gongora:
   bioproject: PRJEB67638
   link: https://pmc.ncbi.nlm.nih.gov/articles/PMC10655203/
+  lineages_in_paper: ["BA.2.75", "BA.5", "XBB.1.5", "BA.2", "BA.2.86", "XBB"]
 
 Garcia:
   bioproject: PRJEB76651
@@ -87,8 +89,10 @@ Garcia:
   temporal: 2
   spatial: 2
 
-Unk7:
+Fontenele2:
   bioproject: PRJNA662596
+  link: https://www.sciencedirect.com/science/article/pii/S0043135421009040
+  lineages_in_paper: ["A.1", "B.1", "B.1.2", "B.1.26", "B.1.5", "B.1.3"]
   wwtps: 12
   runs: 92
   data_notes: "61 in Arizona, rest spread out across the southern states. Started in April 2020."
@@ -142,7 +146,7 @@ Rouchka:
   temporal: 8
   spatial: 2
 
-Unk8:
+Aßmann1:
   bioproject: PRJNA736964
   runs: 54
   wwtps: 20
@@ -176,6 +180,7 @@ Gregory:
   wwtps: ""
   runs: ""
   data_notes: ""
+  lineages_in_paper: ["B.1.1.7", "B.1.617.2", "B.1.351", "P.1", "BA.1", "BA.2", "BA.4"]
   provoc: 0
   temporal: 0
   spatial: 0
@@ -191,9 +196,10 @@ Rios:
   temporal: 3
   spatial: 6
 
-Unk0:
+Herold:
   bioproject: PRJNA765031
   link: https://www.mdpi.com/2073-4441/13/21/3018
+  lineages_in_paper: ["B.1.1.420", "B.1.1.7", "B.1.160", "B.1.177", "B.1.221", "B.1.258", "B.1.351", "B.1.474"]
 
 Khan:
   bioproject: PRJNA772783
@@ -205,7 +211,7 @@ Khan:
   temporal: 3
   spatial: 3
 
-N'Guessan:
+NGuessan:
   bioproject: PRJNA788395
   link: https://www.medrxiv.org/content/10.1101/2022.02.01.22270170v1
   wwtps: 584
@@ -249,9 +255,10 @@ Karthykeyan:
   temporal: 7
   spatial: 2
 
-Unk1:
+Schumann:
   bioproject: PRJNA827160
-  link: https://www.sciencedirect.com/science/article/pii/S0048969722060302?casa_token=kg42tqD8nx8AAAAA:DUiC4wirP_8dnvXnmdEj7fQBDMoxXr4KlLYA0inAjeCx0ZqviNDwGw5ah_t93H2MHmS6qKWGJNo
+  link: https://doi.org/10.1016/j.scitotenv.2022.158931
+  lineages_in_paper: ["A.23.1", "B.1.1.7", "B.1.351", "B.1.617.2", "P.1", "BA.1"]
   runs: 62
   wwtps: 4
   data_notes: "49 samples in WWTP2"
@@ -260,6 +267,7 @@ Unk1:
 Fontenele:
   bioproject: PRJNA847239
   link: https://www.sciencedirect.com/science/article/pii/S004896972301478X
+  lineages_in_paper: ["B.1.1.7", "B.1.617.2", "B.1.1.519", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5"]
 
 
 Agrawal:
@@ -284,9 +292,10 @@ Tryndyak:
   temporal: 6
   spatial: 6
 
-Unk2:
+Barnes:
   bioproject: PRJNA887942
   link: https://www.nature.com/articles/s41467-023-43047-y
+  lineages_in_paper: ["B.1.351", "B.1.617.2", "B.1.1.529"]
   runs: 175
   wwtps: 1
   data_notes: "Uses two different platforms (single and paired). Isolation sources is a river. "
@@ -302,25 +311,28 @@ Pramanik:
   temporal: 8
   spatial: 0
 
-Unk3:
-  bioproject: PRJNA912560
-  link: https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giae051/7730001
+Aßmann2:
+  bioproject: ["PRJNA912560"]
+  link: https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giae051/7730001,
+  lineages_in_paper: ["B.1.1.7", "B.1.351", "P.1", "B.1.526", "B.1.617.2", "AY.2", "BA.1", "BA.2", "BA.2.5"]
   runs: 16
   wwtps: 0
   data_notes: "Appears to be synthetic (or simulated) mixtures designed to test variant callers!"
 
 
-Unk4:
+Haver:
   bioproject: PRJNA922726
   link: https://www.nature.com/articles/s41598-023-44500-0
+  lineages_in_paper: ["AY.43", "BA.2", "BA.5", "B.1.617.2", "BA.4"]
   runs: 79
   wwtps: 3
   data_notes: "WWTPs only differentiated by ww_population as far as I can tell. Several replicates. Inconsistent sampling"
 
 
-Unk5:
+Rajput:
   bioproject: PRJNA931732
-  link: https://www.sciencedirect.com/science/article/pii/S0048969724069900?casa_token=0fuv0LpR24UAAAAA:FNdc1ujuObohfmXYtCIQk3BH-YgkCI23gJHk4WbHpAAwpRveHI0TcAiQc0q6NAIuQ-9sa6sMoVA
+  link: https://doi.org/10.1016/j.scitotenv.2024.176833
+  lineages_in_paper: ["BA.2.86", "XBB", "XBB.1.9", "CH.1.1", "BQ.1", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5", "B.1.1.529"]
   runs: 1068
   wwtps: 2
   data_notes: "Different instruments, one wwtp is 'sewage' while the other is 'wastewater', both sampled on non-overlapping time periods. Might be good for T!"
@@ -375,7 +387,7 @@ Moon:
   link: https://www.medrxiv.org/content/10.1101/2024.02.15.24302811v1
   wwtps: "???"
   runs: "???"
-  data_notes: "Meant to test lineage callers, **no T**. Instead, 32 mixtures with pos, neg, and ctrl."
+  data_notes: "Meant to test lineage callers, **no T**. Instead, 32 mixtures with pos, neg, and ctrl. Good for basic NMF."
   provoc: 10
   temporal: 0
   spatial: 0
@@ -390,8 +402,10 @@ Liponnen:
   temporal: 6
   spatial: 0
 
-Unk6:
+Zambre:
   bioproject: PRJNA1067101
+  link: https://link.springer.com/article/10.1007/s11356-024-34448-7
+  lineages_in_paper: ["B.1.617.2", "B.1.1.529", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5"]
 
 Overton:
   bioproject: PRJNA1088471
