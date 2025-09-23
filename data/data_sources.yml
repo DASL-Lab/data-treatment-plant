@@ -10,6 +10,10 @@ Honda:
   temporal: 4
   spatial: 1
 
+Pechlivanis:
+  bioproject: PRJEB44141
+  link: https://www.nature.com/articles/s41598-022-06625-6
+
 Jahn:
   bioproject: PRJEB44932
   link: https://www.nature.com/articles/s41564-022-01185-x
@@ -33,6 +37,16 @@ Izquierdo-Lara:
   temporal: 3
   spatial: 6
 
+Brunner:
+  usable: false
+  bioproject: PRJEB55313
+  wwtps: 460
+  runs: 23536
+  data_notes: "`effluent.R` fails (memory issue)"
+  provoc: 0
+  temporal: 0
+  spatial: 0
+
 Gurol:
   bioproject: PRJEB61810
   link: https://www.researchsquare.com/article/rs-4880585/v1
@@ -54,6 +68,10 @@ Rasmussen:
   provoc: 6
   temporal: 2
   spatial: 10
+
+Espinosa-Gongora:
+  bioproject: PRJEB67638
+  link: https://pmc.ncbi.nlm.nih.gov/articles/PMC10655203/
 
 Garcia:
   bioproject: PRJEB76651
@@ -158,6 +176,10 @@ Rios:
   temporal: 3
   spatial: 6
 
+Unk0:
+  bioproject: PRJNA765031
+  link: https://www.mdpi.com/2073-4441/13/21/3018
+
 Khan:
   bioproject: PRJNA772783
   wwtps: "?"
@@ -212,6 +234,10 @@ Karthykeyan:
   temporal: 7
   spatial: 2
 
+Unk1:
+  bioproject: PRJNA827160
+  link: https://www.sciencedirect.com/science/article/pii/S0048969722060302?casa_token=kg42tqD8nx8AAAAA:DUiC4wirP_8dnvXnmdEj7fQBDMoxXr4KlLYA0inAjeCx0ZqviNDwGw5ah_t93H2MHmS6qKWGJNo
+
 Fontenele:
   bioproject: PRJNA847239
   link: https://www.sciencedirect.com/science/article/pii/S004896972301478X
@@ -239,6 +265,10 @@ Tryndyak:
   temporal: 6
   spatial: 6
 
+Unk2:
+  bioproject: PRJNA887942
+  link: https://www.nature.com/articles/s41467-023-43047-y
+
 Pramanik:
   bioproject: PRJNA896334
   link: https://pubs.acs.org/doi/full/10.1021/envhealth.5c00048
@@ -249,6 +279,20 @@ Pramanik:
   provoc: 7
   temporal: 8
   spatial: 0
+
+Unk3:
+  bioproject: PRJNA912560
+  link: https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giae051/7730001
+
+
+Unk4:
+  bioproject: PRJNA922726
+  link: https://www.nature.com/articles/s41598-023-44500-0
+
+
+Unk5:
+  bioproject: PRJNA931732
+  link: https://www.sciencedirect.com/science/article/pii/S0048969724069900?casa_token=0fuv0LpR24UAAAAA:FNdc1ujuObohfmXYtCIQk3BH-YgkCI23gJHk4WbHpAAwpRveHI0TcAiQc0q6NAIuQ-9sa6sMoVA
 
 Tierney:
   bioproject: PRJNA946141
@@ -315,6 +359,9 @@ Liponnen:
   temporal: 6
   spatial: 0
 
+Unk6:
+  bioproject: PRJNA1067101
+
 Overton:
   bioproject: PRJNA1088471
   link: https://www.researchsquare.com/article/rs-4183960/v1
@@ -367,16 +414,6 @@ Opeyemi:
   lineages_in_paper: ["BA.2.75", "BA.5", "BQ.1", "XBB.1.5", "BF.7"]
   provoc: 6
   temporal: 8
-  spatial: 0
-
-Brunner:
-  usable: false
-  bioproject: PRJEB55313
-  wwtps: 460
-  runs: 23536
-  data_notes: "`effluent.R` fails (memory issue)"
-  provoc: 0
-  temporal: 0
   spatial: 0
 
 Crits-Christoph:
