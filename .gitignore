@@ -29,3 +29,4 @@ out.log
 provoc/gadm/*
 *.jar
 provoc/model_runs/*
+*.pdf
