@@ -54,6 +54,17 @@ run_treatment() {
 #run_treatment PRJNA1212683
 #run_treatment PRJNA1238906
 
+run_treatment PRJEB44141
+run_treatment PRJNA662596
+run_treatment PRJNA912560
+run_treatment PRJNA736964
+run_treatment PRJNA922726
+run_treatment PRJNA931732
+run_treatment PRJNA827160
+run_treatment PRJNA931732
+run_treatment PRJNA887942
+run_treatment PRJEB96931
+
 # Unknown runtimes (Long or not yet processed)
 #run_treatment PRJNA661613 # minimap2.py failed.
 #run_treatment PRJEB55313  # Downloaded, not processed (memory issues).

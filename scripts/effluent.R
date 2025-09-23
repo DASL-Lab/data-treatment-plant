@@ -1,3 +1,11 @@
+suppressPackageStartupMessages({
+    library(here)
+    library(dplyr)
+    library(stringr)
+    library(lubridate)
+    library(argparser)
+})
+
 # The columns selected in runtable will be kept in the output
 get_runtable <- function(prj) {
 
@@ -279,6 +287,32 @@ get_runtable <- function(prj) {
                 )
             )
 
+    } else if (prj == "PRJEB44141"){
+        runtable <- runtable |>
+            rename(location = geographic_location_.region_and_locality.)
+    } else if (prj == "PRJNA662596"){
+        runtable <- runtable |>
+            mutate(location = str_remove(" ", geo_loc_name))
+    } else if (prj == "PRJNA912560"){
+        runtable <- runtable |>
+            mutate(location = 1)
+    } else if (prj == "PRJNA736964"){
+        runtable <- runtable |>
+            mutate(location = str_split_i(location, "_", 2))
+    } else if (prj == "PRJNA922726"){
+        runtable <- runtable |>
+            rename(location = ww_population)
+    } else if (prj == "PRJNA931732"){
+        runtable <- runtable |>
+            mutate(location = str_remove(geo_loc_name, "India: "))
+    } else if (prj == "PRJNA827160"){
+        runtable <- runtable |>
+            mutate(location = str_remove(geo_loc_name, "Germany: "))
+    } else if (prj == "PRJNA887942"){
+        runtable <- runtable |>
+            mutate(location = "Malawi: Blantyre")
+    } else if (prj == "PRJEB96931"){
+        runtable <- runtable
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -408,13 +442,6 @@ add_missing_mutations <- function(coco) {
 ###########################################################
 #### Run program                                       ####
 ###########################################################
-suppressPackageStartupMessages({
-    library(here)
-    library(dplyr)
-    library(stringr)
-    library(lubridate)
-    library(argparser)
-})
 # Argument Parsing
 p <- arg_parser("Process GromStole output for BioProjects (variant agnostic).",
     hide.opts = TRUE)
