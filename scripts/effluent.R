@@ -349,7 +349,11 @@ get_mfiles <- function(runtable, min_coverage) {
                 next
             }
         }
-        m <- read.csv(mname)
+        m <- tryCatch(read.csv(mname), error = function(e) e)
+        if (inherits(m, "error")) {
+            bad_files <- c(bad_files, runtable$sra[i])
+            next
+        }
         m <- m[m$coverage >= min_coverage, ]
         if (nrow(m) < 10) {
             bad_files <- c(bad_files, runtable$sra[i])
@@ -461,7 +465,7 @@ if (grepl(",", argv$BioProject))
     argv$BioProject <- strsplit(argv$BioProject, ",")[[1]]
 
 if (FALSE) {
-    argv <- list(BioProject = "data/runtables/SraRunTable_PRJEB44932.txt",
+    argv <- list(BioProject = "data/runtables/SraRunTable_PRJNA887942.txt",
         beep = TRUE, parse_mutations = FALSE,
         freqmin = 0.1, min_coverage = 40)
 }
