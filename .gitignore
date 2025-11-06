@@ -30,3 +30,4 @@ provoc/gadm/*
 *.jar
 provoc/model_runs/*
 *.pdf
+working/*
