@@ -76,7 +76,11 @@ TODO:
 - https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1012850
     - Has a list of accession numbers from various PRJs???
 - [x] [PRJEB96931](https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978)
-
+- [PRJEB96931](https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978)
+- [PRJNA889839 (WSLH sequencing method) and PRJNA989260 (University of Illinois Chicago sequencing method)](https://journals.asm.org/doi/full/10.1128/msystems.00229-25)
+- [PRJNA1279593](https://watermark02.silverchair.com/veaf083.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA3kwggN1BgkqhkiG9w0BBwagggNmMIIDYgIBADCCA1sGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMr_VickalVsxK_ALaAgEQgIIDLMrBSC_tvQYEK2BH5PWmu87PrfxDcdHv3RB2pIIDV54Xgh7yC0UVw0cbhIi3CG3_0PLZCP6noLzHOJA89e8pfQjMsi88ff03kmuy13hYGLBUVdgR4q9UiS6wKhjuCgfyhTUKgHAoouGyIbE-eFHGAlPM-bLW4SDVvQ64Fb-S9YtXcVgm4GVy4AOe7bDPlEYBFXS9VlcPX1h684Oh7steJZge4m3mdyz5gVm9mWgv3KclJjuD0dTmVWR90KODofxgRdXcWln59AX2GvXc82T7daREVMNuYouGT1IYWVmDW545CAzg7Jvvsx26umwx_EfkadA_e5jo4gu8oZk7lYfuNXGBk5I-dcdTJR3mhrwXLB3XY4ISs3kInIu-SX6EDWCVVI7Bx6P_dYRW970TOBGdmTnQ2_npjJTJQtJV0vqUbDRCaXN1JkBpcwyP6K8AypqLYnf7IMoRk5dvS3RbOpwas6s0ZIjq2dpi-tJE1AnpC9j_7h3hkqk2roADqv7yRwrs-CBkvwXXrhlSP4u9UK9N3O3a4sPx759sqiOaDNT_7tWEv0ZogX7V32OVi8xiUlI_1U0BNR_SguU9NxQeEN-CJHhWrrCEomfIGO3n6KwcB1fWcw_w5ETAXTCPFGt83WdMSpwTXy5v4mfVr7ANdeI0EHfZsIceSeHhnRnYp7csamHXAlQPm8pIeWxVmWBrfryeIwTvkA_YZ4JuMKksib3HN2CMP9kkvohxPPGsEnjDOattnEAC_5VKXE63j-j4g6QjV0RdXdkP4kA_ba2so9bEzR0k5i-jnKf_sy29hXNIHk2DzBF3fN2_7uyPHmwRL4MSnapcyKAhiSwosrP1zC7RMaEXKcI8ok9-Iu_8N5h9HJJowuKgETxPS40VXb45jRdTMsEUlwUIwxC9c0Znk4BGESIZcWEKX56AoGgOUp4X9pdB9sRIjeMSjIjOaLkH-CRCC22ZiJVb8BaWMb-jByy8QYl_6q3LtFLUaOMwRT9C8Hxt2ssRkpdRDVwZ1oXKSYS2PalaljidY0J53lA9XRucKdw4NvmQU72HCRu69yca-bT-nW0XNz5_NqhVpOzt)
+- [PRJNA941081](https://www.sciencedirect.com/science/article/pii/S0043135425018846#sec0002)
+- [PRJEB88516](https://link.springer.com/article/10.1186/s12889-025-24985-2)
 
 From https://www.sciencedirect.com/science/article/pii/S0043135425013429: 
     - PRJNA1002991, PRJNA1025240, PRJNA847239, PRJNA907808, PRJNA767624, PRJNA896161, PRJEB67638, PRJNA819090, PRJNA767800, PRJNA886745, PRJNA735936, PRJEB42191, PRJNA745177, PRJNA763484, PRJNA783202, PRJNA812772, PRJNA622837, PRJNA796340, PRJNA715712, PRJEB44932, PRJNA748354, SRS7345480, PRJEB55313
