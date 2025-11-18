@@ -40,6 +40,10 @@ Izquierdo-Lara:
   temporal: 3
   spatial: 6
 
+Amman:
+  bioproject: PRJEB48985
+  link: https://www.nature.com/articles/s41587-022-01387-y
+
 Brunner:
   usable: false
   bioproject: PRJEB55313
@@ -87,11 +91,9 @@ Garcia:
   temporal: 2
   spatial: 2
 
-Unk7:
-  bioproject: PRJNA662596
-  wwtps: 12
-  runs: 92
-  data_notes: "61 in Arizona, rest spread out across the southern states. Started in April 2020."
+Yu:
+  bioproject: PRJEB96931
+  link: https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978
 
 Smith:
   bioproject: PRJNA715712
@@ -191,7 +193,11 @@ Rios:
   temporal: 3
   spatial: 6
 
-Unk0:
+Liu:
+  bioproject: PRJNA764181
+  link: https://www.nature.com/articles/s41467-024-48334-w
+
+Herold:
   bioproject: PRJNA765031
   link: https://www.mdpi.com/2073-4441/13/21/3018
 
@@ -249,17 +255,17 @@ Karthykeyan:
   temporal: 7
   spatial: 2
 
-Unk1:
+Schumann:
   bioproject: PRJNA827160
-  link: https://www.sciencedirect.com/science/article/pii/S0048969722060302?casa_token=kg42tqD8nx8AAAAA:DUiC4wirP_8dnvXnmdEj7fQBDMoxXr4KlLYA0inAjeCx0ZqviNDwGw5ah_t93H2MHmS6qKWGJNo
+  link: https://www.sciencedirect.com/science/article/pii/S0048969722060302
   runs: 62
   wwtps: 4
   data_notes: "49 samples in WWTP2"
 
 
 Fontenele:
-  bioproject: PRJNA847239
-  link: https://www.sciencedirect.com/science/article/pii/S004896972301478X
+  bioproject: [PRJNA847239, PRJNA662596]
+  link: [https://www.sciencedirect.com/science/article/pii/S004896972301478X, https://www.sciencedirect.com/science/article/pii/S0043135421009040]
 
 
 Agrawal:
@@ -284,7 +290,7 @@ Tryndyak:
   temporal: 6
   spatial: 6
 
-Unk2:
+Barnes:
   bioproject: PRJNA887942
   link: https://www.nature.com/articles/s41467-023-43047-y
   runs: 175
@@ -318,12 +324,16 @@ Unk4:
   data_notes: "WWTPs only differentiated by ww_population as far as I can tell. Several replicates. Inconsistent sampling"
 
 
-Unk5:
+Rajput:
   bioproject: PRJNA931732
-  link: https://www.sciencedirect.com/science/article/pii/S0048969724069900?casa_token=0fuv0LpR24UAAAAA:FNdc1ujuObohfmXYtCIQk3BH-YgkCI23gJHk4WbHpAAwpRveHI0TcAiQc0q6NAIuQ-9sa6sMoVA
+  link: https://www.sciencedirect.com/science/article/pii/S0048969724069900
   runs: 1068
   wwtps: 2
   data_notes: "Different instruments, one wwtp is 'sewage' while the other is 'wastewater', both sampled on non-overlapping time periods. Might be good for T!"
+
+Yousef:
+  bioproject: PRJNA941107
+  link: https://www.nature.com/articles/s41467-023-41369-5
 
 Tierney:
   bioproject: PRJNA946141

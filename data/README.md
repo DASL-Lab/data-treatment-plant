@@ -72,17 +72,15 @@ TODO:
     - Long time scale
 - [ ] [ PRJNA887942](https://www.nature.com/articles/s41467-023-43047-y)
     - Focused on delta, looks at individual mutations
-- [ ] [No PRJ](https://www.cell.com/heliyon/fulltext/S2405-8440(24)03483-2)
-    - Genetic diversity
-- https://www.nature.com/articles/s41467-024-48334-w
+- [ ] Liu - PRJNA764181 from https://www.nature.com/articles/s41467-024-48334-w
 - https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1012850
-- [PRJEB96931](https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978)
+    - Has a list of accession numbers from various PRJs???
+- [x] [PRJEB96931](https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978)
 
 
 From https://www.sciencedirect.com/science/article/pii/S0043135425013429: 
-
-- PRJNA1002991, PRJNA1025240, PRJNA847239, PRJNA907808, PRJNA767624, PRJNA896161, PRJEB67638, PRJNA819090, PRJNA767800, PRJNA886745, PRJNA735936, PRJEB42191, PRJNA745177, PRJNA763484, PRJNA783202, PRJNA812772, PRJNA622837, PRJNA796340, PRJNA715712, PRJEB44932, PRJNA748354, SRS7345480, PRJEB55313
-- PRJEB48985 from https://www.nature.com/articles/s41587-022-01387-y
+    - PRJNA1002991, PRJNA1025240, PRJNA847239, PRJNA907808, PRJNA767624, PRJNA896161, PRJEB67638, PRJNA819090, PRJNA767800, PRJNA886745, PRJNA735936, PRJEB42191, PRJNA745177, PRJNA763484, PRJNA783202, PRJNA812772, PRJNA622837, PRJNA796340, PRJNA715712, PRJEB44932, PRJNA748354, SRS7345480, PRJEB55313
+- [x] PRJEB48985 from https://www.nature.com/articles/s41587-022-01387-y
 
 Brief lit review:
 
