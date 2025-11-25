@@ -1,3 +1,18 @@
+Thomas:
+  bioproject: PRJEB85606
+  link: https://www.sciencedirect.com/science/article/pii/S2405844025025952#sec2
+  lit_notes: "Filter variant definition to only the currently circulating mutations. Freyja."
+
+Vincent-Hubert:
+  bioproject: PRJEB85436
+  link: https://pubs.rsc.org/en/content/articlehtml/2025/ew/d5ew00482a
+  caller: [varaps, freyja]
+  lineage_defs: "custom processing of GISAID lineages"
+  lit_notes: ""
+  lineages_in_paper: ["BA.1", "BA.2", "BA.4", "BA.5", "BN.1", "BQ.1"]
+
+
+
 Honda:
   bioproject: PRJDB19812
   link: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0317076
