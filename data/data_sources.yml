@@ -1,6 +1,21 @@
 PRJNA1283912:
   link: https://www.sciencedirect.com/science/article/pii/S0043135425021311
   author: Zachmann
+Thomas:
+  bioproject: PRJEB85606
+  link: https://www.sciencedirect.com/science/article/pii/S2405844025025952#sec2
+  lit_notes: "Filter variant definition to only the currently circulating mutations."
+  caller: "Freyja"
+  lineages_in_paper: ["BA.2.75", "BA.4", "BA.5", "BQ.1", "CH.1.1", "XBB.1.5", "XBB.1.9", "XBB"]
+
+Vincent-Hubert:
+  bioproject: PRJEB85436
+  link: https://pubs.rsc.org/en/content/articlehtml/2025/ew/d5ew00482a
+  caller: ["varaps", "Freyja"]
+  lineage_defs: "custom processing of GISAID lineages"
+  lit_notes: ""
+  lineages_in_paper: ["BA.1", "BA.2", "BA.4", "BA.5", "BN.1", "BQ.1"]
+
 
 
 Honda:
@@ -9,7 +24,7 @@ Honda:
   wwtps: 2
   runs: 21
   data_notes: ""
-  lit_notes: "Tracking dissemination of SARS-CoV-2 from wastewater by looking at mutations over time. Only took reads >500bp and clustered according to co-occuring mutations after alignment."
+  lit_notes: "Tracking dissemination of SARS-CoV-2 from wastewater by looking at mutations over time. Only took reads >500bp and clustered according to co-occurring mutations after alignment."
   lineages_in_paper: ["XBT", "XBB.1.9.1", "XBB.1.5", "BA.2.75", "XBB.1.16", "EG.5", "BA.5"]
   provoc: 4
   temporal: 4
@@ -29,7 +44,7 @@ Jahn:
   wwtps: 6
   runs: 1823
   data_notes: "Exact latlon, many obs., spatio-temporal"
-  paper_notes: "Introduces COJAC, which looks at co-occuring mutations. Paper looks at 1339 samples, but there are 1823 available."
+  paper_notes: "Introduces COJAC, which looks at co-occurring mutations. Paper looks at 1339 samples, but there are 1823 available."
   lineages_in_paper: ["B.1.351", "P.1", "B.1.1.7", "B.1.617.2"]
   provoc: 9
   temporal: 10
@@ -45,6 +60,10 @@ Izquierdo-Lara:
   provoc: 10
   temporal: 3
   spatial: 6
+
+Amman:
+  bioproject: PRJEB48985
+  link: https://www.nature.com/articles/s41587-022-01387-y
 
 Brunner:
   usable: false
@@ -93,6 +112,10 @@ Garcia:
   provoc: 1
   temporal: 2
   spatial: 2
+
+Yu:
+  bioproject: PRJEB96931
+  link: https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978
 
 Fontenele2:
   bioproject: PRJNA662596
@@ -201,6 +224,10 @@ Rios:
   temporal: 3
   spatial: 6
 
+Liu:
+  bioproject: PRJNA764181
+  link: https://www.nature.com/articles/s41467-024-48334-w
+
 Herold:
   bioproject: PRJNA765031
   link: https://www.mdpi.com/2073-4441/13/21/3018
@@ -262,7 +289,7 @@ Karthykeyan:
 
 Schumann:
   bioproject: PRJNA827160
-  link: https://doi.org/10.1016/j.scitotenv.2022.158931
+  link: [https://www.sciencedirect.com/science/article/pii/S0048969722060302, https://doi.org/10.1016/j.scitotenv.2022.158931]
   lineages_in_paper: ["A.23.1", "B.1.1.7", "B.1.351", "B.1.617.2", "P.1", "BA.1"]
   runs: 62
   wwtps: 4
@@ -270,8 +297,8 @@ Schumann:
 
 
 Fontenele:
-  bioproject: PRJNA847239
-  link: https://www.sciencedirect.com/science/article/pii/S004896972301478X
+  bioproject: [PRJNA847239, PRJNA662596]
+  link: [https://www.sciencedirect.com/science/article/pii/S004896972301478X, https://www.sciencedirect.com/science/article/pii/S0043135421009040]
   lineages_in_paper: ["B.1.1.7", "B.1.617.2", "B.1.1.519", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5"]
 
 
@@ -336,11 +363,15 @@ Haver:
 
 Rajput:
   bioproject: PRJNA931732
-  link: https://doi.org/10.1016/j.scitotenv.2024.176833
+  link: [https://www.sciencedirect.com/science/article/pii/S0048969724069900, link: https://doi.org/10.1016/j.scitotenv.2024.176833]
   lineages_in_paper: ["BA.2.86", "XBB", "XBB.1.9", "CH.1.1", "BQ.1", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5", "B.1.1.529"]
   runs: 1068
   wwtps: 2
   data_notes: "Different instruments, one wwtp is 'sewage' while the other is 'wastewater', both sampled on non-overlapping time periods. Might be good for T!"
+
+Yousef:
+  bioproject: PRJNA941107
+  link: https://www.nature.com/articles/s41467-023-41369-5
 
 Tierney:
   bioproject: PRJNA946141
