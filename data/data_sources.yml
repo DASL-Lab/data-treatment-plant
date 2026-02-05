@@ -1,6 +1,18 @@
+
+PRJNA1283912:
+  link: https://www.sciencedirect.com/science/article/pii/S0043135425021311
+  author: Zachmann
+
+PRJEB85606:
+  author: Thomas
+  link: https://www.sciencedirect.com/science/article/pii/S2405844025025952#sec2
+  lit_notes: "Filter variant definition to only the currently circulating mutations."
+  caller: "Freyja"
+  lineages_in_paper: ["BA.2.75", "BA.4", "BA.5", "BQ.1", "CH.1.1", "XBB.1.5", "XBB.1.9", "XBB"]
+
 PRJEB85436:
   author: Vincent-Hubert
-  link: "https://archimer.ifremer.fr/doc/00991/110227/124049.pdf"
+  link: []"https://archimer.ifremer.fr/doc/00991/110227/124049.pdf", "https://pubs.rsc.org/en/content/articlehtml/2025/ew/d5ew00482a"]
   panel: "ARTIC v4.1"
   pipeline: "https://gitlab.com/vtilloy/aspicov"
   caller: ["varaps", "Freyja"]
@@ -9,22 +21,7 @@ PRJEB85436:
   lit_notes: "Were looking for early detection of BA.4 and BA.5"
   runs: 49
   wwtps: 2
-  
-
-PRJEB85606:
-  author: Thomas
-  link: "https://www.sciencedirect.com/science/article/pii/S2405844025025952#sec2"
-  lit_notes: "Filter variant definition to only the currently circulating mutations."
-  caller: "Freyja"
-  lineages_in_paper: ["BA.2.75", "BA.4", "BA.5", "BQ.1", "CH.1.1", "XBB.1.5", "XBB.1.9", "XBB"]
-
-PRJEB85436:
-  author: Vincent-Hubert
-  link: https://pubs.rsc.org/en/content/articlehtml/2025/ew/d5ew00482a
   caller: ["varaps", "Freyja"]
-  lineage_defs: "custom processing of GISAID lineages"
-  lit_notes: ""
-  lineages_in_paper: ["BA.1", "BA.2", "BA.4", "BA.5", "BN.1", "BQ.1"]
 
 
 
