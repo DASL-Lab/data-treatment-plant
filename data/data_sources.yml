@@ -1,18 +1,20 @@
 
-PRJNA1283912:
-  link: https://www.sciencedirect.com/science/article/pii/S0043135425021311
-  author: Zachmann
-
 PRJEB85606:
   author: Thomas
   link: https://www.sciencedirect.com/science/article/pii/S2405844025025952#sec2
-  lit_notes: "Filter variant definition to only the currently circulating mutations."
+  lit_notes: |
+    - Filter variant definition to only the currently circulating mutations.
   caller: "Freyja"
   lineages_in_paper: ["BA.2.75", "BA.4", "BA.5", "BQ.1", "CH.1.1", "XBB.1.5", "XBB.1.9", "XBB"]
+  lineage_defs: "covariants.org"
+  caller: "freyja"
+  runs: 53
+  wwtps: 5
+  bioinformatics_notes: "UnCoVar; FreeBayes and Delly"
 
 PRJEB85436:
   author: Vincent-Hubert
-  link: []"https://archimer.ifremer.fr/doc/00991/110227/124049.pdf", "https://pubs.rsc.org/en/content/articlehtml/2025/ew/d5ew00482a"]
+  link: ["https://archimer.ifremer.fr/doc/00991/110227/124049.pdf", "https://pubs.rsc.org/en/content/articlehtml/2025/ew/d5ew00482a"]
   panel: "ARTIC v4.1"
   pipeline: "https://gitlab.com/vtilloy/aspicov"
   caller: ["varaps", "Freyja"]
@@ -519,6 +521,19 @@ PRJNA1238906:
   provoc: 6
   temporal: 8
   spatial: 0
+
+
+PRJNA1283912:
+  author: Zachmann
+  link: https://www.sciencedirect.com/science/article/pii/S0043135425021311
+  runs: 231
+  wwtps: 5
+  lineages_in_paper: NA
+  lit_notes: |
+    - Focuses on (cryptic) mutations, not lineages, detected at airports.
+    - Different locations have different sampling approaches, and the paper points out that these give different sample properties.
+  bioinformatics_notes: "Ion Torrent Suite; TMAP"
+
 
 PRJNA661613:
   author: Crits-Christoph
