@@ -12,6 +12,8 @@ PRJEB85606:
   wwtps: 5
   bioinformatics_notes: "UnCoVar; FreeBayes and Delly"
 
+
+
 PRJEB85436:
   author: Vincent-Hubert
   link: ["https://archimer.ifremer.fr/doc/00991/110227/124049.pdf", "https://pubs.rsc.org/en/content/articlehtml/2025/ew/d5ew00482a"]
@@ -39,6 +41,8 @@ PRJDB19812:
   temporal: 4
   spatial: 1
 
+
+
 PRJEB44141:
   author: Pechlivanis
   link: https://www.nature.com/articles/s41598-022-06625-6
@@ -46,6 +50,8 @@ PRJEB44141:
   runs: 9018
   data_notes: "Many wwtps with <20 obs., 15 with >100. Somewhat consistent sampling at sites with high counts. Multiple instruments used."
   lineages_in_paper: ["B.1.1.7", "B.1.351"]
+
+
 
 PRJEB44932:
   author: Jahn
@@ -59,6 +65,8 @@ PRJEB44932:
   temporal: 10
   spatial: 8
 
+
+
 PRJEB48206:
   author: Izquierdo-Lara
   link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9927792/
@@ -70,9 +78,13 @@ PRJEB48206:
   temporal: 3
   spatial: 6
 
+
+
 PRJEB48985:
   author: Amman
   link: https://www.nature.com/articles/s41587-022-01387-y
+
+
 
 PRJEB55313:
   author: Brunner
@@ -83,6 +95,8 @@ PRJEB55313:
   provoc: 0
   temporal: 0
   spatial: 0
+
+
 
 PRJEB61810:
   author: Gurol
@@ -95,6 +109,8 @@ PRJEB61810:
   temporal: 7
   spatial: 8
 
+
+
 PRJEB65603:
   author: Rasmussen
   link: https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2023.28.36.2300460
@@ -106,10 +122,14 @@ PRJEB65603:
   temporal: 2
   spatial: 10
 
+
+
 PRJEB67638:
   author: Espinosa-Gongora
   link: https://pmc.ncbi.nlm.nih.gov/articles/PMC10655203/
   lineages_in_paper: ["BA.2.75", "BA.5", "XBB.1.5", "BA.2", "BA.2.86", "XBB"]
+
+
 
 PRJEB76651:
   author: Garcia
@@ -122,9 +142,13 @@ PRJEB76651:
   temporal: 2
   spatial: 2
 
+
+
 PRJEB96931:
   author: Yu
   link: https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978
+
+
 
 PRJNA662596:
   author: Fontenele2
@@ -133,6 +157,8 @@ PRJNA662596:
   wwtps: 12
   runs: 92
   data_notes: "61 in Arizona, rest spread out across the southern states. Started in April 2020."
+
+
 
 PRJNA715712:
   author: Smith
@@ -143,6 +169,8 @@ PRJNA715712:
   provoc: 5
   temporal: 7
   spatial: 3
+
+
 
 PRJNA719837:
   author: Layton
@@ -155,11 +183,15 @@ PRJNA719837:
   temporal: 8
   spatial: 1
 
+
+
 PRJNA720687:
   author: Unknown
   wwtps: 11
   runs: 116
   data_notes: "WWTP named Inf has 70 obs, the rest have 2-7"
+
+
 
 PRJNA731975:
   author: Lin
@@ -172,6 +204,8 @@ PRJNA731975:
   temporal: 6
   spatial: 2
 
+
+
 PRJNA735936:
   author: Rouchka
   link: https://www.mdpi.com/2076-0817/10/10/1271
@@ -183,11 +217,15 @@ PRJNA735936:
   temporal: 8
   spatial: 2
 
+
+
 PRJNA736964:
   author: Aßmann1:
   runs: 54
   wwtps: 20
   data_notes: "Very few runs/wwtp. Covers lots of Europe."
+
+
 
 PRJNA741211:
   author: Baaijens
@@ -200,6 +238,8 @@ PRJNA741211:
   temporal: 1
   spatial: 0
 
+
+
 PRJNA759260:
   author: Baaijens
   link: ["https://doi.org/10.1186/s13059-022-02805-9", "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-022-02805-9"]
@@ -210,6 +250,8 @@ PRJNA759260:
   provoc: 1
   temporal: 1
   spatial: 0
+
+
 
 PRJNA745177:
   author: Swift
@@ -222,6 +264,8 @@ PRJNA745177:
   temporal: 2
   spatial: 0
 
+
+
 PRJNA748354:
   author: Gregory
   link: https://doi.org/10.1371/journal.ppat.1010636
@@ -232,6 +276,8 @@ PRJNA748354:
   provoc: 0
   temporal: 0
   spatial: 0
+
+
 
 PRJNA750263:
   author: Rios
@@ -244,14 +290,20 @@ PRJNA750263:
   temporal: 3
   spatial: 6
 
+
+
 PRJNA764181:
   author: Liu
   link: https://www.nature.com/articles/s41467-024-48334-w
+
+
 
 PRJNA765031:
   author: Herold
   link: https://www.mdpi.com/2073-4441/13/21/3018
   lineages_in_paper: ["B.1.1.420", "B.1.1.7", "B.1.160", "B.1.177", "B.1.221", "B.1.258", "B.1.351", "B.1.474"]
+
+
 
 PRJNA772783:
   author: Khan
@@ -262,6 +314,8 @@ PRJNA772783:
   provoc: 5
   temporal: 3
   spatial: 3
+
+
 
 PRJNA788395:
   author: NGuessan
@@ -274,6 +328,8 @@ PRJNA788395:
   temporal: 2
   spatial: 2
 
+
+
 PRJNA796340:
   author: Sapoval
   link: https://www.nature.com/articles/s41467-023-38184-3
@@ -284,6 +340,8 @@ PRJNA796340:
   provoc: 8
   temporal: 2
   spatial: 6
+
+
 
 PRJNA811594:
   author: Ramuta
@@ -296,6 +354,8 @@ PRJNA811594:
   temporal: 6
   spatial: 1
 
+
+
 PRJNA819090:
   author: Karthykeyan
   link: https://www.nature.com/articles/s41586-022-05049-6
@@ -307,6 +367,8 @@ PRJNA819090:
   temporal: 7
   spatial: 2
 
+
+
 PRJNA827160:
   author: Schumann
   link: [https://www.sciencedirect.com/science/article/pii/S0048969722060302, https://doi.org/10.1016/j.scitotenv.2022.158931]
@@ -316,15 +378,19 @@ PRJNA827160:
   data_notes: "49 samples in WWTP2"
 
 
+
 PRJNA847239:
   author: Fontenele
   link: [https://www.sciencedirect.com/science/article/pii/S004896972301478X, https://www.sciencedirect.com/science/article/pii/S0043135421009040]
   lineages_in_paper: ["B.1.1.7", "B.1.617.2", "B.1.1.519", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5"]
 
+
+
 PRJNA662596:
   author: Fontenele
   link: [https://www.sciencedirect.com/science/article/pii/S004896972301478X, https://www.sciencedirect.com/science/article/pii/S0043135421009040]
   lineages_in_paper: ["B.1.1.7", "B.1.617.2", "B.1.1.519", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5"]
+
 
 
 PRJNA856091:
@@ -338,6 +404,8 @@ PRJNA856091:
   temporal: 2
   spatial: 2
 
+
+
 PRJNA865728:
   author: Tryndyak
   link: https://www.nature.com/articles/s41597-025-05100-x
@@ -349,6 +417,8 @@ PRJNA865728:
   temporal: 6
   spatial: 6
 
+
+
 PRJNA887942:
   author: Barnes
   link: https://www.nature.com/articles/s41467-023-43047-y
@@ -356,6 +426,8 @@ PRJNA887942:
   runs: 175
   wwtps: 1
   data_notes: "Uses two different platforms (single and paired). Isolation sources is a river. "
+
+
 
 PRJNA896334:
   author: Pramanik
@@ -368,6 +440,8 @@ PRJNA896334:
   temporal: 8
   spatial: 0
 
+
+
 PRJNA912560:
   author: Aßmann
   link: https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giae051/7730001,
@@ -375,6 +449,7 @@ PRJNA912560:
   runs: 16
   wwtps: 0
   data_notes: "Appears to be synthetic (or simulated) mixtures designed to test variant callers!"
+
 
 
 PRJNA922726:
@@ -386,6 +461,7 @@ PRJNA922726:
   data_notes: "WWTPs only differentiated by ww_population as far as I can tell. Several replicates. Inconsistent sampling"
 
 
+
 PRJNA931732:
   author: Rajput
   link: [https://www.sciencedirect.com/science/article/pii/S0048969724069900, link: https://doi.org/10.1016/j.scitotenv.2024.176833]
@@ -394,9 +470,13 @@ PRJNA931732:
   wwtps: 2
   data_notes: "Different instruments, one wwtp is 'sewage' while the other is 'wastewater', both sampled on non-overlapping time periods. Might be good for T!"
 
+
+
 PRJNA941107:
   author: Yousef
   link: https://www.nature.com/articles/s41467-023-41369-5
+
+
 
 PRJNA946141:
   author: Tierney
@@ -410,6 +490,8 @@ PRJNA946141:
   temporal: 7
   spatial: 7
 
+
+
 PRJNA992940:
   author: Merrett
   link: https://journals.asm.org/doi/full/10.1128/aem.01497-23
@@ -420,6 +502,8 @@ PRJNA992940:
   provoc: 4
   temporal: 5
   spatial: 5
+
+
 
 PRJNA1027333:
   author: Conway
@@ -432,6 +516,8 @@ PRJNA1027333:
   temporal: 4
   spatial: 0
 
+
+
 PRJNA1027858:
   author: Ellman
   link: https://www.nature.com/articles/s41598-024-58113-8
@@ -443,6 +529,8 @@ PRJNA1027858:
   temporal: 0
   spatial: 0
 
+
+
 PRJNA1031245:
   author: Moon
   link: https://www.medrxiv.org/content/10.1101/2024.02.15.24302811v1
@@ -452,6 +540,8 @@ PRJNA1031245:
   provoc: 10
   temporal: 0
   spatial: 0
+
+
 
 PRJNA1042787:
   author: Liponnen
@@ -463,10 +553,14 @@ PRJNA1042787:
   temporal: 6
   spatial: 0
 
+
+
 PRJNA1067101:
   author: Zambre
   link: https://link.springer.com/article/10.1007/s11356-024-34448-7
   lineages_in_paper: ["B.1.617.2", "B.1.1.529", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5"]
+
+
 
 PRJNA1088471:
   author: Overton
@@ -479,6 +573,8 @@ PRJNA1088471:
   temporal: 8
   spatial: 8
 
+
+
 PRJNA1110039:
   author: Matra
   link: https://www.researchsquare.com/article/rs-4609404/v1
@@ -489,6 +585,8 @@ PRJNA1110039:
   provoc: 7
   temporal: 8
   spatial: 8
+
+
 
 PRJNA1141947:
   author: Kellingray
@@ -501,6 +599,8 @@ PRJNA1141947:
   temporal: 7
   spatial: 0
 
+
+
 PRJNA1212683:
   author: Afonso
   link: https://www.nature.com/articles/s41598-025-94323-4
@@ -512,6 +612,8 @@ PRJNA1212683:
   temporal: 8
   spatial: 3
 
+
+
 PRJNA1238906:
   author: Opeyemi
   wwtps: 2
@@ -521,6 +623,7 @@ PRJNA1238906:
   provoc: 6
   temporal: 8
   spatial: 0
+
 
 
 PRJNA1283912:
@@ -535,6 +638,7 @@ PRJNA1283912:
   bioinformatics_notes: "Ion Torrent Suite; TMAP"
 
 
+
 PRJNA661613:
   author: Crits-Christoph
   usable: false
@@ -544,6 +648,8 @@ PRJNA661613:
   provoc: 0
   temporal: 0
   spatial: 0
+
+
 
 PRJNA729801:
   author: Rothman
@@ -555,6 +661,8 @@ PRJNA729801:
   temporal: 0
   spatial: 0
 
+
+
 PRJNA764181:
   author: Liu
   usable: false
@@ -564,27 +672,6 @@ PRJNA764181:
   provoc: 0
   temporal: 0
   spatial: 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
