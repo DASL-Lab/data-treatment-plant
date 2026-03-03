@@ -149,6 +149,12 @@ PRJEB96931:
   link: https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978
 
 
+PRJEB98197:
+  author: Eder
+  link: "https://pubs.acs.org/doi/full/10.1021/acsestwater.5c01178"
+  lit_notes: "Testing recovery of SARS-CoV-2 RNA positivity with disinfectant present; disinfectant can cause substantial loss in wastewater;"
+  data_notes: "Following NCBI bioproject links takes me to 30 smaples labelled 'mouse' and appear to be for a different organism'."
+  usable: false
 
 PRJNA662596:
   author: Fontenele2
@@ -490,7 +496,13 @@ PRJNA946141:
   temporal: 7
   spatial: 7
 
-
+PRJNA980445:
+  author: Tambe
+  link: "https://www.sciencedirect.com/science/article/pii/S2468227626001134"
+  lit_notes: "Only used the consensus sequences + pangolin. Subsample of 75 runs from 350, but only 57 in NCBI."
+  wwtps: "?"
+  runs: 57
+  lineages_in_paper: [Alpha, Beta, Delta, Omicron]
 
 PRJNA992940:
   author: Merrett
