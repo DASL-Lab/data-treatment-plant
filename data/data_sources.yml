@@ -496,6 +496,13 @@ PRJNA946141:
   temporal: 7
   spatial: 7
 
+PRJNA957477:
+  author: Zulli
+  link: https://peerj.com/articles/20941/
+  wwtps: 63
+  runs: 13629
+  data_notes: "Find wwtps by ww_population."
+
 PRJNA980445:
   author: Tambe
   link: "https://www.sciencedirect.com/science/article/pii/S2468227626001134"

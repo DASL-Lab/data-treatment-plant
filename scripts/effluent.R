@@ -313,6 +313,9 @@ get_runtable <- function(prj) {
             mutate(location = "Malawi: Blantyre")
     } else if (prj == "PRJEB96931"){
         runtable <- runtable
+    } else if (prj == "PRJNA957477") {
+        runtable <- runtable |>
+            mutate(location = as.numeric(factor(ww_population)))
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
