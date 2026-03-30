@@ -244,6 +244,11 @@ PRJNA741211:
   temporal: 1
   spatial: 0
 
+PRJNA747181:
+  author: Shakya
+  link: "https://www.cdc.gov/mmwr/volumes/75/wr/mm7510a1.htm"
+  lit_notes: "Specifically looking at BA.3.2; this is a metaproject with many more PRJ's in it"
+  linked: "PRJNA957477"
 
 
 PRJNA759260:
@@ -498,10 +503,13 @@ PRJNA946141:
 
 PRJNA957477:
   author: Zulli
-  link: https://peerj.com/articles/20941/
+  link: "https://peerj.com/articles/20941/"
   wwtps: 63
   runs: 13629
   data_notes: "Find wwtps by ww_population."
+  lineage_caller: "Freyja"
+  lineages_in_paper: ["XEC", "FL" , "JN", "EG", "XBB", "MC", "LP", "KP", "HV", "LF", "BA"]
+  lineage_defs: "Freyja"
 
 PRJNA980445:
   author: Tambe
@@ -655,6 +663,13 @@ PRJNA1283912:
     - Focuses on (cryptic) mutations, not lineages, detected at airports.
     - Different locations have different sampling approaches, and the paper points out that these give different sample properties.
   bioinformatics_notes: "Ion Torrent Suite; TMAP"
+
+PRJNA1365088:
+    author: ElMalah
+    link: "https://www.microbiologyresearch.org/content/journal/jmm/10.1099/jmm.0.002125"
+    runs: 21
+    wwtps: 1
+    lineages_in_paper: ["XBB", "XBB.1"]
 
 
 
