@@ -1,33 +1,4 @@
 
-PRJEB85606:
-  author: Thomas
-  link: https://www.sciencedirect.com/science/article/pii/S2405844025025952#sec2
-  lit_notes: |
-    - Filter variant definition to only the currently circulating mutations.
-  caller: "Freyja"
-  lineages_in_paper: ["BA.2.75", "BA.4", "BA.5", "BQ.1", "CH.1.1", "XBB.1.5", "XBB.1.9", "XBB"]
-  lineage_defs: "covariants.org"
-  caller: "freyja"
-  runs: 53
-  wwtps: 5
-  bioinformatics_notes: "UnCoVar; FreeBayes and Delly"
-
-
-
-PRJEB85436:
-  author: Vincent-Hubert
-  link: ["https://archimer.ifremer.fr/doc/00991/110227/124049.pdf", "https://pubs.rsc.org/en/content/articlehtml/2025/ew/d5ew00482a"]
-  panel: "ARTIC v4.1"
-  pipeline: "https://gitlab.com/vtilloy/aspicov"
-  caller: ["varaps", "Freyja"]
-  lineage_defs: "custom processing of GISAID lineages; allows fractional values; https://github.com/hacen-ai/Varaps-data/blob/main/Variant-mutation-profile-matrix.csv"
-  lineages_in_paper: ["B.1.1.7", "B.1.351", "P.1", "AY.4.2", "BA.1", "BA.2", "BF.7", "BA.4", "BA.5", "BQ.1", "BN.1", "CH.1.1"]
-  lit_notes: "Were looking for early detection of BA.4 and BA.5"
-  runs: 49
-  wwtps: 2
-  caller: ["varaps", "Freyja"]
-
-
 
 PRJDB19812:
   author: Honda
@@ -40,6 +11,7 @@ PRJDB19812:
   provoc: 4
   temporal: 4
   spatial: 1
+
 
 
 
@@ -142,11 +114,39 @@ PRJEB76651:
   temporal: 2
   spatial: 2
 
+PRJEB85436:
+  author: Vincent-Hubert
+  link: ["https://archimer.ifremer.fr/doc/00991/110227/124049.pdf", "https://pubs.rsc.org/en/content/articlehtml/2025/ew/d5ew00482a"]
+  panel: "ARTIC v4.1"
+  pipeline: "https://gitlab.com/vtilloy/aspicov"
+  caller: ["varaps", "Freyja"]
+  lineage_defs: "custom processing of GISAID lineages; allows fractional values; https://github.com/hacen-ai/Varaps-data/blob/main/Variant-mutation-profile-matrix.csv"
+  lineages_in_paper: ["B.1.1.7", "B.1.351", "P.1", "AY.4.2", "BA.1", "BA.2", "BF.7", "BA.4", "BA.5", "BQ.1", "BN.1", "CH.1.1"]
+  lit_notes: "Were looking for early detection of BA.4 and BA.5"
+  runs: 49
+  wwtps: 2
+  caller: ["varaps", "Freyja"]
+
+
+PRJEB85606:
+  author: Thomas
+  link: https://www.sciencedirect.com/science/article/pii/S2405844025025952#sec2
+  lit_notes: |
+    - Filter variant definition to only the currently circulating mutations.
+  caller: "Freyja"
+  lineages_in_paper: ["BA.2.75", "BA.4", "BA.5", "BQ.1", "CH.1.1", "XBB.1.5", "XBB.1.9", "XBB"]
+  lineage_defs: "covariants.org"
+  caller: "freyja"
+  runs: 53
+  wwtps: 5
+  bioinformatics_notes: "UnCoVar; FreeBayes and Delly"
+
 
 
 PRJEB96931:
   author: Yu
   link: https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202505978
+  data_notes: "no public data (yet?)"
 
 
 PRJEB98197:
@@ -156,7 +156,7 @@ PRJEB98197:
   data_notes: "Following NCBI bioproject links takes me to 30 smaples labelled 'mouse' and appear to be for a different organism'."
   usable: false
 
-PRJNA662596:
+PRJNA662596_2:
   author: Fontenele2
   link: https://www.sciencedirect.com/science/article/pii/S0043135421009040
   lineages_in_paper: ["A.1", "B.1", "B.1.2", "B.1.26", "B.1.5", "B.1.3"]
@@ -165,6 +165,10 @@ PRJNA662596:
   data_notes: "61 in Arizona, rest spread out across the southern states. Started in April 2020."
 
 
+PRJNA662596:
+  author: Fontenele
+  link: [https://www.sciencedirect.com/science/article/pii/S004896972301478X, https://www.sciencedirect.com/science/article/pii/S0043135421009040]
+  lineages_in_paper: ["B.1.1.7", "B.1.617.2", "B.1.1.519", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5"]
 
 PRJNA715712:
   author: Smith
@@ -247,7 +251,7 @@ PRJNA741211:
 PRJNA747181:
   author: Shakya
   link: "https://www.cdc.gov/mmwr/volumes/75/wr/mm7510a1.htm"
-  lit_notes: "Specifically looking at BA.3.2; this is a metaproject with many more PRJ's in it"
+  lit_notes: "Specifically looking at BA.3.2; this is a metaproject with many more PRJ's in it: PRJNA850375; PRJNA886720; PRJNA886720; PRJNA934936; PRJNA771693"
   linked: "PRJNA957477"
 
 
@@ -397,10 +401,6 @@ PRJNA847239:
 
 
 
-PRJNA662596:
-  author: Fontenele
-  link: [https://www.sciencedirect.com/science/article/pii/S004896972301478X, https://www.sciencedirect.com/science/article/pii/S0043135421009040]
-  lineages_in_paper: ["B.1.1.7", "B.1.617.2", "B.1.1.519", "BA.1", "BA.2", "BA.3", "BA.4", "BA.5"]
 
 
 
