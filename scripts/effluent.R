@@ -44,10 +44,6 @@ get_runtable <- function(prj) {
             rename(lat_lon = Lat_Lon)
     } else if (prj == "PRJNA741211") {
         runtable <- runtable
-    } else if (prj == "PRJNA720687") {
-        runtable <- runtable %>%
-            mutate(location = sapply(Sample.Name,
-                    function(x) strsplit(x, "-")[[1]][2]))
     } else if (prj == "PRJEB44932") {
         runtable <- runtable %>%
             mutate(location = sapply(
@@ -55,13 +51,6 @@ get_runtable <- function(prj) {
                 function(x) strsplit(x, " - ")[[1]][2])) %>%
             rename(lat = geographic_location_.latitude.,
                 lon = geographic_location_.longitude.)
-    } else if (prj == "PRJNA735936") {
-        runtable <- runtable %>%
-            rename(instrument = Instrument,
-                lat_lon = Lat_Lon,
-                organism = Organism,
-                sample_type = ww_sample_type
-            )
     } else if (prj == "PRJNA796340") {
         runtable <- rename(runtable, location = geo_loc_name)
     } else if (prj == "PRJEB48206") {
@@ -316,6 +305,50 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA957477") {
         runtable <- runtable |>
             mutate(location = as.numeric(factor(ww_population)))
+    } else if (prj == "PRJEB85436") {
+        runtable <- runtable |>
+            mutate(lat_lon = paste0(geographic_location_.latitude., ", ", geographic_location_.longitude.)) |>
+            mutate(location = as.numeric(factor(lat_lon)))
+    } else if (prj == "PRJEB85606") {
+        runtable <- runtable |>
+            mutate(Collection_Date = ymd_hms(create_date), location = 1)
+    } else if (prj == "PRJNA661613") {
+        runtable <- runtable |>
+            rename(location = as.numeric(factor(lat_lon)))
+    }else if (prj == "PRJNA720687") {
+        runtable <- runtable |>
+            mutate(
+                location = str_replace(Sample.Name, 
+                    "(.*)-\\d{2}-\\d{2}-\\d{2}.*", "\\1")
+            )
+    } else if (prj == "PRJNA729801") {
+        runtable <- runtable |>
+            rename(lat_lon = Lat_Lon) |>
+            mutate(location = str_replace(Sample.Name, "([A-Z]*)_.*", "\\1"))
+    } else if (prj == "PRJNA764181") {
+        runtable <- runtable |>
+            mutate(location = str_replace(Sample.Name, "([A-Z]*)-.*", "\\1"))
+    } else if (prj == "PRJNA771693") {
+        runtable <- runtable |>
+            rename(location = geo_loc_name)
+    } else if (prj == "PRJNA850375") {
+        runtable <- runtable |>
+            rename(location = geo_loc_name)
+    } else if (prj == "PRJNA886720") {
+        runtable <- runtable |>
+            rename(location = sample_title)
+    } else if (prj == "PRJNA934936") {
+        runtable <- runtable |>
+            mutate(location = as.numeric(factor(ww_population)))
+    } else if (prj == "PRJNA980445") {
+        runtable <- runtable |>
+            rename(location = geo_loc_name)
+    } else if (prj == "PRJNA1283912") {
+        runtable <- runtable |>
+            rename(location = geo_loc_name)
+    } else if (prj == "PRJNA1365088") {
+        runtable <- runtable |>
+            rename(location = "aircraft")
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
