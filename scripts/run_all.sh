@@ -1,5 +1,5 @@
 # No shebang - this is more like a lab notebook.
-# Running from start to finish would take about two-three weeks at least.
+# Running from start to finish would take about four to five weeks at least.
 
 run_treatment() {
     echo "Running $1"
@@ -10,20 +10,22 @@ run_treatment() {
 
 # Finished runs sorted by PRJ
 #run_treatment PRJDB19812
-run_treatment PRJEB44141
+#run_treatment PRJEB44141
 #run_treatment PRJEB44932
 #run_treatment PRJEB48206
 ####run_treatment PRJEB48985 # Too big or all errors
+####run_treatment PRJEB55313 # Too big or all errors
 #run_treatment PRJEB61810
 #run_treatment PRJEB65603
 #run_treatment PRJEB67638
 #run_treatment PRJEB76651
-run_treatment PRJEB85436
-run_treatment PRJEB85606
-run_treatment PRJEB96931
-run_treatment PRJNA662596
-run_treatment PRJNA715712
-run_treatment PRJNA719837
+#run_treatment PRJEB85436
+#run_treatment PRJEB85606
+#run_treatment PRJEB96931
+run_treatment PRJNA661613
+#run_treatment PRJNA662596
+#run_treatment PRJNA715712
+#run_treatment PRJNA719837
 #run_treatment PRJNA720687
 ####run_treatment PRJNA729801 # Too big or all errors
 #run_treatment PRJNA731975
@@ -36,25 +38,28 @@ run_treatment PRJNA736964
 #run_treatment PRJNA759260
 ####run_treatment PRJNA764181 # Too big or all errors
 #run_treatment PRJNA765031
+#run_treatment PRJNA771693
 #run_treatment PRJNA772783
 #run_treatment PRJNA788395
 #run_treatment PRJNA796340
 #run_treatment PRJNA811594
 #run_treatment PRJNA819090
-run_treatment PRJNA827160
+#run_treatment PRJNA827160
 #run_treatment PRJNA847239
+#run_treatment PRJNA850375
 #run_treatment PRJNA856091
 #run_treatment PRJNA865728
 run_treatment PRJNA886720
-run_treatment PRJNA887942
+#run_treatment PRJNA887942
 #run_treatment PRJNA896334
-run_treatment PRJNA912560
-run_treatment PRJNA922726
-run_treatment PRJNA931732
+#run_treatment PRJNA912560
+#run_treatment PRJNA922726
+#run_treatment PRJNA931732
+#run_treatment PRJNA934936
 #run_treatment PRJNA941107
 ####run_treatment PRJNA946141 # Too big or all errors
-run_treatment PRJNA957477
-run_treatment PRJNA980445
+####run_treatment PRJNA957477 # Too big
+#run_treatment PRJNA980445
 #run_treatment PRJNA992940
 #run_treatment PRJNA1027333
 #run_treatment PRJNA1027858
@@ -66,14 +71,15 @@ run_treatment PRJNA980445
 #run_treatment PRJNA1141947
 #run_treatment PRJNA1212683
 #run_treatment PRJNA1238906
-run_treatment PRJNA1365088
+#run_treatment PRJNA1283912 
+#run_treatment PRJNA1365088
 
 
 # Unknown runtimes (Long or not yet processed)
 #run_treatment PRJNA661613 # minimap2.py failed.
 #run_treatment PRJEB55313  # Downloaded, not processed (memory issues).
 
-ena_fastq="data/fastq/reads_fastq"
-if [ -e "$ena_fastq" ]; then
-	rm -r "$ena_fastq" # Remove ENA folder (full of empty folders)
-fi
+#ena_fastq="data/fastq/reads_fastq"
+#if [ -e "$ena_fastq" ]; then
+#	rm -r "$ena_fastq" # Remove ENA folder (full of empty folders)
+#fi
