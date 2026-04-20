@@ -22,7 +22,7 @@ run_treatment() {
 #run_treatment PRJEB85436
 #run_treatment PRJEB85606
 #run_treatment PRJEB96931
-run_treatment PRJNA661613
+#run_treatment PRJNA661613
 #run_treatment PRJNA662596
 #run_treatment PRJNA715712
 #run_treatment PRJNA719837
@@ -30,7 +30,7 @@ run_treatment PRJNA661613
 ####run_treatment PRJNA729801 # Too big or all errors
 #run_treatment PRJNA731975
 #run_treatment PRJNA735936
-run_treatment PRJNA736964
+#run_treatment PRJNA736964
 #run_treatment PRJNA741211
 #run_treatment PRJNA745177
 ####run_treatment PRJNA748354 # Too big or all errors
@@ -46,10 +46,10 @@ run_treatment PRJNA736964
 #run_treatment PRJNA819090
 #run_treatment PRJNA827160
 #run_treatment PRJNA847239
-#run_treatment PRJNA850375
+####run_treatment PRJNA850375 #too big
 #run_treatment PRJNA856091
 #run_treatment PRJNA865728
-run_treatment PRJNA886720
+#run_treatment PRJNA886720
 #run_treatment PRJNA887942
 #run_treatment PRJNA896334
 #run_treatment PRJNA912560
