@@ -287,7 +287,7 @@ get_runtable <- function(prj) {
             mutate(location = 1)
     } else if (prj == "PRJNA736964"){
         runtable <- runtable |>
-            mutate(location = str_split_i(location, "_", 2))
+            mutate(location = str_split_i(Sample.Name, "_", 2))
     } else if (prj == "PRJNA922726"){
         runtable <- runtable |>
             rename(location = ww_population)
@@ -314,7 +314,7 @@ get_runtable <- function(prj) {
             mutate(Collection_Date = ymd_hms(create_date), location = 1)
     } else if (prj == "PRJNA661613") {
         runtable <- runtable |>
-            rename(location = as.numeric(factor(lat_lon)))
+            mutate(location = as.numeric(factor(lat_lon)))
     }else if (prj == "PRJNA720687") {
         runtable <- runtable |>
             mutate(
