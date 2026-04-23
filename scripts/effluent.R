@@ -287,7 +287,7 @@ get_runtable <- function(prj) {
             mutate(location = 1)
     } else if (prj == "PRJNA736964"){
         runtable <- runtable |>
-            mutate(location = str_split_i(location, "_", 2))
+            mutate(location = str_split_i(Sample.Name, "_", 2))
     } else if (prj == "PRJNA922726"){
         runtable <- runtable |>
             rename(location = ww_population)
@@ -314,7 +314,7 @@ get_runtable <- function(prj) {
             mutate(Collection_Date = ymd_hms(create_date), location = 1)
     } else if (prj == "PRJNA661613") {
         runtable <- runtable |>
-            rename(location = as.numeric(factor(lat_lon)))
+            mutate(location = as.numeric(factor(lat_lon)))
     }else if (prj == "PRJNA720687") {
         runtable <- runtable |>
             mutate(
@@ -348,7 +348,7 @@ get_runtable <- function(prj) {
             rename(location = geo_loc_name)
     } else if (prj == "PRJNA1365088") {
         runtable <- runtable |>
-            rename(location = "aircraft")
+            mutate(location = "aircraft")
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
@@ -460,6 +460,11 @@ add_missing_mutations <- function(coco) {
                 cfile <- here("data", "groutput",
                     paste0(my_sra[i], ".coverage.csv"))
             }
+            if (!file.exists(cfile)) {
+                warning("mapped file exists, but not coverage. Removing mutations from data.")
+                coco <- coco[coco$sra != my_sra[i], ]
+                next
+            }
             c <- read.csv(cfile)
             missings <- anti_join(allmuts, mi, by = "label")
             missings$count <- 0
@@ -501,7 +506,7 @@ if (grepl(",", argv$BioProject))
     argv$BioProject <- strsplit(argv$BioProject, ",")[[1]]
 
 if (FALSE) {
-    argv <- list(BioProject = "data/runtables/SraRunTable_PRJNA887942.txt",
+    argv <- list(BioProject = "data/runtables/SraRunTable_PRJNA745177.txt",
         beep = TRUE, parse_mutations = FALSE,
         freqmin = 0.1, min_coverage = 40)
 }
