@@ -156,6 +156,12 @@ PRJEB98197:
   data_notes: "Following NCBI bioproject links takes me to 30 smaples labelled 'mouse' and appear to be for a different organism'."
   usable: false
 
+PRJEB106823:
+  author: "Carroll"
+  link: "https://journals.asm.org/doi/pdf/10.1128/msphere.00086-26"
+  data_notes: "Floor samples, not wastewater."
+  lineages_in_paper: ["BQ.1.1", "EN.1", "XBB", "XBB.1.5", "XBB.1.18.1", "BA.5", "BU.1", "BE.1"]
+
 PRJNA662596_2:
   author: Fontenele2
   link: https://www.sciencedirect.com/science/article/pii/S0043135421009040

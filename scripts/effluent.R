@@ -349,6 +349,10 @@ get_runtable <- function(prj) {
     } else if (prj == "PRJNA1365088") {
         runtable <- runtable |>
             mutate(location = "aircraft")
+            	
+    } else if (prj == "PRJEB106823") {
+        runtable <- runtable |>
+        	mutate(location = 1)
     } else {
         stop("I don't know how to deal with this BioProject yet.")
     }
