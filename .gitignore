@@ -8,7 +8,9 @@ data/ENA/*
 !data/ENA/download.sh
 logs/*
 */logs/*
+*.log
 provoc/model_runs/*
+provoc/parametric_output_files/*
 
 # Code output
 *__pycache__*
