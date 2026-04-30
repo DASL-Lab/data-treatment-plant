@@ -22,6 +22,7 @@ run_treatment() {
 #run_treatment PRJEB85436
 #run_treatment PRJEB85606
 #run_treatment PRJEB96931
+run_treatment PRJEB106823
 #run_treatment PRJNA661613
 #run_treatment PRJNA662596
 #run_treatment PRJNA715712
