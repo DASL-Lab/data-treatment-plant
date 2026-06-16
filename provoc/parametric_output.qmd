@@ -24,6 +24,9 @@ bioproj <- all_data[[params$prj]]
 ```
 
 
+# BioProject `r params$prj` - `r bioproj$author`
+
+
 ```{r}
 #| label: load_data
 filename <- here(
@@ -34,41 +37,45 @@ filename <- here(
 t0 <- Sys.time()
 coco <- read.csv(filename)
 coco$mutation <- parse_mutations(coco$label)
-print(Sys.time() - t0, units = "mins")
-head(coco) |> knitr::kable()
 coco |>
     select(any_of(c("location", "date", "mutation", "count", "coverage"))) |>
+    head() |>
     knitr::kable()
 ```
 
 
-Loading data took `r round(Sys.time() - t0, 2)` seconds.
-
-# BioProject `r bioproj$author`
+Loading data took `r round(difftime(Sys.time(), t0, units = "mins"), 2)` minutes.
 
 ## Summary Stats
 
-The `data_sources.yml` file claims that there are `r bioproj$wwtps` WWTPs were sampled in `r bioproj$runs` runs.
+From `data_sources.yml` and the loaded data:
 
-I see `r length(unique(coco$loactions))` locations and `r length(unique(coco$sra))` SRA runs in the data.
+- Claims `r bioproj$wwtps` locations, I see `r length(unique(coco$location))`.
+- Claims `r bioproj$runs` runs, I see `r length(unique(coco$sra))`
+- There are `r length(unique(coco$date))` unique dates.
 
 ```{r}
 #| label: check_lineages
 lineages_in_paper <- bioproj$lineages_in_paper
 barcodes <- provoc::usher_barcodes()
-print("Lineages not in barcodes:")
-print(setdiff(lineages_in_paper, rownames(barcodes)))
+not_in_barcodes <- setdiff(lineages_in_paper, rownames(barcodes))
 
 available_lineages <- intersect(lineages_in_paper, rownames(barcodes))
 barcodes <- filter_lineages(barcodes, available_lineages)
-print("Barcode Dimensions:")
-dim(barcodes)
+
 ```
+
+- Lineages in paper: `r lineages_in_paper`
+- Lineages not in barcodes: `r not_in_barcodes`
+- Total lineages used: `r nrow(barcodes)`
 
 If there are any notes, they will appear here:
 
 ```{r}
 #| label: data_notes
+#| results: asis
+#| fig-width: 8
+#| fig-height: 10
 if (!is.null(bioproj$data_notes)) {
     cat(bioproj$data_notes)
 }
@@ -82,19 +89,17 @@ if (!is.null(bioproj$lit_notes)) {
 
 ## Provoc
 
-ProVoC run time statistics:
-
 ```{r}
 #| label: provoc
-system.time(
-    res <- provoc(count / coverage ~ .,
-        data = coco,
-        lineage_defs = barcodes,
-        by = "sra"
-    )
+t0 <- Sys.time()
+res <- provoc(count / coverage ~ .,
+    data = coco,
+    lineage_defs = barcodes,
+    by = "sra"
 )
-head(res)
 ```
+
+ProVoC took `r round(difftime(Sys.time(), t0, units = "mins"), 2)` minutes.
 
 ```{r}
 #| label: plot_provoc
@@ -109,5 +114,4 @@ gg <- autoplot(res, date_col = "date") + facet_wrap(~ location) +
     theme_bw()
 suppressWarnings(print(gg))
 ```
-
 

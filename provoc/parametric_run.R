@@ -1,20 +1,20 @@
 library(here)
 library(stringr)
 
-force <- FALSE
+force <- TRUE
 
 all_processed <- list.files(
   here("data", "processed"),
   pattern = "\\.csv\\.gz$",
   full.names = TRUE
 )
-prjs <- str_extract(all_processed, "PRJNA\\d+") |> unique()
+prjs <- str_extract(all_processed, "PRJ\\w{2}\\d+") |> unique()
 prjs <- prjs[!is.na(prjs)] |> sort()
 
 for (prj in prjs) {
   outfile <- paste0(prj, ".pdf")
   outfile2 <- here("provoc", outfile)
-  cat(paste("\nProcessing", prj, "\n"))
+  cat(paste("\nProcessing", prj, "\b, loop", which(prjs == prj), "of", length(prjs), "\b.\n"))
 
   if ((file.exists(outfile) || file.exists(outfile2)) && !force) {
     cat("File exists. Skipping.\n")
@@ -29,7 +29,7 @@ for (prj in prjs) {
       execute_params = list(prj = prj)
     )
   }, error = function(e) {
-    write(paste("\n\n\n\n\n\n\n\n\n\n\nError:", e), file = "provoc/paramtric_run_errors.log", append = TRUE)
-    e
+    write(paste("\n\n\n\n\n\n\n\n\n\n\nError:", e), file = "provoc/parametric_run_errors.log", append = TRUE)
+    print(e)
   })
 }
