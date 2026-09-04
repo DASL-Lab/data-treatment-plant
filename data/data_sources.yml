@@ -1,4 +1,29 @@
+Multi:
+  author: Suarez
+  link: "https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1012850"
+  lit_notes: "Supp has a ton more PRJs to check out."
 
+PRJNA1328205:
+  author: deCarvalho
+  link: "https://www.mdpi.com/2076-2607/14/7/1402"
+
+PRJNA819090:
+  author: Karthikeyan
+  link: "https://link.springer.com/article/10.1038/s41586-022-05049-6?fromPaywallRec=false"
+
+PRJNA941107:
+  auhor: Yousif
+  link: "https://link.springer.com/article/10.1038/s41467-023-41369-5?fromPaywallRec=false"
+
+PRJNA1183343:
+  author: Manrique
+  link: "https://link.springer.com/article/10.1007/s11033-026-12220-z#data-availability"
+
+PRJNA1251232:
+  author: Chaves
+  link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0349393"
+  lit_notes: "Source code appears to be available; lineages_in_paper is just the ones they compared consensus sequences to."
+  lineages_in_paper: ["JN.1", "B.1.617.2"]
 
 PRJDB19812:
   author: Honda
