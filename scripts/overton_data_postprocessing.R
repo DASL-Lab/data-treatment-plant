@@ -96,35 +96,3 @@ dim(toronto_weekly); length(unique(toronto_weekly$mutation))
 length(unique(toronto_weekly$date))
 head(toronto_weekly)
 write_csv(toronto_weekly, here("data/processed/overton_weekly.csv.gz"))
-
-
-highland <- overton |>
-    filter(str_starts(location, "Highland")) |>
-    mutate(
-        mutation = parse_mutations(label),
-        date = ymd(date)
-    )  |>
-    mutate(date_numeric = as.numeric(date)) |>
-    group_by(mutation, date) |>
-    summarise(
-        count = sum(count), coverage = sum(coverage),
-        sra = sra[1], .groups = "drop"
-    ) |>
-    mutate(
-        frequency = count / (coverage + 1)
-    )
-
-highland |>
-    group_by(location, mutation) |>
-    mutate(
-        lower_thresh = sum(frequency > 0.1) > 2,
-        upper_thresh = sum(frequency < 0.9) > 2
-    ) |>
-    ungroup() |> 
-    filter(lower_thresh, upper_thresh) |>
-    ggplot() +
-    aes(x = date, y = frequency, group = mutation) +
-    geom_line()
-
-head(highland)
-write.csv(highland, here("data/processed/highland.csv"))
